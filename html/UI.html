@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="http://p9ba3amn1.bkt.clouddn.com/title_logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://p9ba3amn1.bkt.clouddn.com/title_logo.ico" type="image/x-icon">
+    <title>UNIVERSITY</title>
+    <link rel="stylesheet" href="../css/cropper.min.css">
+    <link rel="stylesheet" href="../css/ImgCropping.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../css/same.css">
+    <link rel="stylesheet" href="../css/UI.css">
+</head>
+
+<body>
+    <div id="page_container">
+        <div class="title">
+            <div class="logo">
+            </div>
+            <!-- logo -->
+            <div class="list">
+                <ul class="left_list">
+                    <li>
+                        <a href="javascript:;">首页</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">名师讲堂</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">视频教学</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">经典教文</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">议题大会</a>
+                    </li>
+                    <li class="same_li">
+                        <a href="map.html" title="定位" target="_blank">
+                            <i class="iconfont location">&#xe613;</i>
+                        </a>
+                    </li>
+                    <li class="same_li">
+                        <a href="javascript:;" title="搜索" class="search_special">
+                            <i class="iconfont search">&#xe63c;</i>
+                        </a>
+                    </li>
+                    <li class="same_li last_li">
+                        <div class="location_div_a">
+                            <a href="../html/personalCenter.html" class="photo_cicle" target="_blank">
+                                <img src="../img/10.jpg">
+                            </a>
+                            <div class="msg_index_dance">
+                                进入个人中心
+                            </div>
+                        </div>
+                        <!-- 登陆后 -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="user_select">
+            <div class="user_list">
+                <ul>
+                    <li>
+                        <a href="javascript:;" style="background: #dbdada;">
+                            <div>
+                                <i class="iconfont">&#xe620;</i>
+                            </div>
+                            <span>个人资料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <div>
+                                <i class="iconfont" style="font-size: 14px;">&#xe610;</i>
+                            </div>
+                            <span>账号和密码</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <div>
+                                <i class="iconfont">&#xe634;</i>
+                            </div>
+                            <span>社交账号</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="user_information">
+                <ul style="display: block;padding-bottom: 20px;">
+                    <li style="padding:0px 0px 20px 0px;border: none;">
+                        <div class="change_img">
+                            <img id="finalImg" src="../img/11.jpg" width="100%">
+                        </div>
+                        <a href="javascript:;" id="replaceImg">更换图片</a>
+                        <!-- 截图的功能 -->
+                        <div style="display: none" class="tailoring-container">
+                            <div class="black-cloth" onclick="closeTailor(this)"></div>
+                            <div class="tailoring-content">
+                                <div class="tailoring-content-one">
+                                    <label title="上传图片" for="chooseImg" class="l-btn choose-btn">
+                                        <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden" onchange="selectImg(this)"> 选择图片
+                                    </label>
+                                    <div class="close-tailoring" onclick="closeTailor(this)">
+                                        <i class="iconfont">&#xe61a;</i>
+                                    </div>
+                                </div>
+                                <div class="tailoring-content-two">
+                                    <div class="tailoring-box-parcel">
+                                        <img id="tailoringImg">
+                                    </div>
+                                    <div class="preview-box-parcel">
+                                        <p>图片预览：</p>
+                                        <div class="square previewImg"></div>
+                                        <div class="circular previewImg"></div>
+                                    </div>
+                                </div>
+                                <div class="tailoring-content-three">
+                                    <button class="l-btn cropper-reset-btn">复位</button>
+                                    <button class="l-btn cropper-rotate-btn">旋转</button>
+                                    <button class="l-btn cropper-scaleX-btn">换向</button>
+                                    <button class="l-btn sureCut" id="sureCut">确定</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 截图的功能 -->
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span>性别</span>
+                            <label for="inputRadio1" style="margin-left: 140px;">
+                                <input type="radio" id="inputRadio1" name="inputRadio" value="0"> 男
+                            </label>
+                            <label for="inputRadio2">
+                                <input type="radio" id="inputRadio2" name="inputRadio" value="1"> 女
+                            </label>
+                            <label for="inputRadio3">
+                                <input type="radio" id="inputRadio3" name="inputRadio" value="2" checked> 保密
+                            </label>
+                        </a>
+                    </li>
+                    <li>
+                        <span>个人简介</span>
+                        <textarea placeholder="请填写您的个人简介"></textarea>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>地址</span>
+                            <input type="text" placeholder="请输入您的地址" class="inputText">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>QQ号码</span>
+                            <input type="text" placeholder="请输入您的QQ号码" class="inputText">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>电话</span>
+                            <input type="text" placeholder="请输入您的电话" class="inputText">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>从事职业</span>
+                            <input type="text" placeholder="请输入您的职业" class="inputText">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>个人网站</span>
+                            <input type="text" placeholder="请输入您的个人网站" class="inputText">
+                        </div>
+                    </li>
+                    <li style="border: none;padding: 30px 0 0 0;">
+                        <a href="javascript:;" class="save">保存</a>
+                    </li>
+                </ul>
+                <ul style="padding-bottom: 20px;">
+                    <li>
+                        <div class="same_div">
+                            <span>昵称</span>
+                            <input type="text" placeholder="请输入您的昵称" class="inputTextN">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>邮箱地址</span>
+                            <input type="email" placeholder="请输入您的邮箱地址" class="inputTextN" id="inputEmail">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>设置密码</span>
+                            <input type="password" placeholder="请输入您要设置的密码" class="inputTextN password1">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>确认密码</span>
+                            <input type="password" placeholder="请确认您刚才设置的密码" class="inputTextN password2">
+                        </div>
+                    </li>
+                    <li style="border: none;padding: 30px 0 0 0;">
+                        <a href="javascript:;" class="saveN">保存</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="same_div">
+                            <span>新浪微博</span>
+                            <a href="javascript:;" style="background: #EA5D5C;">
+                                绑定微博
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>微信</span>
+                            <a href="javascript:;" style="background: #50B674;">
+                                绑定微信
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="same_div">
+                            <span>腾讯QQ</span>
+                            <a href="javascript:;" style="background: #4CAFE9;">
+                                绑定QQ
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="toTop">
+            <a href="javascript:;" class="GoTop" title="回到顶部">
+                <img src="../img/3.png">
+            </a>
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../layui/layer.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/same.js"></script>
+    <script src="../js/cropper.min.js"></script>
+    <script src="../js/UI.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+#page_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user_select {
+    width: 60%;
+    margin-top: 130px;
+}
+
+.user_information {
+    width: 60%;
+}
+
+.user_information ul {
+    display: none;
+}
+
+.user_information li {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 20px 0px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.user_information .same_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 370px;
+}
+
+.user_information ul:nth-of-type(3) li {
+    padding: 50px 0px;
+}
+
+.user_information ul:nth-of-type(3) a {
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.user_information li span {
+    color: #333;
+}
+
+.user_information li .inputText,
+.user_information li .inputTextN {
+    padding: 8px 0;
+    color: #a0a0a0;
+    font-size: 16px;
+    border: none;
+    cursor: text;
+}
+
+#inputRadio1,
+#inputRadio2,
+#inputRadio3 {
+    cursor: pointer;
+    margin-right: 9px;
+}
+
+.user_information li label {
+    color: #a0a0a0;
+    cursor: pointer;
+}
+
+.user_information li label:nth-of-type(2) {
+    padding: 0px 30px;
+}
+
+.user_information textarea {
+    width: 300px;
+    height: 100px;
+    margin: 0 0 0 110px;
+    border: 1px solid #a0a0a0;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #a0a0a0;
+}
+
+.user_information #replaceImg,
+.save,
+.saveN {
+    padding: 10px 20px;
+    background: #363636;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: 80px;
+    font-size: 12px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+    transition: all .3s linear;
+}
+
+.save,
+.saveN {
+    margin: 0;
+}
+
+.user_information #replaceImg:hover,
+.save:hover,
+.saveN:hover {
+    background: #1b1b1b;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, .5);
+}
+
+.change_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
