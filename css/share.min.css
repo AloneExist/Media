@@ -60,7 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 8px 0px;
+    padding: 10px 0 5px 0;
 }
 
 .social-share .icon-wechat .wechat-qrcode .qrcode table {

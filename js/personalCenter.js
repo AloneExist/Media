@@ -33,6 +33,9 @@ $('.nav .same_a').on('click', function () {
         .css({
             display: 'flex',
         });
+    $('.lastLong').css({
+        'display': 'none',
+    });
 });
 
 var length = $('.user_list a').length;
@@ -315,38 +318,21 @@ select_Article.eq(0).find(".bottom_first_span").append("<b>19</b>");
 select_Article.eq(0).find(".bottom_two_span").append("<b>1</b>");
 select_Article.eq(0).find("p").html("原本打算五一跟朋友跑完半程马拉松后就去北海拍海景，然而不幸的是，她准备跑到终点时突然晕倒了，虽然我没体验过这种晕倒的感觉，但可以想象出这种从鬼门关出来人的有多不易。");
 
-
-
-var second_list_bottom = $('.second_list').outerHeight();
-
-$('.second_list').css({
-    'bottom': -(second_list_bottom),
-});
-
-$('.first_ul li').eq(4).hover(function () {
-    $('.nav .second_list').css({
-        'z-index': '2',
-        'transform': 'translateX(-50%) scaleY(1)',
-    });
-}, function () {
-    $('.nav .second_list').css({
-        'transform': '',
+$('.nav .same_a').eq(4).on('click', function () {
+    $('.lastLong').css({
+        'display': 'block',
     });
 });
 
-var OLD_collect = $('.Select_Five_Div .collect').eq(0);
+var OldElement = $('.collect').eq(0);
 
 $('.second_list a').on('click', function () {
     var index = $('.second_list a').index(this);
-    $('.first_ul .same_a').eq(4).trigger("click");
-    OLD_collect.css({
+    OldElement.css({
         'display': 'none',
     });
-    OLD_collect = $('.Select_Five_Div .collect').eq(index);
-    $('.Select_Five_Div .collect').eq(index).css({
+    OldElement = $('.collect').eq(index);
+    $('.collect').eq(index).css({
         'display': 'flex',
-    });
-    $('.nav .second_list').css({
-        'transform': '',
     });
 });

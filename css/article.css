@@ -135,6 +135,7 @@ blockquote b {
   border-radius: 60px;
   background: #1a2d27;
   cursor: pointer;
+  z-index: 10;
 }
 
 .social-share .social-share-icon {
@@ -327,7 +328,7 @@ blockquote b {
 
 .w-e-panel-container h4 {
   margin: 0 !important;
-  padding: 20px 0 10px 0;
+  padding: 20px 0 20px 0;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -343,15 +344,18 @@ blockquote b {
 }
 
 .w-e-text-container .w-e-panel-container {
-  padding: 0px 20px 45px 20px !important;
+  padding: 20px 20px 45px 20px !important;
 }
 
 .close_top_div a {
   z-index: 10;
 }
 
-.w-e-text img {
+.w-e-text img,
+.commentsMessage .bottomMessage img {
   display: inline-block !important;
+  position: relative;
+  top: 5px;
 }
 
 #ContainEditor blockquote {
@@ -362,4 +366,195 @@ blockquote b {
   line-height: 30px;
   font-size: 100%;
   background-color: #f1f1f1;
+}
+
+.collectAlike {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0 100px 0;
+}
+
+.TwoPart {
+  width: 620px;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.TwoPart a {
+  padding: 10px 20px;
+  color: #fff;
+  background: #000;
+  font-size: 18px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #4e4545 0px 5px 0px, rgba(0, 0, 0, .5) 0px 9px 25px;
+  transition: all .3s ease 0s;
+}
+
+.TwoPart a:active {
+  box-shadow: #3e816d 0px 0px 0px, rgba(0, 0, 0, .5) 0px 9px 25px;
+  position: relative;
+  top: 6px;
+}
+
+.TwoPart .iconfont {
+  padding-right: 10px;
+}
+
+.icon-qq:before,
+.icon-linkedin::before,
+.icon-douban::before,
+.icon-diandian::before,
+.icon-facebook::before,
+.icon-google::before {
+  content: '';
+}
+
+.commentsDetail,
+.containContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  padding-top: 30px;
+}
+
+.containContent {
+  width: 700px;
+  flex-wrap: wrap;
+}
+
+.commentsNum,
+.commentsNum span {
+  font-size: 20px;
+  color: #1a2d27;
+  font-weight: 700;
+}
+
+.commentsNum {
+  width: 100%;
+  margin: 0 !important;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #DDD;
+}
+
+.commentsList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.commentsList li {
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 1px solid #DDD;
+}
+
+.topMessage a {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: block;
+}
+
+.topMessage a img {
+  width: 100%;
+}
+
+.commentsMessage {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rightMessage {
+  padding-left: 15px;
+  width: calc(100% - 65px);
+}
+
+.topMessage {
+  width: 100%;
+  display: flex;
+}
+
+.commentsName,
+.timeMessage {
+  width: 100%;
+}
+
+.timeMessage span {
+  font-size: 14px;
+}
+
+.timeMessage span:nth-of-type(2) {
+  padding-left: 5px;
+}
+
+.commentsName {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bottomMessage {
+  width: 100%;
+}
+
+.bottomMessage p {
+  margin: 0 !important;
+  padding: 15px 0;
+  word-break: break-word !important;
+}
+
+.toolBar_Btn .iconfont {
+  color: #373E40;
+  transition: all .3s ease;
+  padding-right: 5px;
+}
+
+.toolBar_Btn a {
+  color: #000;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolBar_Btn a:nth-of-type(2) {
+  padding-left: 20px;
+}
+
+.toolBar_Btn span {
+  font-size: 14px;
+}
+
+.NewToolbar {
+  position: relative;
+}
+
+.EditorNew .w-e-text {
+  padding: 5px 20px !important;
+  height: 100% !important;
+}
+
+.w-e-text p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.gray {
+  display: none !important;
+}
+
+.NewGoodEditor {
+  padding-top: 30px;
+  position: relative;
+  top: -20px;
+  opacity: 0;
+  transition: all .5s ease;
 }

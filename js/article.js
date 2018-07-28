@@ -142,7 +142,7 @@ $('.circle').on('click', function () {
     }
 });
 
-//分享菜单移动
+//分享菜单可移动
 var ContentShare = document.getElementsByClassName('ContentShare')[0];
 var C_x = 0;
 var C_y = 0;
@@ -198,6 +198,7 @@ ContentShare.onmouseup = function () {
     });
 };
 
+//创建一个新的编辑器
 var E = window.wangEditor;
 var editor = new E('#top_list', '#bottom_content');
 editor.customConfig.menus = ['bold', 'italic', 'link', 'emoticon'];
@@ -211,3 +212,160 @@ $('#QRCode').qrcode({
     height: 105,
     text: UrlAddress,
 });
+
+var initNum = 100;
+$('.numCount').html(initNum);
+var isGood = true;
+var isBad = true;
+$('.TwoPart a').eq(0).on('click', function () {
+    if (isGood) {
+        isGood = false;
+        Change(1, $(this), 1);
+    } else {
+        isGood = true;
+        Change(0, $(this), 1);
+    }
+});
+
+$('.TwoPart a').eq(1).on('click', function () {
+    if (isBad) {
+        isBad = false;
+        Change(1, $(this), 0);
+    } else {
+        isBad = true;
+        Change(0, $(this), 0);
+    }
+});
+
+function Change(n, m, o) {
+    if (n) {
+        if (o) {
+            initNum++;
+        }
+        m.css({
+            'color': '#FF9500',
+        });
+    } else {
+        if (o) {
+            initNum--;
+        }
+        m.css({
+            'color': '',
+        });
+    }
+    $('.numCount').html(initNum);
+}
+
+var NumAdd = 0;
+
+// description.replace(/<(?!img).*?>/g, "");//去除所有的html标签除了img
+$('.NewEditor .publish_A').on('click', function () {
+    NumAdd++;
+    var Now = new Date();
+    var Year = Now.getFullYear();
+    var Month = Now.getMonth() + 1;
+    var Day = Now.getDate();
+    var Hour = Now.getHours();
+    var Minute = Now.getMinutes();
+    var Second = Now.getSeconds();
+    var addComments = $('<li class="Number' + NumAdd + '"><div class="commentsMessage"><div class="topMessage"><a href="javascript:;"><img src="../img/11.jpg"></a>' +
+        '<div class="rightMessage"><div class="commentsName">白矖</div><div class="timeMessage"><span></span><span></span>' +
+        '</div></div></div><div class="bottomMessage"><p></p><div class="toolBar_Btn"><a href="javascript:;"><i class="iconfont">&#xe606;</i>' +
+        '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont">&#xe61b;</i><span>回复</span>' +
+        '</a></div> </div></div></li>');
+    var Content = $('.NewEditor .w-e-text').html().replace(/<(?!img).*?>/g, "");
+    $('.commentsList').prepend(addComments);
+    $('.Number' + NumAdd + ' .commentsMessage .bottomMessage p').html(Content);
+    $('.Number' + NumAdd + ' .timeMessage span').eq(0).html('' + Year + '/' + Month + '/' + Day + '');
+    $('.Number' + NumAdd + ' .timeMessage span').eq(1).html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
+    $('.NewEditor .w-e-text').html('<p><br></p>');
+
+    //点赞
+    var NotSame = true;
+    var GoodNum = parseInt($('.goodNum').html());
+    $('.toolBar_Btn a').eq(0).on('click', function () {
+        if (NotSame) {
+            NotSame = false;
+            onNotSame($(this).find('.iconfont'), 1);
+            $(this).find('.goodNum').html(++GoodNum);
+        } else {
+            NotSame = true;
+            onNotSame($(this).find('.iconfont'), 0);
+            $(this).find('.goodNum').html(--GoodNum);
+        }
+    });
+
+    //回复
+    var NewGoodEditor = $('<div class="NewGoodEditor"><div class="NewEditor">' +
+        '<div id="Newtoolbar" class="NewToolbar" style="width:100%;background: #fff;border-bottom: 1px solid #DDD;"></div>' +
+        '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
+        'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>');
+    var NoSame = true;
+    $('.toolBar_Btn a').eq(1).on('click', function () {
+        if (NoSame) {
+            NoSame = false;
+            onNotSame($(this).find('.iconfont'), 1);
+            $(this).parent().parent().append(NewGoodEditor);
+            setTimeout(function () {
+                $('.NewGoodEditor').css({
+                    'opacity': '1',
+                    'top': '0',
+                });
+                $('.NewGoodEditor .cancel_A').css({
+                    'display': 'flex',
+                });
+                $('.NewGoodEditor .publish_A').html('<i class="iconfont">&#xe815;</i>发送');
+            }, 10);
+            var M = window.wangEditor;
+            var NewEditor = new M('#Newtoolbar', '#NewUser_edit');
+            NewEditor.customConfig.menus = ['bold', 'italic', 'link', 'emoticon'];
+            NewEditor.customConfig.zIndex = 0;
+            NewEditor.create();
+
+            $('.NewGoodEditor .cancel_A').on('click', function () {
+                CodeSame(NewGoodEditor);
+                $('.toolBar_Btn a').eq(1).find('.iconfont').css({
+                    'color': '',
+                });
+                NoSame = true;
+            });
+        } else {
+            NoSame = true;
+            onNotSame($(this).find('.iconfont'), 0);
+            CodeSame(NewGoodEditor);
+        }
+    });
+});
+
+function addZero(n) {
+    if (n < 10) {
+        n = '0' + n + ''
+    }
+    return n;
+}
+
+function onNotSame(m, n) {
+    if (n) {
+        m.css({
+            'color': '#00B38C',
+        });
+    } else {
+        m.css({
+            'color': '',
+        });
+    };
+};
+
+function CodeSame(n) {
+    $('.NewGoodEditor').css({
+        'opacity': '',
+        'top': '',
+    });
+    $('.NewGoodEditor .w-e-text').remove();
+    n.remove();
+}
+
+$(document).on("click", '.toolBar_Btn a,.NewEditor .publish_A', function () {
+    $("body").getNiceScroll().resize();
+});
+//重载滚动条

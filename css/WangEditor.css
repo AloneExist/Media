@@ -265,7 +265,8 @@ p {
     margin: 0px auto 20px auto !important;
 }
 
-.publish_A {
+.publish_A,
+.cancel_A {
     position: absolute;
     right: 0px;
     height: 100%;
@@ -279,13 +280,24 @@ p {
     margin-right: 10px !important;
 }
 
-.publish_A:hover {
+.cancel_A {
+    right: 88px;
+    margin: 0 !important;
+    display: none;
+}
+
+.publish_A:hover,
+.cancel_A:hover {
     background: #595955;
     color: #f2f2f2;
 }
 
 .publish_A .iconfont {
     margin-right: 15px;
+}
+
+.cancel_A .iconfont {
+    margin-right: 5px;
 }
 
 iframe {
