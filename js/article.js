@@ -21,46 +21,46 @@ addContent.html(getFirstContent);
 var ListLan = $('.circle').attr('list-title');
 
 $('.timeBar').hover(
-  function() {
+  function () {
     $('.bottom_message').append(alertTitle);
     $('.alertSpan').html(DataTitle);
-    setTimeout(function() {
+    setTimeout(function () {
       $('.alertSpan').css({
         opacity: '1',
       });
     }, 10);
   },
-  function() {
+  function () {
     $('.alertSpan').css({
       opacity: '',
     });
-    setTimeout(function() {
+    setTimeout(function () {
       alertTitle.remove();
     }, 300);
-  },
+  }
 );
 
 $('.circle').hover(
-  function() {
+  function () {
     $('.ContentShare').append(alertTitle);
     $('.alertSpan').html(ListLan);
-    setTimeout(function() {
+    setTimeout(function () {
       $('.alertSpan').css({
         opacity: '1',
       });
     }, 10);
   },
-  function() {
+  function () {
     $('.alertSpan').css({
       opacity: '',
     });
-    setTimeout(function() {
+    setTimeout(function () {
       alertTitle.remove();
     }, 300);
-  },
+  }
 );
 
-$('.focus').on('click', function() {
+$('.focus').on('click', function () {
   if (onOff) {
     onOff = false;
     $('.focus').css({
@@ -88,7 +88,7 @@ socialShare('.social-share', {
   description: getFirstContent, //分享到额描述
 });
 
-$('.circle').on('click', function() {
+$('.circle').on('click', function () {
   if (Judge) {
     Judge = false;
     $('.listTop')
@@ -134,7 +134,7 @@ $('.circle').on('click', function() {
     $('.social-share').css({
       height: '',
     });
-    setTimeout(function() {
+    setTimeout(function () {
       $('.social-share').css({
         display: '',
       });
@@ -150,7 +150,7 @@ var C_l = 0;
 var C_t = 0;
 var isDown = false;
 //鼠标按下事件
-ContentShare.onmousedown = function(e) {
+ContentShare.onmousedown = function (e) {
   //获取x坐标和y坐标
   C_x = e.clientX;
   C_y = e.clientY;
@@ -162,7 +162,7 @@ ContentShare.onmousedown = function(e) {
   isDown = true;
 };
 //鼠标移动
-window.onmousemove = function(e) {
+window.onmousemove = function (e) {
   if (isDown == false) {
     return;
   }
@@ -186,7 +186,7 @@ window.onmousemove = function(e) {
   });
 };
 //鼠标抬起事件
-ContentShare.onmouseup = function() {
+ContentShare.onmouseup = function () {
   //开关关闭
   isDown = false;
 
@@ -219,7 +219,7 @@ var isGood = true;
 var isBad = true;
 $('.TwoPart a')
   .eq(0)
-  .on('click', function() {
+  .on('click', function () {
     if (isGood) {
       isGood = false;
       Change(1, $(this), 1);
@@ -231,7 +231,7 @@ $('.TwoPart a')
 
 $('.TwoPart a')
   .eq(1)
-  .on('click', function() {
+  .on('click', function () {
     if (isBad) {
       isBad = false;
       Change(1, $(this), 0);
@@ -260,13 +260,8 @@ function Change(n, m, o) {
   $('.numCount').html(initNum);
 }
 
-var NumAdd = 0;
-
 // description.replace(/<(?!img).*?>/g, "");//去除所有的html标签除了img
-$('.NewEditor .publish_A').on('click', function() {
-  var NumNumber = $('.commentsList li').length;
-  $('.commentsNum span').html(++NumNumber);
-  NumAdd++;
+$('.NewEditor .publish_A').on('click', function () {
   var Now = new Date();
   var Year = Now.getFullYear();
   var Month = Now.getMonth() + 1;
@@ -275,29 +270,31 @@ $('.NewEditor .publish_A').on('click', function() {
   var Minute = Now.getMinutes();
   var Second = Now.getSeconds();
   var addComments = $(
-    '<li class="Number' +
-      NumAdd +
-      '"><div class="commentsMessage"><div class="topMessage"><a href="javascript:;"><img src="../img/11.jpg"></a>' +
-      '<div class="rightMessage"><div class="commentsName">白矖</div><div class="timeMessage"><span></span><span></span>' +
-      '</div></div></div><div class="bottomMessage"><p class="OneFirst"></p><div class="toolBar_Btn"><a href="javascript:;"><i class="iconfont">&#xe606;</i>' +
-      '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
-      '</a></div></div></div></li>',
+    '<li class="Number"><div class="commentsMessage"><div class="topMessage"><a href="javascript:;"><img src="../img/11.jpg"></a>' +
+    '<div class="rightMessage"><div class="commentsName">白矖</div><div class="timeMessage"><span></span><span></span>' +
+    '</div></div></div><div class="bottomMessage"><p class="OneFirst"></p><div class="toolBar_Btn"><a href="javascript:;"><i class="iconfont">&#xe606;</i>' +
+    '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
+    '</a></div></div></div></li>'
   );
   var Content = $('.NewEditor .w-e-text')
     .html()
     .replace(/<(?!img).*?>/g, '');
-  $('.commentsList').prepend(addComments);
-  $('.Number' + NumAdd + ' .commentsMessage .bottomMessage .OneFirst').html(
-    Content,
-  );
-  $('.Number' + NumAdd + ' .timeMessage span')
-    .eq(0)
-    .html('' + Year + '/' + Month + '/' + Day + '');
-  $('.Number' + NumAdd + ' .timeMessage span')
-    .eq(1)
-    .html(
-      '' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '',
-    );
+  if (Content == '') {
+    alert('请您写一点内容再发送，当前状态不可发送');
+  } else {
+    var NumNumber = $('.commentsList li').length;
+    $('.commentsNum span').html(++NumNumber); //用于记录有多少条的评论
+    $('.commentsList').prepend(addComments);
+    $('.commentsList li:first-child .OneFirst').html(Content);
+    $('.commentsList li:first-child .timeMessage span')
+      .eq(0)
+      .html('' + Year + '/' + Month + '/' + Day + '');
+    $('.commentsList li:first-child .timeMessage span')
+      .eq(1)
+      .html(
+        '' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + ''
+      );
+  }
   $('.NewEditor .w-e-text').html('<p><br></p>');
 
   //点赞
@@ -305,7 +302,7 @@ $('.NewEditor .publish_A').on('click', function() {
   var GoodNum = parseInt($('.goodNum').html());
   $('.toolBar_Btn a')
     .eq(0)
-    .on('click', function() {
+    .on('click', function () {
       if (NotSame) {
         NotSame = false;
         onNotSame($(this).find('.iconfont'), 1);
@@ -324,14 +321,14 @@ $('.NewEditor .publish_A').on('click', function() {
   //回复
   var NewGoodEditor = $(
     '<div class="NewGoodEditor"><div class="NewEditor">' +
-      '<div id="Newtoolbar" class="NewToolbar" style="width:100%;background: #fff;border-bottom: 1px solid #DDD;"></div>' +
-      '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
-      'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>',
+    '<div id="Newtoolbar" class="NewToolbar" style="width:100%;background: #fff;border-bottom: 1px solid #DDD;"></div>' +
+    '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
+    'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>'
   );
 
   $('.toolBar_Btn a')
     .eq(1)
-    .on('click', function() {
+    .on('click', function () {
       $('.replyBack').css({
         color: '',
       });
@@ -341,7 +338,7 @@ $('.NewEditor .publish_A').on('click', function() {
         .parent()
         .parent()
         .append(NewGoodEditor);
-      setTimeout(function() {
+      setTimeout(function () {
         $('.NewGoodEditor').css({
           opacity: '1',
           top: '0',
@@ -350,7 +347,7 @@ $('.NewEditor .publish_A').on('click', function() {
           display: 'flex',
         });
         $('.NewGoodEditor .publish_A').html(
-          '<i class="iconfont">&#xe815;</i>发送',
+          '<i class="iconfont">&#xe815;</i>发送'
         );
       }, 10);
       var M = window.wangEditor;
@@ -359,16 +356,7 @@ $('.NewEditor .publish_A').on('click', function() {
       NewEditor.customConfig.zIndex = 0;
       NewEditor.create();
 
-      $('.NewGoodEditor .cancel_A').on('click', function() {
-        CodeSame(NewGoodEditor);
-        $('.replyBack').css({
-          color: '',
-        });
-      });
-
-      var insertNum = 0;
-      $('.NewGoodEditor .publish_A').on('click', function() {
-        insertNum++;
+      $('.NewGoodEditor .publish_A').on('click', function () {
         var Now = new Date();
         var Year = Now.getFullYear();
         var Month = Now.getMonth() + 1;
@@ -379,42 +367,40 @@ $('.NewEditor .publish_A').on('click', function() {
         var ContentNew = $('.NewGoodEditor .w-e-text')
           .html()
           .replace(/<(?!img).*?>/g, '');
-        $('.NewGoodEditor').before(
-          '<div id="insertComment' +
-            insertNum +
-            '" class="insertComment"><p class="TwoSecond">不怎么自律，写作就不自律了</p><span></span><span></span><a href="javascript:;" class="DEl">删除</a></div>',
-        );
-        $('#insertComment' + insertNum + ' .TwoSecond').html(ContentNew);
-        $('#insertComment' + insertNum + ' span')
-          .eq(0)
-          .html('' + Year + '/' + Month + '/' + Day + '');
-        $('#insertComment' + insertNum + ' span')
-          .eq(1)
-          .html(
-            '' +
-              addZero(Hour) +
-              ':' +
-              addZero(Minute) +
-              ':' +
-              addZero(Second) +
-              '',
-          );
+        if (ContentNew == '') {
+          alert('请您写一点内容再发送，当前状态不可发送');
+        } else {
+          $('.NewGoodEditor').before('<div class="insertComment"><p class="TwoSecond"></p><span class="oneSpanTWO"></span><span class="TwoSpanTWO"></span><a href="javascript:;" class="DEl">删除</a></div>');
+          $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .TwoSecond').html(ContentNew);
+          $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .oneSpanTWO').html('' + Year + '/' + Month + '/' + Day + '');
+          $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .TwoSpanTWO').html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
+        }
 
         $('.NewGoodEditor .w-e-text').html('<p><br></p>');
 
-        $('.NewGoodEditor .cancel_A').on('click', function() {
+        $('.NewGoodEditor .cancel_A').on('click', function () {
           CodeSame($('.NewGoodEditor'));
           $('.replyBack').css({
             color: '',
           });
         });
 
-        $('.DEl').on('click', function() {
-          if (confirm('确定要删除此评论吗？')) {
-            $(this)
-              .parent()
-              .remove();
-          }
+        $('.DEl').unbind('click').on('click', function () {
+          var This = $(this);
+          layer.confirm('确定要删除此评论吗?', {
+            btn: ['确定', '取消'], //按钮
+            title: '提示',
+          }, function (index) {
+            This.parent().remove();
+            layer.close(index);
+          });
+        }); //删除评论
+      });
+
+      $('.NewGoodEditor .cancel_A').on('click', function () {
+        CodeSame(NewGoodEditor);
+        $('.replyBack').css({
+          color: '',
         });
       });
     });
@@ -448,7 +434,7 @@ function CodeSame(n) {
   n.remove();
 }
 
-$(document).on('click', '.toolBar_Btn a,.NewEditor .publish_A', function() {
+$(document).on('click', '.toolBar_Btn a,.NewEditor .publish_A', function () {
   $('body')
     .getNiceScroll()
     .resize();
