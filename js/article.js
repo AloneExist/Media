@@ -264,6 +264,8 @@ var NumAdd = 0;
 
 // description.replace(/<(?!img).*?>/g, "");//去除所有的html标签除了img
 $('.NewEditor .publish_A').on('click', function() {
+  var NumNumber = $('.commentsList li').length;
+  $('.commentsNum span').html(++NumNumber);
   NumAdd++;
   var Now = new Date();
   var Year = Now.getFullYear();
@@ -277,15 +279,17 @@ $('.NewEditor .publish_A').on('click', function() {
       NumAdd +
       '"><div class="commentsMessage"><div class="topMessage"><a href="javascript:;"><img src="../img/11.jpg"></a>' +
       '<div class="rightMessage"><div class="commentsName">白矖</div><div class="timeMessage"><span></span><span></span>' +
-      '</div></div></div><div class="bottomMessage"><p></p><div class="toolBar_Btn"><a href="javascript:;"><i class="iconfont">&#xe606;</i>' +
+      '</div></div></div><div class="bottomMessage"><p class="OneFirst"></p><div class="toolBar_Btn"><a href="javascript:;"><i class="iconfont">&#xe606;</i>' +
       '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
-      '</a></div> </div></div></li>',
+      '</a></div></div></div></li>',
   );
   var Content = $('.NewEditor .w-e-text')
     .html()
     .replace(/<(?!img).*?>/g, '');
   $('.commentsList').prepend(addComments);
-  $('.Number' + NumAdd + ' .commentsMessage .bottomMessage p').html(Content);
+  $('.Number' + NumAdd + ' .commentsMessage .bottomMessage .OneFirst').html(
+    Content,
+  );
   $('.Number' + NumAdd + ' .timeMessage span')
     .eq(0)
     .html('' + Year + '/' + Month + '/' + Day + '');
@@ -359,6 +363,58 @@ $('.NewEditor .publish_A').on('click', function() {
         CodeSame(NewGoodEditor);
         $('.replyBack').css({
           color: '',
+        });
+      });
+
+      var insertNum = 0;
+      $('.NewGoodEditor .publish_A').on('click', function() {
+        insertNum++;
+        var Now = new Date();
+        var Year = Now.getFullYear();
+        var Month = Now.getMonth() + 1;
+        var Day = Now.getDate();
+        var Hour = Now.getHours();
+        var Minute = Now.getMinutes();
+        var Second = Now.getSeconds();
+        var ContentNew = $('.NewGoodEditor .w-e-text')
+          .html()
+          .replace(/<(?!img).*?>/g, '');
+        $('.NewGoodEditor').before(
+          '<div id="insertComment' +
+            insertNum +
+            '" class="insertComment"><p class="TwoSecond">不怎么自律，写作就不自律了</p><span></span><span></span><a href="javascript:;" class="DEl">删除</a></div>',
+        );
+        $('#insertComment' + insertNum + ' .TwoSecond').html(ContentNew);
+        $('#insertComment' + insertNum + ' span')
+          .eq(0)
+          .html('' + Year + '/' + Month + '/' + Day + '');
+        $('#insertComment' + insertNum + ' span')
+          .eq(1)
+          .html(
+            '' +
+              addZero(Hour) +
+              ':' +
+              addZero(Minute) +
+              ':' +
+              addZero(Second) +
+              '',
+          );
+
+        $('.NewGoodEditor .w-e-text').html('<p><br></p>');
+
+        $('.NewGoodEditor .cancel_A').on('click', function() {
+          CodeSame($('.NewGoodEditor'));
+          $('.replyBack').css({
+            color: '',
+          });
+        });
+
+        $('.DEl').on('click', function() {
+          if (confirm('确定要删除此评论吗？')) {
+            $(this)
+              .parent()
+              .remove();
+          }
         });
       });
     });
