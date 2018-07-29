@@ -211,8 +211,11 @@ $(window).keyup(function (event) {
 	} //让空格键在登录和注册界面点击的时候不会出发video播放的事件
 	event = event || window.event;
 	if (event.keyCode == 32 && Judge) {
-		playControl();
-		$('.volumeBar').hide();
+		var isFocus = $(".InputTextBtn").is(":focus");
+		if (!isFocus) {
+			playControl();
+			$('.volumeBar').hide();
+		} //判断焦点是否在搜索框
 	} //空格
 	if (event.keyCode == 27) {
 		if (document.exitFullscreen) {
