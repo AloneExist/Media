@@ -1,0 +1,254 @@
+.mainContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    padding-top: 25px;
+}
+
+.TwoParts {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftParts {
+    width: 280px;
+}
+
+.leftParts ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.leftParts li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.leftParts a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    padding: 10px 15px;
+    background: transparent;
+    border-radius: 4px;
+    transition: all .3s linear;
+    position: relative;
+}
+
+.leftParts a:hover {
+    background: #dbdada;
+}
+
+.leftParts a div {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: #a0a0a0;
+}
+
+.leftParts .iconfont {
+    color: #fff;
+    font-size: 16px;
+}
+
+.leftParts a span {
+    padding-left: 20px;
+    color: #333;
+    font-size: 15px;
+}
+
+.rightParts {
+    width: 70%;
+}
+
+.firstPart {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.secondPart {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.thirdPart {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.same_module {
+    width: 30%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+}
+
+.same_module img {
+    width: 100%;
+    position: relative;
+    top: -15px;
+    transition: all .5s;
+}
+
+.same_module a {
+    width: 100%;
+    height: 130px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    display: block;
+}
+
+.same_module .a_hover::before {
+    z-index: 1;
+}
+
+.navParts {
+    width: 100%;
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.navParts li {
+    flex: 1;
+}
+
+.navParts a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background: #34352C;
+    color: #fff;
+    font-size: 14px;
+    transition: all .3s ease;
+}
+
+.navParts a:hover {
+    background: #C9CABB;
+    color: #34352C;
+}
+
+.Parts {
+    display: none;
+}
+
+.Select_Much {
+    width: 100%;
+    display: none;
+}
+
+.fourPart {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.recommed_topic li div {
+    margin-bottom: 20px;
+}
+
+.recommed_topic li {
+    margin-bottom: 0;
+}
+
+.historySearch {
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.lastContent {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lastContent p,
+.lastContent a {
+    color: #969696;
+    transition: all .3s ease;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.lastContent a {
+    width: auto;
+    padding: 0;
+    border-radius: 0;
+    padding-right: 15px;
+}
+
+.lastContent a:hover {
+    background: transparent;
+}
+
+.lastContent a:hover {
+    color: #1f1d1d;
+}
+
+.lastContent .lastTime {
+    padding: 0;
+    padding-top: 10px;
+}
+
+.lastContent .lastTime a {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    transition: all .3s ease;
+    border-radius: 4px;
+    position: relative;
+}
+
+.lastContent .lastTime a:hover {
+    background: #dbdada;
+}
+
+.lastContent .lastTime a:hover .HiddenSpan {
+    display: block;
+}
+
+.lastContent .iconfont {
+    color: #969696;
+    padding-right: 10px;
+}
+
+.lastContent .lastTime .IBottom {
+    color: #1f1d1d;
+    padding: 0;
+}
+
+.lastContent .lastTime span .iconfont,
+.lastContent .lastTime span {
+    padding: 0;
+    transition: all .3s ease;
+}
+
+.lastContent .lastTime span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.lastContent .lastTime span:hover .iconfont {
+    color: #000;
+}
+
+.HiddenSpan {
+    display: none;
+}

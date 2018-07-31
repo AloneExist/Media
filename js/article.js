@@ -396,13 +396,7 @@ $('.NewEditor .publish_A').on('click', function () {
           });
         }); //删除评论
       });
-
-      $('.NewGoodEditor .cancel_A').on('click', function () {
-        CodeSame(NewGoodEditor);
-        $('.replyBack').css({
-          color: '',
-        });
-      });
+      
     });
 });
 

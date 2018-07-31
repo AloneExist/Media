@@ -1,78 +1,78 @@
-var oLdA = $('.nav .same_a').eq(0);
-$('.nav .same_a').on('click', function () {
-    oLdA.css({
-        "border-bottom": "",
-    });
-    oLdA = $(this);
-    $(this).css({
-        "border-bottom": "2px solid #1A2D27",
-    });
-});
-
-$(document).on("click", '.same_a,.user_list a,.second_list a', function () {
+$(document).on("click", '.leftParts a,.navParts a', function () {
     $("body").getNiceScroll().resize();
 });
-//通过class绑定click事件，可以只点击一次就触发事件，否则需要点击两次
 
-var Select_One_Div = $('.Select_One_Div');
-for (var i = 0; i < 15; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
-    Select_One_Div.append(select_one);
-};
-
-var oLd_div = $('.all_content .Select').eq(0);
-
-$('.nav .same_a').on('click', function () {
-    var index = $('.nav .same_a').index(this); //判断元素在当前的位置是第几个元素
-    oLd_div.css({
-        display: 'none',
-    });
-    oLd_div = $('.all_content .Select').eq(index);
-    $('.all_content .Select')
-        .eq(index)
-        .css({
-            display: 'flex',
-        });
-    $('.lastLong').css({
+var Old = $('.leftParts a').eq(0);
+var OldParts = $('.Parts').eq(0);
+$('.leftParts .topA').on('click', function () {
+    var index = $('.leftParts a').index(this); //判断元素在当前的位置是第几个元素
+    OldParts.css({
         'display': 'none',
+    });
+    OldParts = $('.Parts').eq(index);
+    $('.Parts').eq(index).css({
+        'display': 'flex',
+    });
+    Old.css({
+        'background': '',
+    });
+    Old = $(this);
+    $(this).css({
+        'background': '#dbdada',
     });
 });
 
-var length = $('.user_list a').length;
-var Select_Two_Div = $('.Select_Two_Div');
+var firstPart = $('.firstPart');
+for (var i = 0; i < 15; i++) {
+    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
+    firstPart.append(select_one);
+};
+
+var secondPart = $('.secondPart');
+for (var i = 0; i < 15; i++) {
+    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/dou.gif"></a><span>抖音短视频</span></div>');
+    secondPart.append(select_one);
+};
+
+$('.same_module a').hover(function () {
+    $(this).addClass("a_hover a_hover_a");
+}, function () {
+    $(this).removeClass("a_hover a_hover_a");
+});
+
+var length = $('.navParts a').length;
+var thirdPart = $('.thirdPart');
 
 for (var i = 0; i < length; i++) {
     var select_two = $('<div class="Select_Much"></div>');
-    Select_Two_Div.append(select_two);
+    thirdPart.append(select_two);
 }
 
 $('.Select_Much').eq(0).css({
     "display": "block",
 });
 
-var oLd = $('.user_list a').eq(0);
+var olDNav = $('.navParts a').eq(0);
 var oLdDiv = $('.Select_Much').eq(0);
-$('.user_list a').on('click', function () {
-    var index = $('.user_list a').index(this); //判断元素在当前的位置是第几个元素
+$('.navParts a').on('click', function () {
+    var index = $('.navParts a').index(this);
     oLdDiv.css({
         display: 'none',
     });
     oLdDiv = $('.Select_Much').eq(index);
-    $('.Select_Much')
-        .eq(index)
-        .css({
-            display: 'block',
-        });
-    oLd.css({
-        background: '',
+    $('.Select_Much').eq(index).css({
+        display: 'block',
     });
-    oLd = $(this);
+    olDNav.css({
+        'background': '',
+        'color': '',
+    });
+    olDNav = $(this);
     $(this).css({
-        background: '#dbdada',
+        'background': '#C9CABB',
+        'color': '#34352C',
     });
-    //清空上一个的属性，给当前的元素添加属性
 });
-//左边书籍的列表
 
 var SelectDiv = $('.Select_Much');
 for (var i = 0; i < 3; i++) {
@@ -175,29 +175,8 @@ SelectDiv.eq(6).find(".bottom_first_span").append("<b>47</b>");
 SelectDiv.eq(6).find(".bottom_two_span").append("<b>0</b>");
 SelectDiv.eq(6).find("p").html("从2015年我第一次踏上跑步机至今，我已经跑步满三年了，最初的动机是产后减肥，时至今日跑步已成为我的一种生活习惯。很多人认识我源于我2016年那篇关于自律的文字，不可否认跑步是我一切自律行动的开始，是跑步让我拥有了自律和坚韧的品质。总是有人不断问我如何跑步怎么坚持，所以今天我就来说说跑步这件神奇的事。");
 
-// SelectDiv.eq().find("img").attr("src", ImgArray[]);
-// SelectDiv.eq().find(".under_line").html("");
-// SelectDiv.eq().find(".bottom_first_a").html("");
-// SelectDiv.eq().find(".bottom_two_a").append("<b></b>");
-// SelectDiv.eq().find(".bottom_first_span").append("<b></b>");
-// SelectDiv.eq().find(".bottom_two_span").append("<b></b>");
-// SelectDiv.eq().find("p").html("");
-//模板
-
-
-$(function () {
-    $(".draw_text").each(function () {
-        var maxwidth = 72;
-        if ($(this).text().length > maxwidth) {
-            $(this).text($(this).text().substring(0, maxwidth));
-            $(this).html($(this).html() + "...");
-        };
-    });
-    //限制字数，超过显示...
-});
-
 var carousel_contain = $('<section></section>');
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < 8; i++) {
     var five_block = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
     carousel_contain.append(five_block);
 }
@@ -230,107 +209,34 @@ $('.recommed_topic li').eq(5).find("img").attr("src", Issue[5]);
 $('.recommed_topic li').eq(5).find("span").html("知识产权保卫战");
 $('.recommed_topic li').eq(5).find(".issue").html("该议题被浏览 2223661 次");
 
-var Video_list = $('.Video_list');
-var article_list = $('.article_list');
-var select_Btn = $('<div class="Select_Much" style="display:flex;"></div>');
-var get_more_one = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
-var get_more_two = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
-var get_more_three = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
+var HistoryPast = $('<div class="historySearch"><div class="lastContent"><p>最近搜索</p><a href="javascript:;" class="ClearAll">' +
+    '清空</a><ul class="lastTime"><li><a href="javascript:;" class="bottomA"><i class="iconfont">&#xe6c0;</i>' +
+    '<p class="IBottom">是什么造就了《三生三世十里桃花》的火爆？</p><span class="HiddenSpan"><i class="iconfont">&#xe61a;</i>' +
+    '</span></a></li></ul></div></div>');
+$('.leftParts').append(HistoryPast);
 
-for (var i = 0; i < 5; i++) {
-    var v_list = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
-    Video_list.append(v_list);
-}
-
-Video_list.append(get_more_one);
-
-for (var i = 0; i < 6; i++) {
-    var a_list = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>');
-    select_Btn.append(a_list);
-}
-
-article_list.append(select_Btn);
-article_list.append(get_more_two);
-
-select_Btn.eq(0).find("img").attr("src", ImgArray[0]);
-select_Btn.eq(0).find(".under_line").html("五一，差点只剩半条命！");
-select_Btn.eq(0).find(".bottom_first_a").html("5312Ana");
-select_Btn.eq(0).find(".bottom_two_a").append("<b>20</b>");
-select_Btn.eq(0).find(".bottom_first_span").append("<b>19</b>");
-select_Btn.eq(0).find(".bottom_two_span").append("<b>1</b>");
-select_Btn.eq(0).find("p").html("原本打算五一跟朋友跑完半程马拉松后就去北海拍海景，然而不幸的是，她准备跑到终点时突然晕倒了，虽然我没体验过这种晕倒的感觉，但可以想象出这种从鬼门关出来人的有多不易。");
-
-var answer_list = $('.answer_list');
-var w_list_container = $('<section></section>');
-for (var i = 0; i < 6; i++) {
-    var w_list = $('<div><a href="javascript:;"><img src=""><span class="top_img_span"></span></a><span class="issue"></span></div>');
-    w_list_container.append(w_list);
-}
-answer_list.append(w_list_container);
-answer_list.append(get_more_three);
-
-$('.answer_list section').eq(0).find("img").attr("src", Issue[0]);
-$('.answer_list section').eq(0).find(".top_img_span").html("知识产权保卫战");
-$('.answer_list section').eq(0).find(".issue").html("该议题被浏览 2223661 次");
-
-var collect_video = $('.collect_video');
-var collect_article = $('.collect_article');
-var collect_answer = $('.collect_answer');
-
-var collect_answer_contain = $('<section></section>');
-for (var i = 0; i < 6; i++) {
-    var collect_answer_list = $('<div><a href="javascript:;"><img src=""><span class="top_img_span"></span></a><span class="issue"></span></div>');
-    collect_answer_contain.append(collect_answer_list);
-}
-collect_answer.append(collect_answer_contain);
-
-$('.collect_answer section').eq(0).find("img").attr("src", Issue[0]);
-$('.collect_answer section').eq(0).find(".top_img_span").html("知识产权保卫战");
-$('.collect_answer section').eq(0).find(".issue").html("该议题被浏览 2223661 次");
-
-for (var i = 0; i < 20; i++) {
-    var c_video = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
-    collect_video.append(c_video);
-}
-
-$('.same_module a').hover(function () {
-    $(this).addClass("a_hover a_hover_a");
-}, function () {
-    $(this).removeClass("a_hover a_hover_a");
+//控制文字的多少
+$('.IBottom').each(function () {
+    var maxwidth = 12;
+    if ($(this).text().length > maxwidth) {
+        $(this).text($(this).text().substring(0, maxwidth));
+        $(this).html($(this).html() + "...");
+    };
 });
 
-var select_Article = $('<div class="Select_Much" style="display:flex;"></div>');
-
-for (var i = 0; i < 6; i++) {
-    var wen_list = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>');
-    select_Article.append(wen_list);
-}
-
-collect_article.append(select_Article);
-
-select_Article.eq(0).find("img").attr("src", ImgArray[0]);
-select_Article.eq(0).find(".under_line").html("五一，差点只剩半条命！");
-select_Article.eq(0).find(".bottom_first_a").html("5312Ana");
-select_Article.eq(0).find(".bottom_two_a").append("<b>20</b>");
-select_Article.eq(0).find(".bottom_first_span").append("<b>19</b>");
-select_Article.eq(0).find(".bottom_two_span").append("<b>1</b>");
-select_Article.eq(0).find("p").html("原本打算五一跟朋友跑完半程马拉松后就去北海拍海景，然而不幸的是，她准备跑到终点时突然晕倒了，虽然我没体验过这种晕倒的感觉，但可以想象出这种从鬼门关出来人的有多不易。");
-
-$('.nav .same_a').eq(4).on('click', function () {
-    $('.lastLong').css({
-        'display': 'block',
-    });
+//清空按钮
+$('.ClearAll').on('click', function () {
+    $('.historySearch').empty();
+    $('.historySearch').remove();
 });
 
-var OldElement = $('.collect').eq(0);
-
-$('.second_list a').on('click', function () {
-    var index = $('.second_list a').index(this);
-    OldElement.css({
-        'display': 'none',
-    });
-    OldElement = $('.collect').eq(index);
-    $('.collect').eq(index).css({
-        'display': 'flex',
-    });
+//删除按钮，当只有一个li时与清空的操作时一样的
+$('.HiddenSpan').on('click', function () {
+    var length = $('.bottomA').length;
+    if (length == 1) {
+        $('.historySearch').empty();
+        $('.historySearch').remove();
+    } else {
+        $(this).parent().parent().remove();
+    }
 });
