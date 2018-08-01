@@ -695,3 +695,7 @@ h6 {
     right: 30px;
     color: #34352C;
 }
+
+.layui-layer-title {
+    cursor: default !important;
+}

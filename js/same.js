@@ -53,7 +53,7 @@ $('#login_a').on('click', function () {
         title: 'SIGN',
         maxmin: false,
         shadeClose: true, //点击遮罩关闭层
-        area: ['40%', '80%'],
+        area: ['100%', '100%'],
         content: '../html/signIn.html',
     });
 });
@@ -65,7 +65,7 @@ $('#register_a').on('click', function () {
         title: 'SIGN',
         maxmin: false,
         shadeClose: true, //点击遮罩关闭层
-        area: ['40%', '85%'],
+        area: ['100%', '100%'],
         content: '../html/signUp.html',
     });
 });
