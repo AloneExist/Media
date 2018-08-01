@@ -319,16 +319,13 @@ $('.NewEditor .publish_A').on('click', function () {
     });
 
   //回复
-  var NewGoodEditor = $(
-    '<div class="NewGoodEditor"><div class="NewEditor">' +
-    '<div id="Newtoolbar" class="NewToolbar" style="width:100%;background: #fff;border-bottom: 1px solid #DDD;"></div>' +
-    '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
-    'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>'
-  );
-
   $('.toolBar_Btn a')
     .eq(1)
     .on('click', function () {
+      var NewGoodEditor = $('<div class="NewGoodEditor"><div class="NewEditor">' +
+        '<div id="Newtoolbar" class="NewToolbar" style="width:100%;background: #fff;border-bottom: 1px solid #DDD;"></div>' +
+        '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
+        'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>');
       $('.replyBack').css({
         color: '',
       });
@@ -346,9 +343,7 @@ $('.NewEditor .publish_A').on('click', function () {
         $('.NewGoodEditor .cancel_A').css({
           display: 'flex',
         });
-        $('.NewGoodEditor .publish_A').html(
-          '<i class="iconfont">&#xe815;</i>发送'
-        );
+        $('.NewGoodEditor .publish_A').html('<i class="iconfont">&#xe815;</i>发送');
       }, 10);
       var M = window.wangEditor;
       var NewEditor = new M('#Newtoolbar', '#NewUser_edit');
@@ -396,7 +391,7 @@ $('.NewEditor .publish_A').on('click', function () {
           });
         }); //删除评论
       });
-      
+
     });
 });
 
