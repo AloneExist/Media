@@ -306,3 +306,12 @@ iframe {
     left: 50%;
     transform: translateX(-50%);
 }
+
+.w-e-droplist .w-e-list .w-e-item h1,
+.w-e-droplist .w-e-list .w-e-item h2,
+.w-e-droplist .w-e-list .w-e-item h3,
+.w-e-droplist .w-e-list .w-e-item h4,
+.w-e-droplist .w-e-list .w-e-item h5,
+.w-e-droplist .w-e-list .w-e-item p {
+    margin: 0 !important;
+}
