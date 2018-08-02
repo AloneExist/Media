@@ -216,13 +216,21 @@ var HistoryPast = $('<div class="historySearch"><div class="lastContent"><p>最�
 $('.leftParts').append(HistoryPast);
 
 //控制文字的多少
-$('.IBottom').each(function () {
-    var maxwidth = 12;
-    if ($(this).text().length > maxwidth) {
-        $(this).text($(this).text().substring(0, maxwidth));
-        $(this).html($(this).html() + "...");
-    };
-});
+
+CutWordSearch('.IBottom', 12);
+
+CutWordSearch('.draw_text', 72);
+
+function CutWordSearch(n, num) {
+    $(n).each(function () {
+        var maxwidth = num;
+        if ($(this).text().length > maxwidth) {
+            $(this).text($(this).text().substring(0, maxwidth));
+            $(this).html($(this).html() + "...");
+        };
+    });
+}
+
 
 //清空按钮
 $('.ClearAll').on('click', function () {

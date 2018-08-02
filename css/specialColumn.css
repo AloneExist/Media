@@ -1,0 +1,117 @@
+#main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.specialColumns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    padding: 50px 0 70px 0;
+    flex-wrap: wrap;
+}
+
+.topImgColumns {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.leftColumns {
+    width: calc(100% - 120px);
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.leftColumns h1 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.leftColumns p {
+    width: 100%;
+    color: #969696;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 0 0 20px 0;
+}
+
+.leftColumns p:nth-of-type(1) {
+    color: #1A2D27;
+    font-size: 16px;
+    padding: 0;
+}
+
+.leftColumns p:nth-of-type(2) {
+    padding: 0;
+    padding-top: 10px;
+}
+
+.rightColumns a {
+    width: 120px;
+    height: 120px;
+    display: block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.rightColumns a img {
+    width: 100%;
+}
+
+.moveDou {
+    width: 35%;
+    height: 8px;
+    background-image: -webkit-radial-gradient(circle, transparent, transparent 5px, #FF5983 5px, #FF5983 8px, transparent 8px, transparent);
+    background-image: -moz-radial-gradient(circle, transparent, transparent 5px, #FF5983 5px, #FF5983 8px, transparent 8px, transparent);
+    background-image: radial-gradient(circle, transparent, transparent 5px, #FF5983 5px, #FF5983 8px, transparent 8px, transparent);
+    background-size: 16px 16px;
+}
+
+/* 波浪线用作分割线 */
+
+.leftColumns a {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #fff;
+    background: #AAB8A3;
+    transition: all .3s ease;
+}
+
+.leftColumns a:hover {
+    background: #C1194E;
+}
+
+.outerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 90px 0 0 0;
+}
+
+.insertContainer {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.articleContainer {
+    width: 100;
+}
+
+.titleHot {
+    width: 30%;
+}
