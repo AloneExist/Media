@@ -74,7 +74,6 @@
                 </ul>
             </div>
         </div>
-        <div id="particles-js"></div>
         <div class="column">
             <p class="teach">问道教程</p>
             <div class="containMuch">
@@ -219,6 +218,7 @@
                     </a>
                 </div>
             </div>
+            <!-- 七个文章的分类，做成七个专题 -->
         </div>
         <div class="copyright">
             <p>© Copyright 2018. Powered by DXstudio. All rights reserved.</p>
@@ -229,13 +229,22 @@
             </a>
         </div>
     </div>
+    <iframe src="particles.html" id="particles"></iframe>
     <script src="../js/jquery.min.js"></script>
     <script src="../layui/layer.js"></script>
     <script src="../js/jquery.nicescroll.min.js"></script>
     <script src="../js/same.js"></script>
-    <script src="../particle/particles.min.js"></script>
-    <script src="../particle/app.js"></script>
     <script src="../js/articlePage.js"></script>
+    <script>
+        //控制文字的多少，最多显示maxwidth
+        $('.testText').each(function () {
+            var maxwidth = 35;
+            if ($(this).text().length > maxwidth) {
+                $(this).text($(this).text().substring(0, maxwidth));
+                $(this).html($(this).html() + "...");
+            };
+        });
+    </script>
 </body>
 
 </html>
