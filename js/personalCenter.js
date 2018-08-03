@@ -15,7 +15,7 @@ $(document).on("click", '.same_a,.user_list a,.second_list a', function () {
 //通过class绑定click事件，可以只点击一次就触发事件，否则需要点击两次
 
 var Select_One_Div = $('.Select_One_Div');
-for (var i = 0; i < 15; i++) {
+for (var i = 0; i < 12; i++) {
     var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
     Select_One_Div.append(select_one);
 };
@@ -196,39 +196,18 @@ $(function () {
     //限制字数，超过显示...
 });
 
-var carousel_contain = $('<section></section>');
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < 7; i++) {
     var five_block = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
-    carousel_contain.append(five_block);
+    $('.recommed_topic').append(five_block);
 }
-$('.recommed_topic li').append(carousel_contain);
 
-var Issue = new Array(6);
+
+var Issue = new Array(1);
 Issue[0] = "../img/4.jpg";
-Issue[1] = "../img/5.jpg";
-Issue[2] = "../img/6.jpg";
-Issue[3] = "../img/7.jpg";
-Issue[4] = "../img/8.jpg";
-Issue[5] = "../img/9.jpg";
 
-$('.recommed_topic li').eq(0).find("img").attr("src", Issue[0]);
-$('.recommed_topic li').eq(0).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(0).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic li').eq(1).find("img").attr("src", Issue[1]);
-$('.recommed_topic li').eq(1).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(1).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic li').eq(2).find("img").attr("src", Issue[2]);
-$('.recommed_topic li').eq(2).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(2).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic li').eq(3).find("img").attr("src", Issue[3]);
-$('.recommed_topic li').eq(3).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(3).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic li').eq(4).find("img").attr("src", Issue[4]);
-$('.recommed_topic li').eq(4).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(4).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic li').eq(5).find("img").attr("src", Issue[5]);
-$('.recommed_topic li').eq(5).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(5).find(".issue").html("该议题被浏览 2223661 次");
+$('.recommed_topic').find("img").attr("src", Issue[0]);
+$('.recommed_topic').find("span").html("知识产权保卫战");
+$('.recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
 
 var Video_list = $('.Video_list');
 var article_list = $('.article_list');
@@ -237,14 +216,14 @@ var get_more_one = $('<div class="contain_a"><a class="contain_span" href="javas
 var get_more_two = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 var get_more_three = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < 6; i++) {
     var v_list = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
     Video_list.append(v_list);
 }
 
 Video_list.append(get_more_one);
 
-for (var i = 0; i < 6; i++) {
+for (var i = 0; i < 5; i++) {
     var a_list = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>');
     select_Btn.append(a_list);
 }
@@ -261,34 +240,30 @@ select_Btn.eq(0).find(".bottom_two_span").append("<b>1</b>");
 select_Btn.eq(0).find("p").html("原本打算五一跟朋友跑完半程马拉松后就去北海拍海景，然而不幸的是，她准备跑到终点时突然晕倒了，虽然我没体验过这种晕倒的感觉，但可以想象出这种从鬼门关出来人的有多不易。");
 
 var answer_list = $('.answer_list');
-var w_list_container = $('<section></section>');
-for (var i = 0; i < 6; i++) {
+for (var i = 0; i < 8; i++) {
     var w_list = $('<div><a href="javascript:;"><img src=""><span class="top_img_span"></span></a><span class="issue"></span></div>');
-    w_list_container.append(w_list);
+    answer_list.append(w_list);
 }
-answer_list.append(w_list_container);
 answer_list.append(get_more_three);
 
-$('.answer_list section').eq(0).find("img").attr("src", Issue[0]);
-$('.answer_list section').eq(0).find(".top_img_span").html("知识产权保卫战");
-$('.answer_list section').eq(0).find(".issue").html("该议题被浏览 2223661 次");
+$('.answer_list').find("img").attr("src", Issue[0]);
+$('.answer_list').find(".top_img_span").html("知识产权保卫战");
+$('.answer_list').find(".issue").html("该议题被浏览 2223661 次");
 
 var collect_video = $('.collect_video');
 var collect_article = $('.collect_article');
 var collect_answer = $('.collect_answer');
 
-var collect_answer_contain = $('<section></section>');
-for (var i = 0; i < 6; i++) {
+for (var i = 0; i < 8; i++) {
     var collect_answer_list = $('<div><a href="javascript:;"><img src=""><span class="top_img_span"></span></a><span class="issue"></span></div>');
-    collect_answer_contain.append(collect_answer_list);
+    collect_answer.append(collect_answer_list);
 }
-collect_answer.append(collect_answer_contain);
 
-$('.collect_answer section').eq(0).find("img").attr("src", Issue[0]);
-$('.collect_answer section').eq(0).find(".top_img_span").html("知识产权保卫战");
-$('.collect_answer section').eq(0).find(".issue").html("该议题被浏览 2223661 次");
+$('.collect_answer').find("img").attr("src", Issue[0]);
+$('.collect_answer').find(".top_img_span").html("知识产权保卫战");
+$('.collect_answer').find(".issue").html("该议题被浏览 2223661 次");
 
-for (var i = 0; i < 20; i++) {
+for (var i = 0; i < 22; i++) {
     var c_video = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
     collect_video.append(c_video);
 }

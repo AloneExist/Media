@@ -22,6 +22,18 @@ body {
     padding: 150px 300px 0 300px;
 }
 
+.module_scene,
+.module_news {
+    justify-content: flex-start;
+}
+
+.module_scene .same_module,
+.module_news .same_module {
+    width: 256px;
+    margin-left: calc((100% - 1280px) / 10);
+    margin-right: calc((100% - 1280px) / 10);
+}
+
 .module_scene div,
 .module_news div {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);

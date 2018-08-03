@@ -70,18 +70,18 @@
     width: 70%;
 }
 
-.firstPart {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
+.firstPart,
 .secondPart {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+.firstPart .same_module,
+.secondPart .same_module {
+    margin-left: calc((100% - 786px) / 6);
+    margin-right: calc((100% - 786px) / 6);
 }
 
 .thirdPart {
@@ -91,7 +91,7 @@
 }
 
 .same_module {
-    width: 30%;
+    width: 252px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
     border-radius: 10px;
 }
@@ -156,12 +156,9 @@
     justify-content: space-between;
 }
 
-.recommed_topic li div {
-    margin-bottom: 20px;
-}
-
-.recommed_topic li {
-    margin-bottom: 0;
+.recommed_topic div {
+    margin-left: calc((100% - 800px) / 8);
+    margin-right: calc((100% - 800px) / 8);
 }
 
 .historySearch {

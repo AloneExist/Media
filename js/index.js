@@ -1,10 +1,6 @@
 $(function () {
     $("html").niceScroll();
 
-    $('.same_module').css({
-        width: (module_scene_width - 40) / 5,
-    });
-
     $(window).scroll(function () {
         function BrowserType() {
             var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
@@ -142,23 +138,22 @@ Img_Array[9] = "https://upload-images.jianshu.io/upload_images/11145786-f0bf3ad5
 
 //轮播的讨论
 var carousel_contain = $('<section></section>');
-var carousel_contain_new = $('<section></section>');
 for (var i = 0; i < 5; i++) {
     var five_block = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
-    var five_block_new = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
     carousel_contain.append(five_block);
-    carousel_contain_new.append(five_block_new);
 }
 $('.carousel_ul li').append(carousel_contain);
-$('.recommed_topic li').append(carousel_contain_new);
 
-var Issue = new Array(9);
+for (var i = 0; i < 8; i++) {
+    var five_block_new = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
+    $('.recommed_topic').append(five_block_new);
+}
+
+var Issue = new Array(4);
 Issue[0] = "../img/4.jpg";
 Issue[1] = "../img/5.jpg";
 Issue[2] = "../img/6.jpg";
 Issue[3] = "../img/7.jpg";
-Issue[4] = "../img/8.jpg";
-Issue[5] = "../img/9.jpg";
 
 $('.carousel_ul li').eq(0).find("img").attr("src", Issue[0]);
 $('.carousel_ul li').eq(0).find("span").html("「分开」这件小事");
@@ -169,15 +164,9 @@ $('.carousel_ul li').eq(1).find(".issue").html("该议题被浏览 9221631 次")
 $('.carousel_ul li').eq(2).find("img").attr("src", Issue[2]);
 $('.carousel_ul li').eq(2).find("span").html("知识产权保卫战");
 $('.carousel_ul li').eq(2).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic li').eq(0).find("img").attr("src", Issue[3]);
-$('.recommed_topic li').eq(0).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(0).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic li').eq(1).find("img").attr("src", Issue[4]);
-$('.recommed_topic li').eq(1).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(1).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic li').eq(2).find("img").attr("src", Issue[5]);
-$('.recommed_topic li').eq(2).find("span").html("知识产权保卫战");
-$('.recommed_topic li').eq(2).find(".issue").html("该议题被浏览 2223661 次");
+$('.recommed_topic').find("img").attr("src", Issue[3]);
+$('.recommed_topic').find("span").html("知识产权保卫战");
+$('.recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
 //结束
 
 //轮播图开始
@@ -302,9 +291,8 @@ setTimeout(function () {
 
 //推荐直播
 var module_scene = $('.module_scene');
-var module_scene_width = module_scene.width();
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 12; i++) {
     var scene_1 = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
     module_scene.append(scene_1);
 }
@@ -314,7 +302,7 @@ module_scene.append(span_scene);
 
 //推荐视频
 var module_news = $('.module_news');
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 12; i++) {
     var news_1 = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
     module_news.append(news_1);
 }

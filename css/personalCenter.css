@@ -116,7 +116,7 @@
     transition: all .5s;
 }
 
-.second_list li a:hover{
+.second_list li a:hover {
     color: #DE8100;
 }
 
@@ -153,6 +153,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 25px;
+}
+
+.all_content .Select_One_Div {
+    justify-content: flex-start;
+}
+
+.all_content .Select_One_Div .same_module {
+    margin-right: 1%;
+    margin-left: 1%;
 }
 
 .all_content .Select_Four_Div {
@@ -217,6 +226,22 @@
     justify-content: space-between;
 }
 
+.Video_list,
+.answer_list {
+    justify-content: flex-start;
+}
+
+.answer_list div {
+    margin-left: calc((100% - 1200px) / 12);
+    margin-right: calc((100% - 1200px) / 12);
+    margin-bottom: 30px;
+}
+
+.Video_list .same_module {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
 .v_p,
 .a_p,
 .w_p {
@@ -248,24 +273,16 @@
     width: 45%;
 }
 
-.answer_list section,
-.collect_answer section {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 .answer_list div,
-.collect_answer section div {
+.collect_answer div {
     width: 200px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
     border-radius: 3px;
     overflow: hidden;
 }
 
-.answer_list section a,
-.collect_answer section a {
+.answer_list a,
+.collect_answer a {
     width: 100%;
     display: block;
     position: relative;
@@ -351,6 +368,22 @@
     display: none;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.collect_video,
+.collect_answer {
+    justify-content: flex-start;
+}
+
+.collect_answer div {
+    margin-left: calc((100% - 1200px) / 12);
+    margin-right: calc((100% - 1200px) / 12);
+    margin-bottom: 30px;
+}
+
+.collect_video .same_module {
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .collect_article {
