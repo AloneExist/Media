@@ -10,29 +10,7 @@
     <title>问道</title>
     <link rel="stylesheet" href="../font/iconfont.css">
     <link rel="stylesheet" href="../css/same.css">
-    <link rel="stylesheet" href="../css/articlePage.css">
-    <style>
-        .replaceA {
-            margin-top: 10px;
-        }
-
-        .bottomDiv span,
-        .bottomDiv p {
-            font-size: 16px;
-            color: #778087;
-        }
-
-        .MuchSameSpan img {
-            border-radius: 5px;
-            width: 50px;
-            height: 50px;
-            border: none;
-        }
-
-        .MuchSame h4 {
-            padding: 20px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/topicEnter.css">
 </head>
 
 <body>
@@ -73,7 +51,7 @@
                     </li>
                     <li class="same_li last_li">
                         <!-- <a href="javascript:;" id="login_a">登录</a>
-                                                <a href="javascript:;" id="register_a">注册</a> -->
+                                                    <a href="javascript:;" id="register_a">注册</a> -->
                         <!-- 登录前 -->
                         <div class="location_div_a">
                             <a href="../html/personalCenter.html" class="photo_cicle" target="_blank">
@@ -96,11 +74,20 @@
                 </ul>
             </div>
         </div>
-        <div class="column">
-            <p class="teach">问道议题广场</p>
-            <div class="containMuch"></div>
-            <!-- 议题举办方 -->
+        <div class="OldStyle">
+            <div class="hang">
+                <span class="wood">
+                    <img src="../img/ban.png">
+                </span>
+                <span class="LogoImg">
+                    <img src="../img/zhihu.jpg">
+                </span>
+            </div>
+            <div class="outerRecommed">
+                <div class="recommed_topic"></div>
+            </div>
         </div>
+        <div id="pagingTool"></div>
         <div class="copyright">
             <p>© Copyright 2018. Powered by DXstudio. All rights reserved.</p>
         </div>
@@ -110,27 +97,25 @@
             </a>
         </div>
     </div>
-    <iframe src="particles.html" id="particles"></iframe>
     <script src="../js/jquery.min.js"></script>
     <script src="../layui/layer.js"></script>
     <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/paging.js"></script>
     <script src="../js/same.js"></script>
     <script>
-        for (var i = 0; i < 9; i++) {
-            var MuchSame = $(
-                '<div class="MuchSame"><a href="topicEnter.html" target="_blank"><span class="MuchSameSpan"><img src="../img/zhihu.jpg"></span>' +
-                '<h4>知乎圆桌</h4><div class="bottomDiv"><p>举办过</p><span>249</span><p>场圆桌</p></div><span class="replaceA">进入会场</span></a></div>'
+        for (var i = 0; i < 7; i++) {
+            var five_block = $(
+                '<div class="recommedOuter"><div class="InRecommed"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div><img src="../img/skin.png"></div>'
             );
-            $('.containMuch').append(MuchSame);
+            $('.recommed_topic').append(five_block);
         }
 
-        $('.MuchSame h4').each(function () {
-            var maxwidth = 7;
-            if ($(this).text().length > maxwidth) {
-                $(this).text($(this).text().substring(0, maxwidth));
-                $(this).html($(this).html() + "...");
-            };
-        });
+        var Issue = new Array(1);
+        Issue[0] = "../img/4.jpg";
+
+        $('.InRecommed img').attr("src", Issue[0]);
+        $('.recommed_topic').find("span").html("知识产权保卫战");
+        $('.recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
     </script>
 </body>
 

@@ -698,3 +698,55 @@ h6 {
     border: none;
     transform: none !important;
 }
+
+/* 分页样式 */
+
+#pagingTool {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.ui-paging-container ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ui-paging-container ul li {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.ui-paging-container ul li:last-child {
+    margin: 0;
+}
+
+.ui-paging-container .js-page-first,
+.ui-paging-container .js-page-prev,
+.ui-paging-container .ui-pager,
+.ui-paging-container .js-page-next,
+.ui-paging-container .js-page-last {
+    background: #fff;
+    color: #000;
+    transition: all .5s ease;
+    box-shadow: inset 0 0.3rem 0.2rem rgba(255, 255, 255, .2), inset 0 -0.1rem 0.2rem rgba(0, 0, 0, .2), 0 0.2rem 0.1rem rgba(0, 0, 0, .2);
+}
+
+.ui-paging-container .focus {
+    background: #3F3F3F;
+    color: #fff;
+}
+
+.ui-paging-container .ui-pager:hover {
+    background: #3F3F3F;
+    color: #fff;
+}

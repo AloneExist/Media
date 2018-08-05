@@ -319,80 +319,9 @@ $('.NewEditor .publish_A').on('click', function () {
     });
 
   //回复
-  $('.toolBar_Btn a')
-    .eq(1)
-    .on('click', function () {
-      var NewGoodEditor = $('<div class="NewGoodEditor"><div class="NewEditor">' +
-        '<div id="Newtoolbar" class="NewToolbar" style="width:100%;background: #fff;border-bottom: 1px solid #DDD;"></div>' +
-        '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
-        'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>');
-      $('.replyBack').css({
-        color: '',
-      });
-      CodeSame($('.NewGoodEditor'));
-      onNotSame($(this).find('.iconfont'), 1);
-      $(this)
-        .parent()
-        .parent()
-        .append(NewGoodEditor);
-      setTimeout(function () {
-        $('.NewGoodEditor').css({
-          opacity: '1',
-          top: '0',
-        });
-        $('.NewGoodEditor .cancel_A').css({
-          display: 'flex',
-        });
-        $('.NewGoodEditor .publish_A').html('<i class="iconfont">&#xe815;</i>发送');
-      }, 10);
-      var M = window.wangEditor;
-      var NewEditor = new M('#Newtoolbar', '#NewUser_edit');
-      NewEditor.customConfig.menus = ['bold', 'italic', 'link', 'emoticon'];
-      NewEditor.customConfig.zIndex = 0;
-      NewEditor.create();
-
-      $('.NewGoodEditor .publish_A').on('click', function () {
-        var Now = new Date();
-        var Year = Now.getFullYear();
-        var Month = Now.getMonth() + 1;
-        var Day = Now.getDate();
-        var Hour = Now.getHours();
-        var Minute = Now.getMinutes();
-        var Second = Now.getSeconds();
-        var ContentNew = $('.NewGoodEditor .w-e-text')
-          .html()
-          .replace(/<(?!img).*?>/g, '');
-        if (ContentNew == '') {
-          alert('请您写一点内容再发送，当前状态不可发送');
-        } else {
-          $('.NewGoodEditor').before('<div class="insertComment"><p class="TwoSecond"></p><span class="oneSpanTWO"></span><span class="TwoSpanTWO"></span><a href="javascript:;" class="DEl">删除</a></div>');
-          $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .TwoSecond').html(ContentNew);
-          $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .oneSpanTWO').html('' + Year + '/' + Month + '/' + Day + '');
-          $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .TwoSpanTWO').html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
-        }
-
-        $('.NewGoodEditor .w-e-text').html('<p><br></p>');
-
-        $('.NewGoodEditor .cancel_A').on('click', function () {
-          CodeSame($('.NewGoodEditor'));
-          $('.replyBack').css({
-            color: '',
-          });
-        });
-
-        $('.DEl').unbind('click').on('click', function () {
-          var This = $(this);
-          layer.confirm('确定要删除此评论吗?', {
-            btn: ['确定', '取消'], //按钮
-            title: '提示',
-          }, function (index) {
-            This.parent().remove();
-            layer.close(index);
-          });
-        }); //删除评论
-      });
-
-    });
+  $('.toolBar_Btn a').eq(1).on('click', function () {
+    getNewEditor($(this));
+  });
 });
 
 function addZero(n) {
@@ -412,6 +341,87 @@ function onNotSame(m, n) {
       color: '',
     });
   }
+}
+
+function cancel() {
+  $('.NewGoodEditor .cancel_A').on('click', function () {
+    CodeSame($('.NewGoodEditor'));
+    $('.replyBack').css({
+      color: '',
+    });
+  });
+}
+
+function getNewEditor(n) {
+  var NewGoodEditor = $('<div class="NewGoodEditor"><div class="NewEditor">' +
+    '<div id="Newtoolbar" class="NewToolbar" style="width:100%;background: #fff;border-bottom: 1px solid #DDD;"></div>' +
+    '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
+    'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>');
+  $('.replyBack').css({
+    color: '',
+  });
+  CodeSame($('.NewGoodEditor'));
+  onNotSame(n.find('.iconfont'), 1);
+  n.parent().parent().append(NewGoodEditor);
+  setTimeout(function () {
+    $('.NewGoodEditor').css({
+      opacity: '1',
+      top: '0',
+    });
+    $('.NewGoodEditor .cancel_A').css({
+      display: 'flex',
+    });
+    $('.NewGoodEditor .publish_A').html('<i class="iconfont">&#xe815;</i>发送');
+  }, 10);
+  var M = window.wangEditor;
+  var NewEditor = new M('#Newtoolbar', '#NewUser_edit');
+  NewEditor.customConfig.menus = ['bold', 'italic', 'link', 'emoticon'];
+  NewEditor.customConfig.zIndex = 0;
+  NewEditor.create();
+
+  cancel();
+
+  $('.NewGoodEditor .publish_A').on('click', function () {
+    var Now = new Date();
+    var Year = Now.getFullYear();
+    var Month = Now.getMonth() + 1;
+    var Day = Now.getDate();
+    var Hour = Now.getHours();
+    var Minute = Now.getMinutes();
+    var Second = Now.getSeconds();
+    var ContentNew = $('.NewGoodEditor .w-e-text')
+      .html()
+      .replace(/<(?!img).*?>/g, '');
+    if (ContentNew == '') {
+      alert('请您写一点内容再发送，当前状态不可发送');
+    } else {
+      $('.NewGoodEditor').before('<div class="insertComment"><p class="TwoSecond"></p><span class="oneSpanTWO"></span><span class="TwoSpanTWO"></span><a href="javascript:;" class="ADDCommit">评论</a><a href="javascript:;" class="DEl">删除</a></div>');
+      $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .TwoSecond').html(ContentNew);
+      $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .oneSpanTWO').html('' + Year + '/' + Month + '/' + Day + '');
+      $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:last .TwoSpanTWO').html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
+    }
+
+    $('.NewGoodEditor .w-e-text').html('<p><br></p>');
+
+    cancel();
+
+    $('.DEl').unbind('click').on('click', function () {
+      var This = $(this);
+      layer.confirm('确定要删除此评论吗?', {
+        btn: ['确定', '取消'], //按钮
+        title: '提示',
+      }, function (index) {
+        This.parent().remove();
+        layer.close(index);
+      });
+    }); //删除评论
+
+
+    $('.ADDCommit').on('click', function () {
+      getNewEditor($(this));
+    });
+
+  });
 }
 
 function CodeSame(n) {

@@ -127,7 +127,7 @@ $('.user_list a').on('click', function () {
 function layerMsg(n, m) {
   layer.msg(n, {
     icon: m,
-    time: 1000, //1秒关闭（如果不配置，默认是3秒）
+    time: 2000, //1秒关闭（如果不配置，默认是3秒）
   });
 } //弹窗
 
@@ -168,13 +168,9 @@ $('.saveN').on('click', function () {
   }
 
   if ($('.password1').val() == '') {
-    layerMsg('设置的密码不可为空，请重新设置', 7);
+    layerMsg('请确保您的密码正确，请重新输入您的密码', 7);
   } else if ($('.password2').val() == '') {
-    layerMsg('确认的密码不可为空，请重新设置', 7);
-  } else if ($('.password1').val() != $('.password2').val()) {
-    layerMsg('与设置的密码不同，请重新设置', 7);
-    $('.inputTextN').eq(2).val('');
-    $('.inputTextN').eq(3).val('');
+    layerMsg('请设置您的新密码', 7);
   }
 
   if (
@@ -185,8 +181,7 @@ $('.saveN').on('click', function () {
       /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/,
     ) &&
     $('.password1').val() != '' &&
-    $('.password2').val() != '' &&
-    $('.password1').val() == $('.password2').val()
+    $('.password2').val() != ''
   ) {
     layerMsg('保存成功', 6);
   }

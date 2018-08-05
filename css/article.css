@@ -604,6 +604,10 @@ blockquote b {
   display: none;
 }
 
+.insertComment .ADDCommit {
+  right: 50px;
+}
+
 .insertComment:hover a {
   display: block;
   padding-right: 30px;

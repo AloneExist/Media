@@ -1,5 +1,12 @@
 $(function () {
-    $("html").niceScroll();
+    $("body").getNiceScroll().hide(); //使body为overflow:hidden
+    $("body").getNiceScroll().resize(); //在页面尺寸变化的时候整个页面会有一种变化
+    $("body").niceScroll({
+        cursorwidth: "0px", //隐藏滚动的关键
+        zindex: "9",
+        scrollspeed: "150", //使整个页面有一种缓动的感觉
+        mousescrollstep: "40", //鼠标的滚动速度
+    });
 
     //兼容edge的png黑框
     $(function () {
@@ -88,14 +95,7 @@ $('.photo_cicle').hover(function () {
     });
 });
 
-$("body").getNiceScroll().hide(); //使body为overflow:hidden
-$("body").getNiceScroll().resize(); //在页面尺寸变化的时候整个页面会有一种变化
-$("body").niceScroll({
-    cursorwidth: "0px", //隐藏滚动的关键
-    zindex: "9",
-    scrollspeed: "150", //使整个页面有一种缓动的感觉
-    mousescrollstep: "40", //鼠标的滚动速度
-});
+
 
 function getBigHeight() {
     var bigHeight = document.documentElement.clientHeight || document.body.clientHeight;
@@ -280,3 +280,47 @@ function CutWord() {
         };
     });
 }
+
+//分页
+$('#pagingTool').Paging({
+    pagesize: 10,
+    count: 100,
+    prevTpl: '<i class="iconfont">&#xe78c;</i>',
+    nextTpl: '<i class="iconfont">&#xe77c;</i>',
+    firstTpl: '<i class="iconfont">&#xe609;</i>',
+    lastTpl: '<i class="iconfont">&#xe6de;</i>',
+});
+
+$('#pagingTool li').on('click', function () {
+    $('#pagingTool').css({
+        '-webkit-user-select': 'none',
+        '-moz-user-select': 'none',
+        '-ms-user-select': 'none',
+        'user-select': 'none',
+    });
+});
+//分页
+
+console.log([
+    "                   我佛慈悲",
+    "                   _ooOoo_",
+    "                  o8888888o",
+    "                  88\" . \"88",
+    "                  (| -_- |)",
+    "                  O\\  =  /O",
+    "               ____/`---'\\____",
+    "             .'  \\\\|     |//  `.",
+    "            /  \\\\|||  :  |||//  \\",
+    "           /  _||||| -卍- |||||- \\",
+    "           |   | \\\\\\  -  /// |   |",
+    "           | \\_|  ''\\---/''  |   |",
+    "           \\  .-\\__  `-`  ___/-. /",
+    "         ___`. .'  /--.--\\  `. . __",
+    "      .\"\" '<  `.___\\_<|>_/___.'  >'\"\".",
+    "     | | :  `- \\`.;`\\ _ /`;.`/ - ` : | |",
+    "     \\  \\ `-.   \\_ __\\ /__ _/   .-` /  /",
+    "======`-.____`-.___\\_____/___.-`____.-'======",
+    "                   `=---='",
+    "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "            佛祖保佑        永无BUG"
+].join('\n'));
