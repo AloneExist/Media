@@ -87,7 +87,8 @@
                 <div class="recommed_topic"></div>
             </div>
         </div>
-        <div id="pagingTool"></div>
+        <!-- 分页 -->
+        <div class="pagingTool"></div>
         <div class="copyright">
             <p>© Copyright 2018. Powered by DXstudio. All rights reserved.</p>
         </div>
@@ -116,6 +117,28 @@
         $('.InRecommed img').attr("src", Issue[0]);
         $('.recommed_topic').find("span").html("知识产权保卫战");
         $('.recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
+
+        // 分页
+        $('.pagingTool').Paging({
+            pagesize: 10,
+            count: 100,
+            prevTpl: '<i class="iconfont">&#xe78c;</i>',
+            nextTpl: '<i class="iconfont">&#xe77c;</i>',
+            firstTpl: '<i class="iconfont">&#xe609;</i>',
+            lastTpl: '<i class="iconfont">&#xe6de;</i>',
+        });
+
+        $('.pagingTool li').on('click', function () {
+            $('.pagingTool').css({
+                '-webkit-user-select': 'none',
+                '-moz-user-select': 'none',
+                '-ms-user-select': 'none',
+                'user-select': 'none',
+            });
+        });
+
+        //NO MORE
+        // $('.pagingTool').append('<div class="NOMore"><i class="iconfont">&#xe670;</i><p>没有更多了</p></div>');
     </script>
 </body>
 

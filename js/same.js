@@ -108,7 +108,7 @@ var isEdge = userAgent.indexOf('Edge') > -1; //判断是否IE的Edge浏览器
 var isChrome = userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("Safari") > -1; //判断Chrome浏览器
 
 if (isChrome && isEdge) {
-    Return();
+    console.log('NOTHING');
 } else {
     var Body = document.getElementsByTagName('body')[0];
     var JudgeMove = false;
@@ -137,10 +137,6 @@ if (isChrome && isEdge) {
                 clearInterval(timer);
             }
         }, 0);
-    }
-
-    function Return() {
-        return;
     }
 
     Body.onmousemove = function (e) {
@@ -280,26 +276,6 @@ function CutWord() {
         };
     });
 }
-
-//分页
-$('#pagingTool').Paging({
-    pagesize: 10,
-    count: 100,
-    prevTpl: '<i class="iconfont">&#xe78c;</i>',
-    nextTpl: '<i class="iconfont">&#xe77c;</i>',
-    firstTpl: '<i class="iconfont">&#xe609;</i>',
-    lastTpl: '<i class="iconfont">&#xe6de;</i>',
-});
-
-$('#pagingTool li').on('click', function () {
-    $('#pagingTool').css({
-        '-webkit-user-select': 'none',
-        '-moz-user-select': 'none',
-        '-ms-user-select': 'none',
-        'user-select': 'none',
-    });
-});
-//分页
 
 console.log([
     "                   我佛慈悲",

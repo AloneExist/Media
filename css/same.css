@@ -701,7 +701,7 @@ h6 {
 
 /* 分页样式 */
 
-#pagingTool {
+.pagingTool {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -742,6 +742,7 @@ h6 {
 }
 
 .ui-paging-container .focus {
+    padding: 0 !important;
     background: #3F3F3F;
     color: #fff;
 }
@@ -749,4 +750,24 @@ h6 {
 .ui-paging-container .ui-pager:hover {
     background: #3F3F3F;
     color: #fff;
+}
+
+/* NO MORE */
+.NOMore {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.NOMore p {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    color: #000;
+}
+
+.NOMore .iconfont {
+    font-size: 80px;
+    color: #000;
 }
