@@ -1,0 +1,124 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+}
+
+.preset {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.presetFirstP {
+    padding-bottom: 100px;
+    font-size: 45px;
+    color: #376956;
+}
+
+.InsertPreset {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Form {
+    display: flex;
+    justify-content: center;
+    padding-right: 200px;
+}
+
+.Form form span {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.Form span input {
+    padding: 15px;
+    background: #d0d1d0;
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 30px;
+    color: #aaa;
+    font-size: 15px;
+    transition: all .2s ease;
+    border: 2px solid transparent;
+}
+
+.Form div {
+    position: relative;
+}
+
+.Form label {
+    width: calc(100% - 50px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    /* top: -25px; */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .2s ease;
+    padding: 0 25px;
+    cursor: text;
+    color: #8b8c8b;
+    font-size: 15px;
+}
+
+/* .Newpreview {} */
+
+.Form span a {
+    padding: 10px 20px;
+    background: #363636;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+    transition: all .3s linear;
+}
+
+.Form span a:hover {
+    background: #1b1b1b;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, .5);
+}
+
+.Newpreview .cutImg {
+    width: 250px;
+    height: 200px;
+    border: 1px solid #d0d1d0;
+    transition: all .3s ease;
+}
+
+.Newpreview .cutInsertImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.Newpreview p {
+    color: #376956;
+    font-size: 15px;
+    padding-bottom: 20px;
+}
