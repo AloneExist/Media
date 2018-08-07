@@ -89,7 +89,8 @@
 
 .user_information #replaceImg,
 .save,
-.saveN {
+.saveN,
+.logOut {
     padding: 10px 20px;
     background: #363636;
     color: #fff;
