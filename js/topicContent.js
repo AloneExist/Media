@@ -1,4 +1,4 @@
-for (var i = 0; i < 3; i++) {
+for (var i = 0; i < 5; i++) {
     // 8条最佳评论
     var addComments = $('<li><div class="TitleA"><a href="javascript:;">你有什么经验一定要分享给初入职场的新人？</a></div>' +
         '<div class="SocialTool"><a href="javascript:;" class="GuanFocus"><i class="iconfont">&#xe6e0;</i><span>关注</span></a>' +
@@ -75,6 +75,15 @@ function getNewEditor(n) {
     NewEditor.create();
 
     cancel();
+
+    //解决火狐不能自动去除占位符的问题
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var isFF = userAgent.indexOf('Firefox') > -1; //判断是否Firefox浏览器
+    if (isFF) {
+        $('.w-e-text p').eq(0).find('br').css({
+            'display': 'none',
+        });
+    }
 
     $('.NewGoodEditor .publish_A').on('click', function () {
         var Now = new Date();
@@ -199,4 +208,12 @@ $('.middleTopic a').on('click', function () {
 
 $(document).on('click', '.commentsAndjoin,.cancel_A,.publish_A,.middleTopic a', function () {
     $('body').getNiceScroll().resize();
+});
+
+//检测TwoList内容的改变从而去判断评论的条数
+$('.TwoList').on('DOMNodeInserted', function () {
+    var Len = $('.insertComment').length;
+    if (Len > 0) {
+        $('.TwoMiddle span').html('' + Len + '条评论');
+    };
 });

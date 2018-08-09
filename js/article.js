@@ -2,21 +2,8 @@ var DataTitle = $('.bottom_message').attr('data-title');
 var alertTitle = $('<span class="alertSpan"></span>');
 var onOff = true;
 var Judge = true;
-var titleImg = $('#ContainEditor img')
-  .eq(0)
-  .attr('src');
-$('#ContainEditor h1')
-  .eq(0)
-  .css({
-    display: 'none',
-  });
-var getNodeName = document.getElementById('ContainEditor').firstElementChild
-  .nodeName;
-var addContent = $('<' + getNodeName + '></' + getNodeName + '>');
-addContent.insertBefore($('#userInformation'));
-var getFirstContent = document.getElementById('ContainEditor').firstElementChild
-  .innerHTML;
-addContent.html(getFirstContent);
+var titleImg = $('#ContainEditor img').eq(0).attr('src');
+var getFirstContent = $('.w-e-text h1').eq(0).html();
 
 var ListLan = $('.circle').attr('list-title');
 
@@ -91,46 +78,34 @@ socialShare('.social-share', {
 $('.circle').on('click', function () {
   if (Judge) {
     Judge = false;
-    $('.listTop')
-      .eq(0)
-      .css({
-        top: '50%',
-        transform: 'translate(-50%,-50%) rotateZ(-45deg)',
-      });
-    $('.listTop')
-      .eq(2)
-      .css({
-        top: '50%',
-        transform: 'translate(-50%,-50%) rotateZ(45deg)',
-      });
-    $('.listTop')
-      .eq(1)
-      .css({
-        display: 'none',
-      });
+    $('.listTop').eq(0).css({
+      top: '50%',
+      transform: 'translate(-50%,-50%) rotateZ(-45deg)',
+    });
+    $('.listTop').eq(2).css({
+      top: '50%',
+      transform: 'translate(-50%,-50%) rotateZ(45deg)',
+    });
+    $('.listTop').eq(1).css({
+      display: 'none',
+    });
     $('.social-share').css({
       display: 'block',
       height: '600px',
     });
   } else {
     Judge = true;
-    $('.listTop')
-      .eq(0)
-      .css({
-        top: '',
-        transform: '',
-      });
-    $('.listTop')
-      .eq(2)
-      .css({
-        top: '',
-        transform: '',
-      });
-    $('.listTop')
-      .eq(1)
-      .css({
-        display: '',
-      });
+    $('.listTop').eq(0).css({
+      top: '',
+      transform: '',
+    });
+    $('.listTop').eq(2).css({
+      top: '',
+      transform: '',
+    });
+    $('.listTop').eq(1).css({
+      display: '',
+    });
     $('.social-share').css({
       height: '',
     });
@@ -217,29 +192,25 @@ var initNum = 100;
 $('.numCount').html(initNum);
 var isGood = true;
 var isBad = true;
-$('.TwoPart a')
-  .eq(0)
-  .on('click', function () {
-    if (isGood) {
-      isGood = false;
-      Change(1, $(this), 1);
-    } else {
-      isGood = true;
-      Change(0, $(this), 1);
-    }
-  });
+$('.TwoPart a').eq(0).on('click', function () {
+  if (isGood) {
+    isGood = false;
+    Change(1, $(this), 1);
+  } else {
+    isGood = true;
+    Change(0, $(this), 1);
+  }
+});
 
-$('.TwoPart a')
-  .eq(1)
-  .on('click', function () {
-    if (isBad) {
-      isBad = false;
-      Change(1, $(this), 0);
-    } else {
-      isBad = true;
-      Change(0, $(this), 0);
-    }
-  });
+$('.TwoPart a').eq(1).on('click', function () {
+  if (isBad) {
+    isBad = false;
+    Change(1, $(this), 0);
+  } else {
+    isBad = true;
+    Change(0, $(this), 0);
+  }
+});
 
 function Change(n, m, o) {
   if (n) {
@@ -366,6 +337,15 @@ function getNewEditor(n) {
   NewEditor.create();
 
   cancel();
+
+  //解决火狐不能自动去除占位符的问题
+  var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+  var isFF = userAgent.indexOf('Firefox') > -1; //判断是否Firefox浏览器
+  if (isFF) {
+    $('#NewUser_edit .w-e-text p').eq(0).find('br').css({
+      'display': 'none',
+    });
+  }
 
   $('.NewGoodEditor .publish_A').on('click', function () {
     var Now = new Date();
