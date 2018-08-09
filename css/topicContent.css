@@ -1,0 +1,332 @@
+.topicContentMain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 100px;
+    padding-top: 30px;
+}
+
+.ContainerTopic {
+    width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.leftTopicContent {
+    width: 68%;
+}
+
+.topTopic {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.rightTopicContent {
+    width: 27%;
+}
+
+.innerDiv {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.innerDiv .imgContain {
+    width: 200px;
+    height: 200px;
+    display: block;
+}
+
+.innerDiv .imgContain img {
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+}
+
+.PeopleRight {
+    padding: 10px;
+    width: calc(100% - 220px);
+    background: #EDEDED;
+}
+
+.PeopleTitle h1 {
+    font-size: 18px;
+    color: #000;
+    padding: 5px 0 10px 0;
+    margin: 0 !important;
+}
+
+.describe p {
+    font-size: 14px;
+    line-height: 25px;
+    height: 100px;
+    color: #000;
+    overflow: hidden;
+    margin: 0 !important;
+}
+
+.rightFocus a {
+    background: #1A2D27;
+    color: #fff;
+    padding: 8px 20px;
+    display: inline-block;
+    transition: all .3s ease;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.rightFocus a:hover {
+    background: #FF6E97;
+}
+
+.rightFocus .rightFocusHover {
+    background: #FF6E97;
+}
+
+.TopicMessage {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.leftFocus {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.leftFocus span {
+    color: #7A023C;
+    font-size: 14px;
+}
+
+.leftFocus .AndSpecial {
+    padding: 0 5px;
+}
+
+.middleTopic {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 35px 0;
+}
+
+.middleTopic div {
+    flex: 1;
+}
+
+.middleTopic div a {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    background: #EDEDED;
+    transition: all .3s ease;
+    font-size: 16px;
+}
+
+.middleTopic div a:hover {
+    color: #EBEDF4;
+    background: #7A023C;
+}
+
+.bottomTopic,
+.NewList {
+    width: 100%;
+}
+
+.NewList {
+    display: none;
+}
+
+.NewList li {
+    width: calc(100% - 40px);
+    background: #EDEDED;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.TitleA {
+    padding-bottom: 20px;
+}
+
+.TitleA a {
+    color: #3B200C;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.TitleA a:hover {
+    text-decoration: underline;
+}
+
+.SocialTool .iconfont,
+.SocialTool span {
+    color: #1A2D27;
+    transition: all .3s ease;
+    font-size: 15px;
+}
+
+.SocialTool .ZanA {
+    padding: 0 20px;
+}
+
+.SocialTool a:hover span,
+.SocialTool a:hover .iconfont {
+    color: #FF6E97;
+}
+
+.SocialTool .HoverA {
+    color: #FF6E97;
+}
+
+/* 编辑器参与评论 */
+
+.NewGoodEditor {
+    padding-top: 30px;
+    position: relative;
+    top: -20px;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.NewEditor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+}
+
+.input_Time {
+    display: none;
+}
+
+.EditorNew .w-e-text {
+    padding: 5px 20px !important;
+    height: 100% !important;
+}
+
+.NewToolbar {
+    position: relative;
+}
+
+.publish_A,
+.cancel_A {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    background: transparent;
+    color: #595959;
+    transition: all .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px !important;
+    margin-right: 10px !important;
+}
+
+.publish_A {
+    width: auto;
+    margin: 0 !important;
+    padding: 0px 15px !important;
+}
+
+.cancel_A {
+    right: 88px;
+    margin: 0 !important;
+    display: none;
+}
+
+.insertComment {
+    width: calc(100% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 2px solid #999;
+    margin-top: 20px;
+    padding-left: 20px !important;
+    position: relative;
+}
+
+.NewList .insertComment p {
+    margin: 0 !important;
+    padding: 15px 0;
+    word-break: break-word !important
+}
+
+.insertComment p {
+    width: 100%;
+    padding: 0 !important;
+    display: flex;
+    line-height: 1.5;
+    padding-bottom: 5px !important;
+    font-size: 14px;
+}
+
+.insertComment p img {
+    top: 0 !important;
+    padding: 0px 5px !important;
+}
+
+.insertComment span {
+    font-size: 12px;
+}
+
+.insertComment span:nth-of-type(1) {
+    padding-right: 5px !important;
+}
+
+.insertComment a {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #999;
+    font-size: 14px;
+    display: none;
+}
+
+.insertComment .ADDCommit {
+    right: 50px;
+}
+
+.insertComment:hover a {
+    display: block;
+    padding-right: 10px;
+}
+
+.w-e-emoticon-container {
+    display: block !important;
+}
+
+.w-e-panel-tab-title {
+    display: none !important;
+}
+
+.w-e-text-container .w-e-panel-container {
+    padding: 20px 20px 45px 20px !important;
+}
+
+.w-e-panel-container h4 {
+    margin: 0 !important;
+    padding: 20px 0 20px 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+}
+
+.w-e-panel-tab-content {
+    height: auto !important;
+}
+
+.w-e-text img,
+.commentsMessage .bottomMessage img {
+    display: inline-block !important;
+    position: relative;
+    top: 5px;
+}
