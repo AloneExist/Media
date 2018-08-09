@@ -152,10 +152,24 @@
     padding-bottom: 20px;
 }
 
-.TitleA a {
+.TitleA p {
+    margin: 0 !important;
+}
+
+.TitleA a,
+.HoldOwner,
+.TitleA p {
     color: #3B200C;
     font-weight: 600;
     font-size: 15px;
+}
+
+.TitleA p {
+    font-size: 20px;
+}
+
+.HoldOwner {
+    font-size: 16px;
 }
 
 .TitleA a:hover {
@@ -169,8 +183,16 @@
     font-size: 15px;
 }
 
+.SocialTool .iconfont {
+    padding-right: 5px;
+}
+
 .SocialTool .ZanA {
     padding: 0 20px;
+}
+
+.SocialTool .ZanA span:last-child {
+    padding-left: 3px;
 }
 
 .SocialTool a:hover span,
@@ -256,21 +278,31 @@
 .NewList .insertComment p {
     margin: 0 !important;
     padding: 15px 0;
-    word-break: break-word !important
+    word-break: break-word !important;
+}
+
+.NewList .insertComment .TwoSecond {
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.NewList .insertComment .TwoSecond p:last-child {
+    padding: 0 !important;
 }
 
 .insertComment p {
     width: 100%;
     padding: 0 !important;
-    display: flex;
     line-height: 1.5;
     padding-bottom: 5px !important;
     font-size: 14px;
 }
 
 .insertComment p img {
-    top: 0 !important;
+    position: relative;
+    top: 5px;
     padding: 0px 5px !important;
+    display: inline-block;
 }
 
 .insertComment span {
@@ -329,4 +361,95 @@
     display: inline-block !important;
     position: relative;
     top: 5px;
+}
+
+/* 结束 */
+
+.Hold {
+    background: #f2f2f2;
+    color: #3B200C;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.Hold p {
+    margin: 0 !important;
+}
+
+.Hold .HoldOwner {
+    padding: 15px;
+    background: #ebe9e9;
+}
+
+.owner {
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.owner p {
+    width: 100%;
+    font-size: 14px;
+}
+
+.MainMessageImg {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.MainMessageImg img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.owner p {
+    border: none;
+}
+
+.bottomRightTopic {
+    padding-top: 35px;
+}
+
+.ChangeImgMessage {
+    align-items: flex-start;
+    border-bottom: 1px solid #DDD;
+}
+
+.Hold .ChangeImgMessage:last-child {
+    border: none;
+}
+
+.owner p:first-child {
+    padding-bottom: 8px;
+}
+
+.bestComments {
+    padding-top: 35px;
+}
+
+.ChangeMainMessage img {
+    margin-right: 15px;
+}
+
+.ChangeMainMessage img:last-child {
+    margin: 0;
+}
+
+.replaceLi {
+    width: calc(100% - 40px);
+    background: #EDEDED;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.w-e-text p {
+    margin: 0 !important;
+}
+
+.TwoList .replaceLi {
+    margin-bottom: 0;
 }

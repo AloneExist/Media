@@ -1,3 +1,18 @@
+for (var i = 0; i < 3; i++) {
+    // 8条最佳评论
+    var addComments = $('<li><div class="TitleA"><a href="javascript:;">你有什么经验一定要分享给初入职场的新人？</a></div>' +
+        '<div class="SocialTool"><a href="javascript:;" class="GuanFocus"><i class="iconfont">&#xe6e0;</i><span>关注</span></a>' +
+        '<a href="javascript:;" class="ZanA"><i class="iconfont">&#xe60a;</i><span>赞</span><span class="Zan">2</span></a>' +
+        '<a href="javascript:;" class="commentsAndjoin" data-onOff="1"><i class="iconfont">&#xe66f;</i><span>参与讨论</span></a></div></li>');
+    $('.OneList').append(addComments);
+}
+
+var LiNum = $('.OneList li').length;
+$('.OneMiddle span').html(LiNum);
+
+var H1People = $('.PeopleTitle h1').html();
+$('.TitleA p').html('欢迎你参加' + H1People + '议题');
+
 $('.RealFocus').on('click', function () {
     if ($(this).html() == '取消关注') {
         $(this).html('关注');
@@ -30,6 +45,10 @@ function remove(n) {
 
 $('.commentsAndjoin').on('click', function () {
     getNewEditor($(this));
+});
+
+$('.AndJoin').on('click', function () {
+    getNewEditor($(this).parent());
 });
 
 function getNewEditor(n) {
@@ -65,7 +84,7 @@ function getNewEditor(n) {
         var Hour = Now.getHours();
         var Minute = Now.getMinutes();
         var Second = Now.getSeconds();
-        var ContentNew = $('.NewGoodEditor .w-e-text').html().replace(/<(?!img).*?>/g, '');
+        var ContentNew = $('.NewGoodEditor .w-e-text').html();
         if (ContentNew == '') {
             alert('请您写一点内容再发送，当前状态不可发送');
         } else {

@@ -276,9 +276,7 @@ $('.NewEditor .publish_A').on('click', function () {
     '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
     '</a></div></div></div></li>'
   );
-  var Content = $('.NewEditor .w-e-text')
-    .html()
-    .replace(/<(?!img).*?>/g, '');
+  var Content = $('.NewEditor .w-e-text').html();
   if (Content == '') {
     alert('请您写一点内容再发送，当前状态不可发送');
   } else {
@@ -286,37 +284,25 @@ $('.NewEditor .publish_A').on('click', function () {
     $('.commentsNum span').html(++NumNumber); //用于记录有多少条的评论
     $('.commentsList').prepend(addComments);
     $('.commentsList li:first-child .OneFirst').html(Content);
-    $('.commentsList li:first-child .timeMessage span')
-      .eq(0)
-      .html('' + Year + '/' + Month + '/' + Day + '');
-    $('.commentsList li:first-child .timeMessage span')
-      .eq(1)
-      .html(
-        '' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + ''
-      );
+    $('.commentsList li:first-child .timeMessage span').eq(0).html('' + Year + '/' + Month + '/' + Day + '');
+    $('.commentsList li:first-child .timeMessage span').eq(1).html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
   }
   $('.NewEditor .w-e-text').html('<p><br></p>');
 
   //点赞
   var NotSame = true;
   var GoodNum = parseInt($('.goodNum').html());
-  $('.toolBar_Btn a')
-    .eq(0)
-    .on('click', function () {
-      if (NotSame) {
-        NotSame = false;
-        onNotSame($(this).find('.iconfont'), 1);
-        $(this)
-          .find('.goodNum')
-          .html(++GoodNum);
-      } else {
-        NotSame = true;
-        onNotSame($(this).find('.iconfont'), 0);
-        $(this)
-          .find('.goodNum')
-          .html(--GoodNum);
-      }
-    });
+  $('.toolBar_Btn a').eq(0).on('click', function () {
+    if (NotSame) {
+      NotSame = false;
+      onNotSame($(this).find('.iconfont'), 1);
+      $(this).find('.goodNum').html(++GoodNum);
+    } else {
+      NotSame = true;
+      onNotSame($(this).find('.iconfont'), 0);
+      $(this).find('.goodNum').html(--GoodNum);
+    }
+  });
 
   //回复
   $('.toolBar_Btn a').eq(1).on('click', function () {
@@ -389,9 +375,7 @@ function getNewEditor(n) {
     var Hour = Now.getHours();
     var Minute = Now.getMinutes();
     var Second = Now.getSeconds();
-    var ContentNew = $('.NewGoodEditor .w-e-text')
-      .html()
-      .replace(/<(?!img).*?>/g, '');
+    var ContentNew = $('.NewGoodEditor .w-e-text').html();
     if (ContentNew == '') {
       alert('请您写一点内容再发送，当前状态不可发送');
     } else {
