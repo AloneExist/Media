@@ -453,3 +453,16 @@
 .TwoList .replaceLi {
     margin-bottom: 0;
 }
+
+.containerNewOneList {
+    display: none;
+}
+
+.containerNewOneList .NewGoodEditor:first-child {
+    padding: 0;
+    padding-bottom: 30px;
+}
+
+.ShowUL {
+    display: block;
+}
