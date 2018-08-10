@@ -443,8 +443,6 @@ h6 {
 
 .user_list {
     width: 280px;
-    position: fixed;
-    top: 130px;
 }
 
 .user_list ul {
@@ -752,6 +750,7 @@ h6 {
 }
 
 /* NO MORE */
+
 .NOMore {
     display: flex;
     flex-wrap: wrap;

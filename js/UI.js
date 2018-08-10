@@ -1,9 +1,3 @@
-var InformationWidth = $('.user_information').width();
-var SelectWidth = $('.user_select').width();
-$('.user_information').css({
-  'margin-left': SelectWidth - InformationWidth,
-});
-
 (window.onresize = function () {
   var win_height = $(window).height();
   var win_width = $(window).width();

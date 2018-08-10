@@ -133,6 +133,12 @@ function getNewFirstEditor(n) {
             getNewEditor($(this));
         });
 
+        $('.TitleA a').on('click', function () {
+            var index = $(this).html();
+            var url = "AnswerQuestion.html?SendAContent=" + index;
+            window.open(encodeURI(url));
+        });
+
     });
 }
 

@@ -8,6 +8,9 @@
 .user_select {
     width: 60%;
     margin-top: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .user_information {

@@ -1,0 +1,44 @@
+.topImgColumns {
+    width: 60%;
+    justify-content: space-between;
+}
+
+.leftColumns {
+    width: 700px;
+}
+
+.moveDou,
+.insertContainer {
+    width: 60%;
+}
+
+.Select_Much {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.other_module {
+    width: 48%;
+}
+
+.FocusQuestion {
+    margin-right: 20px;
+}
+
+.rightColumns a {
+    width: 200px;
+    height: 150px;
+    border-radius: inherit;
+    overflow: inherit;
+}
+
+.editorCover {
+    margin-left: 20px;
+}
+
+.rightColumns a img {
+    width: 100%;
+    height: 100%;
+}
