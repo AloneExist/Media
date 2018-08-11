@@ -276,7 +276,7 @@ $('.same_module a').hover(function () {
 
 var select_Article = $('<div class="Select_Much" style="display:flex;"></div>');
 
-for (var i = 0; i < 6; i++) {
+for (var i = 0; i < 7; i++) {
     var wen_list = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>');
     select_Article.append(wen_list);
 }

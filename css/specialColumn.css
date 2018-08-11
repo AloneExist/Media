@@ -15,14 +15,14 @@
 }
 
 .topImgColumns {
-    width: 35%;
+    width: 60%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
 }
 
 .leftColumns {
-    width: calc(100% - 120px);
+    width: 700px;
     display: flex;
     justify-content: flex-start;
     align-content: flex-start;
@@ -70,7 +70,7 @@
 }
 
 .moveDou {
-    width: 35%;
+    width: 60%;
     height: 8px;
     background-image: -webkit-radial-gradient(circle, transparent, transparent 5px, #FF5983 5px, #FF5983 8px, transparent 8px, transparent);
     background-image: -moz-radial-gradient(circle, transparent, transparent 5px, #FF5983 5px, #FF5983 8px, transparent 8px, transparent);
@@ -102,7 +102,7 @@
 }
 
 .insertContainer {
-    width: 35%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -114,4 +114,15 @@
 
 .titleHot {
     width: 30%;
+}
+
+.other_module {
+    width: 48%;
+}
+
+.Select_Much {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

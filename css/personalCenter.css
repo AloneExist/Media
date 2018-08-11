@@ -396,23 +396,14 @@
 }
 
 .collect_article .Select_Much {
-    width: 45%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.collect_article .Select_Much .other_module {
+    width: 48%;
 }
 
 .collect_article .other_module {
     width: 100%;
-}
-
-.same_img {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
-.same_img img {
-    width: 45%;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
 }

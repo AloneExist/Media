@@ -316,13 +316,13 @@ for (var i = 0; i < 10; i++) {
     var hall_1 = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;"></a><a href="javascript:;"><i class="iconfont">&#xe684;</i></a><span><i class="iconfont">&#xe602;</i></span><span><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>');
     $('.contain_other').append(hall_1);
 };
-var span_scene = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
+var span_scene = $('<div class="contain_a"><a class="contain_span" href="articlePage.html" target="_blank"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 module_hall.append(span_scene);
 //推荐文章
 
 //问答专区
 var module_ans_que = $('.module_ans_que');
-var span_scene = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
+var span_scene = $('<div class="contain_a"><a class="contain_span" href="topic.html" target="_blank"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 module_ans_que.append(span_scene);
 
 $('.same_module a').hover(function () {
