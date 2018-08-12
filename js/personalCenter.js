@@ -298,7 +298,7 @@ $('.nav .same_a').eq(4).on('click', function () {
 });
 
 var OldElement = $('.collect').eq(0);
-
+var OldLISecond = $('.second_list a').eq(0);
 $('.second_list a').on('click', function () {
     var index = $('.second_list a').index(this);
     OldElement.css({
@@ -307,5 +307,13 @@ $('.second_list a').on('click', function () {
     OldElement = $('.collect').eq(index);
     $('.collect').eq(index).css({
         'display': 'flex',
+    });
+
+    OldLISecond.css({
+        'color': '',
+    });
+    OldLISecond = $(this);
+    $(this).css({
+        'color': '#DE8100',
     });
 });
