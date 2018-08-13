@@ -83,19 +83,123 @@
                             <div class="HeadPicture">
                                 <img src="../img/11.jpg">
                             </div>
+                            <div class="leftRightImg">
+                                <div class="topLocation">
+                                    <div class="MainContain">
+                                        <p title="养乐多了的投稿视频">养乐多了的投稿视频</p>
+                                        <span title="娱乐">娱乐</span>
+                                        <span>&nbsp;·&nbsp;</span>
+                                        <span title="视频唱见">视频唱见</span>
+                                    </div>
+                                    <div class="NameColumn">
+                                        <a href="javascript:;" title="养乐多了">养乐多了</a>
+                                    </div>
+                                </div>
+                                <div class="rightImgLocation">
+                                    <div class="topImgL">
+                                        <a href="javascript:;" title="举报">
+                                            <span>
+                                                <i class="iconfont">&#xe629;</i>
+                                            </span>
+                                            <span>举报</span>
+                                        </a>
+                                        <a href="javascript:;" title="分享">
+                                            <span>
+                                                <i class="iconfont">&#xe646;</i>
+                                            </span>
+                                            <span>分享</span>
+                                        </a>
+                                        <span style="cursor: default" title="人气值">
+                                            <i class="iconfont">&#xe60d;</i>
+                                        </span>
+                                        <span style="cursor: default" title="人气值">--</span>
+                                    </div>
+                                    <div class="bottomImgL">
+                                        <a href="javascript:;" title="喜欢 TA 就关注 TA 吧，时刻跟上主播步伐 _(:3 」∠)_">
+                                            <span style="padding-right: 3px;">
+                                                <i class="iconfont">&#xe638;</i>
+                                            </span>
+                                            <span class="focusFocusTwo">关注</span>
+                                        </a>
+                                        <span class="NUmCounts">6666</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div id="DPlayerVideo"></div>
-                        <div class="welcome">
-                            <img src="../reduce/wait.gif">
-                            <p>礼物模式还在开发中......敬请期待</p>
+                    </div>
+                    <div class="DanMuListKeepSame">
+                        <div class="Cute">
+                            <div>
+                                <img src="../reduce/wait.gif">
+                            </div>
+                            <div>
+                                <img src="../reduce/wait.gif">
+                            </div>
+                        </div>
+                        <!-- 发送区域 -->
+                        <div class="SendArea"></div>
+                        <!-- 编辑发送 -->
+                        <div class="SendFunction">
+                            <textarea class="editorDanMu" id="editorTextarea" placeholder="请输入弹幕 ௹DAN☪MU"></textarea>
+                            <p class="DanMUSendP">弹幕发送 ௹DAU☪MU</p>
+                            <!-- 弹幕设置 -->
+                            <b class="DanMuSet">
+                                <i class="iconfont iconSEt" title="弹幕设置">&#xe647;</i>
+                                <div class="DanMUSetIng">
+                                    <p>弹幕位置</p>
+                                    <div class="DanMuLocation">
+                                        <span class="SetColorPink" data-click="1">
+                                            <i class="iconfont">&#xe65a;</i>
+                                            <p>滚动</p>
+                                        </span>
+                                        <span data-click="0">
+                                            <i class="iconfont">&#xe65b;</i>
+                                            <p>顶部</p>
+                                        </span>
+                                        <span data-click="0">
+                                            <i class="iconfont">&#xe659;</i>
+                                            <p>底部</p>
+                                        </span>
+                                    </div>
+                                    <p>弹幕颜色</p>
+                                    <div class="MuchColors">
+                                        <div>
+                                            <span colorValue="#fff" class="bigER"></span>
+                                        </div>
+                                        <div>
+                                            <span colorValue="#ff6868"></span>
+                                        </div>
+                                        <div>
+                                            <span colorValue="#66ccff"></span>
+                                        </div>
+                                        <div>
+                                            <span colorValue="#e33fff"></span>
+                                        </div>
+                                        <div>
+                                            <span colorValue="#00fffc"></span>
+                                        </div>
+                                        <div>
+                                            <span colorValue="#7eff00"></span>
+                                        </div>
+                                        <div>
+                                            <span colorValue="#ffed4f"></span>
+                                        </div>
+                                        <div>
+                                            <span colorValue="#ff9800"></span>
+                                        </div>
+                                        <div>
+                                            <span colorValue="#ff739a"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </b>
+                            <a href="javascript:;" id="SendDanMU">发送</a>
+                            <span class="RecordNUM">0/20</span>
                         </div>
                     </div>
-                    <div class="DanMuListKeepSame"></div>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>© Copyright 2018. Powered by DXstudio. All rights reserved.</p>
         </div>
         <div class="toTop">
             <a href="javascript:;" class="GoTop" title="回到顶部">
@@ -108,17 +212,7 @@
     <script src="../js/jquery.nicescroll.min.js"></script>
     <script src="../DPlayer/DPlayer.min.js"></script>
     <script src="../js/same.js"></script>
-    <script>
-        const dp = new DPlayer({
-            container: document.getElementById('DPlayerVideo'),
-            screenshot: true, //截图
-            volume: 1,
-            theme: '#FF5983', //主题颜色
-            video: {
-                url: 'http://pdc3kp6os.bkt.clouddn.com/test.mp4' //视频地址
-            }
-        });
-    </script>
+    <script src="../js/videoPage.js"></script>
 </body>
 
 </html>

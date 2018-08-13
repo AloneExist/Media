@@ -123,6 +123,14 @@ $(function () {
     });
 });
 
+var html5_player = document.getElementById('html5_player');
+html5_player.oncanplay = function () { //当视频加载完成时
+    var contain_videoHeight = $('.contain_video').outerHeight();
+    $('.live_list').css({
+        'height': contain_videoHeight - 20,
+    });
+}
+
 //数组存放文章所在的图片链接，方便存储
 var Img_Array = new Array(10);
 Img_Array[0] = "https://upload-images.jianshu.io/upload_images/10560804-8aa981c5b24fc5ac.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240";
@@ -330,3 +338,10 @@ $('.same_module a').hover(function () {
 }, function () {
     $(this).removeClass("a_hover a_hover_a");
 });
+
+(window.onresize = function () {
+    var contain_videoHeight = $('.contain_video').outerHeight();
+    $('.live_list').css({
+        'height': contain_videoHeight - 20,
+    });
+})();
