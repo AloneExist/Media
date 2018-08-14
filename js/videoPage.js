@@ -3,9 +3,10 @@ const dp = new DPlayer({
     container: document.getElementById('DPlayerVideo'),
     screenshot: true, //截图
     volume: 1,
+    live: true,
     theme: '#FF5983', //主题颜色
     video: {
-        url: 'http://pdc3kp6os.bkt.clouddn.com/test.mp4' //视频地址
+        url: 'http://pdc3kp6os.bkt.clouddn.com/Soda1.mp4' //视频地址
     }
 });
 
@@ -88,13 +89,12 @@ $('.SendFunction a').hover(function () {
 });
 
 $('.DanMuSet').on('click', function () {
-    $(this).find('.iconSEt').css({
+    $('.iconSEt').css({
         'color': '#FF6E97',
     });
-    $(this).find('.DanMUSetIng').css({
-        'display': 'block',
-    });
-    $(this).find('.DanMUSetIng').addClass('bounceIn');
+    $('.DanMUSetIng').css('display', 'block');
+    $('.DanMUSetIng').addClass('fadeIn');
+    stopBubble();
 });
 
 //当页面变化时盖度随之改变
@@ -131,6 +131,11 @@ $('.MuchColors span').on('click', function () {
 //发送按钮点击
 $('#SendDanMU').on('click', function () {
     if ($('.SendFunction a').css('cursor') == 'pointer') {
+        var DamMuLength = $('.userMessageDiv').length;
+        //缓存99条弹幕记录
+        if (DamMuLength >= 99) {
+            $('.SendArea .userMessageDiv:first-child').remove();
+        }
         var createDiv = $('<div class="userMessageDiv"><a href="javascript:;">白矖&nbsp;:</a>&nbsp;<span class="MainMessageP"></span></div>');
         var editorTextareaContainer = $('#editorTextarea').val();
         $('.SendArea').append(createDiv);
@@ -157,8 +162,28 @@ $(window).keydown(function (event) {
 
 $('.bottomImgL a').on('click', function () {
     if ($(this).find('.focusFocusTwo').html() == '关注') {
+        $('.NUmCounts').html(parseInt($('.NUmCounts').html()) + 1);
         $(this).find('.focusFocusTwo').html('已关注');
     } else {
+        $('.NUmCounts').html(parseInt($('.NUmCounts').html()) - 1);
         $(this).find('.focusFocusTwo').html('关注');
     }
 });
+
+$(document).on('click', function () {
+    $('.iconSEt').css({
+        'color': '',
+    });
+    $('.DanMUSetIng').removeClass('fadeIn');
+    $('.DanMUSetIng').css('display', '');
+});
+
+function stopBubble(e) {
+    //如果提供了事件对象，则这是一个非IE浏览器 
+    if (e && e.stopPropagation)
+        //因此它支持W3C的stopPropagation()方法 
+        e.stopPropagation();
+    else
+        //否则，我们需要使用IE的方式来取消事件冒泡 
+        window.event.cancelBubble = true;
+}

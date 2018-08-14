@@ -1,32 +1,4 @@
 $(function () {
-    $("html").niceScroll();
-
-    $(window).scroll(function () {
-        function BrowserType() {
-            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-            var isEdge = userAgent.indexOf('Edge') > -1; //判断是否IE的Edge浏览器
-            var isChrome = userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("Safari") > -1; //判断Chrome浏览器
-            if (isChrome && isEdge) {
-                if (osTop == 0) {
-                    $('#html5_player').css({
-                        "z-index": "999",
-                    });
-                    $('.control_bar').css({
-                        "z-index": "1000",
-                    })
-                } else {
-                    $('#html5_player').css({
-                        "z-index": "",
-                    });
-                    $('.control_bar').css({
-                        "z-index": "",
-                    })
-                };
-            };
-        };
-        BrowserType(); //解决edge浏览器往下移的时候video上画面消失的问题
-    });
-
     //10个推荐文章
     $('.other_module').eq(0).find("img").attr("src", Img_Array[0]);
     $('.left_part').eq(0).find(".under_line").html("五一，差点只剩半条命！");
@@ -122,14 +94,6 @@ $(function () {
         };
     });
 });
-
-var html5_player = document.getElementById('html5_player');
-html5_player.oncanplay = function () { //当视频加载完成时
-    var contain_videoHeight = $('.contain_video').outerHeight();
-    $('.live_list').css({
-        'height': contain_videoHeight - 20,
-    });
-}
 
 //数组存放文章所在的图片链接，方便存储
 var Img_Array = new Array(10);
@@ -282,20 +246,6 @@ $('.left_move,.right_move').hover(function () {
 }, function () {
     autoPlay();
 });
-//轮播图结束
-
-// $('#login_a').click(function () {
-//     $("body").getNiceScroll(0).doScrollTop(2000, .1);
-// });
-// 模拟target过渡的效果
-
-var Pic = $('.pic');
-setTimeout(function () {
-    var pic_height = Pic.height();
-    $('.down_btn').on('click', function () {
-        $("body").getNiceScroll(0).doScrollTop(pic_height);
-    });
-}, 10); //为了兼容火狐不可获取pic的高
 
 //推荐直播
 var module_scene = $('.module_scene');
@@ -339,9 +289,30 @@ $('.same_module a').hover(function () {
     $(this).removeClass("a_hover a_hover_a");
 });
 
-(window.onresize = function () {
-    var contain_videoHeight = $('.contain_video').outerHeight();
+//视频播放
+const dp = new DPlayer({
+    container: document.getElementById('DPlayerVideo'),
+    screenshot: true, //截图
+    volume: 1,
+    live: true,
+    theme: '#FF5983', //主题颜色
+    video: {
+        url: 'http://pdc3kp6os.bkt.clouddn.com/Soda1.mp4' //视频地址
+    }
+});
+
+//视频加载完
+dp.on('canplay', function () {
+    var ContainerOutVideoH = $('.ContainerOutVideo').outerHeight();
     $('.live_list').css({
-        'height': contain_videoHeight - 20,
+        'height': ContainerOutVideoH - 20,
     });
-})();
+});
+
+//页页面的尺寸发生变化
+$(window).resize(function () {
+    var ContainerOutVideoH = $('.ContainerOutVideo').outerHeight();
+    $('.live_list').css({
+        'height': ContainerOutVideoH - 20,
+    });
+});

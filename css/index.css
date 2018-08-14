@@ -302,3 +302,28 @@ body {
     padding: 0px 10px !important;
     font-size: 12px;
 }
+
+/* 视频 */
+
+.ContainerOutVideo {
+    width: 980px;
+}
+
+.dplayer-bar-wrap {
+    bottom: inherit;
+    top: -15px;
+}
+
+.dplayer-controller {
+    padding-bottom: 5px;
+}
+
+.dplayer-controller .dplayer-icons {
+    bottom: inherit;
+    top: 0;
+}
+
+.dplayer.dplayer-hide-controller .dplayer-controller,
+.dplayer.dplayer-hide-controller .dplayer-controller-mask {
+    transform: translateY(calc(100% + 15px));
+}

@@ -10,6 +10,7 @@
     <title>问道</title>
     <link rel="stylesheet" href="../font/iconfont.css">
     <link rel="stylesheet" href="../css/same.css">
+    <link rel="stylesheet" href="../DPlayer/DPlayer.min.css">
     <link rel="stylesheet" href="../css/VideoPlay.css">
     <link rel="stylesheet" href="../css/index.css">
 </head>
@@ -77,55 +78,25 @@
         </div>
         <div class="pic">
             <div class="flex_box">
-                <div class="contain_video">
-                    <video id="html5_player" src="http://video.pearvideo.com/mp4/third/20180630/cont-1378471-11926675-004334-hd.mp4" muted></video>
-                    <div class="control_bar">
-                        <a href="javascript:;" class="control_play_pasue" title="播放">
-                            <i class="iconfont">&#xe618;</i>
-                            <!-- 播放 &#xe618; -->
-                            <!-- 暂停 &#xe663; -->
-                        </a>
-                        <div class="function_btn">
-                            <span class="sound_btn" title="音量">
-                                <i class="iconfont sound">&#xe62f;</i>
-                                <!-- 二级声音 &#xe753; -->
-                                <!-- 静音 &#xe752; -->
-                            </span>
-                            <span class="screen_btn" title="全屏或alt+enter">
-                                <i class="iconfont screen">&#xe600;</i>
-                            </span>
-                            <div class="volumeBar">
-                                <div class="volumewrap">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 8px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p>
-                            <a href="javascript:;" title="进入直播间" class="enter_btn">进入直播间</a>
-                        </p>
-                        <p class="close_btn_p">
-                            <a href="javascript:;" title="关闭静音" class="close_btn">关闭静音</a>
-                        </p>
-                    </div>
+                <div class="ContainerOutVideo">
+                    <div id="DPlayerVideo"></div>
                 </div>
                 <!-- 视频 -->
                 <div class="live_list">
-                    <div data-url="http://video.pearvideo.com/mp4/third/20180630/cont-1378471-11926675-004334-hd.mp4">
-                        <p>梨视频 -- 登月</p>
+                    <div data-url="http://pdc3kp6os.bkt.clouddn.com/Soda1.mp4">
+                        <p>MV -- DJ-Soda</p>
                     </div>
-                    <div data-url="http://video.pearvideo.com/mp4/adshort/20180701/cont-1378827-12366495_adpkg-ad_hd.mp4">
-                        <p>梨视频 -- 辛迪加</p>
+                    <div data-url="http://pdc3kp6os.bkt.clouddn.com/Soda2.mp4">
+                        <p>MV -- DJ-Soda</p>
                     </div>
-                    <div data-url="http://video.pearvideo.com/mp4/short/20180701/cont-1379014-12367927-hd.mp4">
-                        <p>梨视频 -- 非洲留学生</p>
+                    <div data-url="http://pdc3kp6os.bkt.clouddn.com/Soda3.mp4">
+                        <p>MV -- DJ-Soda</p>
                     </div>
-                    <div data-url="http://video.pearvideo.com/mp4/adshort/20180701/cont-1378848-12365976_adpkg-ad_hd.mp4">
-                        <p>梨视频 -- 京沪开跑</p>
+                    <div data-url="http://pdc3kp6os.bkt.clouddn.com/Soda4.mp4">
+                        <p>MV -- DJ-Soda</p>
                     </div>
-                    <div data-url="http://video.pearvideo.com/mp4/adshort/20180701/cont-1378960-12367235_adpkg-ad_hd.mp4">
-                        <p>梨视频 -- 带父飞天</p>
+                    <div data-url="http://pdc3kp6os.bkt.clouddn.com/Soda5.mp4">
+                        <p>MV -- DJ-Soda</p>
                     </div>
                 </div>
                 <!-- <input type="button"> -->
@@ -179,6 +150,7 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../layui/layer.js"></script>
     <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../DPlayer/DPlayer.min.js"></script>
     <script src="../js/same.js"></script>
     <script src="../js/VideoPlay.js"></script>
     <script src="../js/index.js"></script>

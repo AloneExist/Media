@@ -270,6 +270,7 @@ h6 {
     top: 85px;
     left: 0;
     padding-top: 20px;
+    border-radius: 5px;
 }
 
 .HotAPast::before {
