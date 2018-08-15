@@ -29,9 +29,9 @@ body {
 
 .module_scene .same_module,
 .module_news .same_module {
-    width: 256px;
-    margin-left: calc((100% - 1280px) / 10);
-    margin-right: calc((100% - 1280px) / 10);
+    width: 19%;
+    margin-left: .5%;
+    margin-right: .5%;
 }
 
 .module_scene div,

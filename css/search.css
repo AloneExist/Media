@@ -80,8 +80,8 @@
 
 .firstPart .same_module,
 .secondPart .same_module {
-    margin-left: calc((100% - 786px) / 6);
-    margin-right: calc((100% - 786px) / 6);
+    margin-left: 1.666666666%;
+    margin-right: 1.666666666%;
 }
 
 .thirdPart {
@@ -91,7 +91,7 @@
 }
 
 .same_module {
-    width: 252px;
+    width: 30%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
     border-radius: 10px;
 }
