@@ -93,19 +93,24 @@
         });
 
         $(document).on('click', function () {
-            if ($('.Form input[data-target="1"]').val() == '') {
-                $('.Form label[data-target="1"]').css({
+            JudgeTarget(1);
+            JudgeTarget(0);
+        });
+
+        function JudgeTarget(n) {
+            if ($('.Form input[data-target="' + n + '"]').val() == '') {
+                $('.Form label[data-target="' + n + '"]').css({
                     'top': '',
                     'transform': '',
                     'color': '',
                 });
-                $('.Form input[data-target="1"]').css({
+                $('.Form input[data-target="' + n + '"]').css({
                     'background': '',
                     'border': '',
                 });
-                $('.Form input[data-target="1"]').blur();
+                $('.Form input[data-target="' + n + '"]').blur();
             }
-        });
+        }
 
         function initTarget() {
             $('.Form div label').attr({

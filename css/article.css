@@ -624,3 +624,18 @@ blockquote b {
   display: block;
   padding-right: 30px;
 }
+
+.editorAgain {
+  padding: 10px 20px;
+  background: #363636;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+  transition: all .3s linear;
+}
+
+.editorAgain:hover {
+  background: #1b1b1b;
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, .5);
+}

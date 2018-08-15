@@ -16,7 +16,7 @@ $(document).on("click", '.same_a,.user_list a,.second_list a', function () {
 
 var Select_One_Div = $('.Select_One_Div');
 for (var i = 0; i < 12; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
+    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
     Select_One_Div.append(select_one);
 };
 
@@ -197,7 +197,7 @@ $(function () {
 });
 
 for (var i = 0; i < 7; i++) {
-    var five_block = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
+    var five_block = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
     $('.recommed_topic').append(five_block);
 }
 
@@ -217,7 +217,7 @@ var get_more_two = $('<div class="contain_a"><a class="contain_span" href="javas
 var get_more_three = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 
 for (var i = 0; i < 6; i++) {
-    var v_list = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
+    var v_list = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
     Video_list.append(v_list);
 }
 
@@ -264,7 +264,7 @@ $('.collect_answer').find(".top_img_span").html("知识产权保卫战");
 $('.collect_answer').find(".issue").html("该议题被浏览 2223661 次");
 
 for (var i = 0; i < 22; i++) {
-    var c_video = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
+    var c_video = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
     collect_video.append(c_video);
 }
 

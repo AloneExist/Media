@@ -108,165 +108,35 @@ Img_Array[7] = "https://upload-images.jianshu.io/upload_images/4923048-bc60d3577
 Img_Array[8] = "https://upload-images.jianshu.io/upload_images/2879246-28b72f30b23fd91d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240";
 Img_Array[9] = "https://upload-images.jianshu.io/upload_images/11145786-f0bf3ad51abf6b64.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240";
 
-//轮播的讨论
-var carousel_contain = $('<section></section>');
-for (var i = 0; i < 5; i++) {
-    var five_block = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
-    carousel_contain.append(five_block);
-}
-$('.carousel_ul li').append(carousel_contain);
-
 for (var i = 0; i < 8; i++) {
-    var five_block_new = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
+    var five_block_new = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
     $('.recommed_topic').append(five_block_new);
 }
 
-var Issue = new Array(4);
+var Issue = new Array(1);
 Issue[0] = "../img/4.jpg";
-Issue[1] = "../img/5.jpg";
-Issue[2] = "../img/6.jpg";
-Issue[3] = "../img/7.jpg";
 
-$('.carousel_ul li').eq(0).find("img").attr("src", Issue[0]);
-$('.carousel_ul li').eq(0).find("span").html("「分开」这件小事");
-$('.carousel_ul li').eq(0).find(".issue").html("该议题被浏览 61651564 次");
-$('.carousel_ul li').eq(1).find("img").attr("src", Issue[1]);
-$('.carousel_ul li').eq(1).find("span").html("悄声抑郁");
-$('.carousel_ul li').eq(1).find(".issue").html("该议题被浏览 9221631 次");
-$('.carousel_ul li').eq(2).find("img").attr("src", Issue[2]);
-$('.carousel_ul li').eq(2).find("span").html("知识产权保卫战");
-$('.carousel_ul li').eq(2).find(".issue").html("该议题被浏览 2223661 次");
-$('.recommed_topic').find("img").attr("src", Issue[3]);
+$('.recommed_topic').find("img").attr("src", Issue[0]);
 $('.recommed_topic').find("span").html("知识产权保卫战");
 $('.recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
-//结束
-
-//轮播图开始
-var $ul_box = $(".carousel_ul"),
-    $items = $ul_box.children("li"),
-    $pre = $('.left_move'),
-    $next = $('.right_move'),
-    imgWidth = $('.carousel').width();
-imgCount = $items.length;
-
-$ul_box.prepend($items.last().clone());
-$ul_box.append($items.first().clone());
-imgNewWidth = $ul_box.children().length;
-
-$ul_box.css({
-    left: 0 - imgWidth,
-    width: imgNewWidth * imgWidth,
-});
-
-var judge = true;
-var timer = null;
-
-$next.on('click', function () {
-    playnext();
-});
-$pre.on('click', function () {
-    playpre();
-});
-
-var curidx = 0;
-var mov = 1;
-
-function playnext() {
-    if (judge) {
-        judge = false;
-        $ul_box.animate({
-            left: '-=' + mov * imgWidth,
-        }, 500, function () {
-            judge = true;
-            curidx += mov;
-            if (curidx === imgCount) {
-                $ul_box.css({
-                    left: 0 - imgWidth,
-                });
-                curidx = 0;
-            };
-        });
-    };
-};
-
-function playpre() {
-    if (judge) {
-        judge = false;
-        $ul_box.animate({
-            left: '+=' + mov * imgWidth,
-        }, 500, function () {
-            judge = true;
-            curidx -= mov;
-            if (curidx === (-1)) {
-                $ul_box.css({
-                    left: 0 - imgWidth * imgCount,
-                });
-                curidx = imgCount - 1;
-            };
-        });
-    };
-};
-
-function autoPlay() {
-    clearInterval(timer);
-    timer = setInterval(function () {
-        playnext();
-    }, 5000);
-};
-
-autoPlay();
-
-$(window).resize(function () {
-    imgWidth = $('.carousel').width();
-    $ul_box.css({
-        left: 0 - imgWidth,
-        width: imgNewWidth * imgWidth,
-    });
-    autoPlay();
-});
-
-$('.module_ans_que').hover(function () {
-    $pre.css({
-        opacity: 1,
-    });
-    $next.css({
-        opacity: 1,
-    });
-}, function () {
-    $pre.css({
-        opacity: 0,
-    });
-    $next.css({
-        opacity: 0,
-    });
-});
-
-$('.left_move,.right_move').hover(function () {
-    clearInterval(timer);
-}, function () {
-    autoPlay();
-});
 
 //推荐直播
 var module_scene = $('.module_scene');
-
 for (var i = 0; i < 12; i++) {
-    var scene_1 = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
+    var scene_1 = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
     module_scene.append(scene_1);
 }
 var span_scene = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 module_scene.append(span_scene);
-//推荐直播
 
 //推荐视频
 var module_news = $('.module_news');
 for (var i = 0; i < 12; i++) {
-    var news_1 = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
+    var news_1 = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
     module_news.append(news_1);
 }
 var span_scene = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 module_news.append(span_scene);
-//推荐视频
 
 //推荐文章
 var module_hall = $('.module_hall');
@@ -276,7 +146,6 @@ for (var i = 0; i < 10; i++) {
 };
 var span_scene = $('<div class="contain_a"><a class="contain_span" href="articlePage.html" target="_blank"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 module_hall.append(span_scene);
-//推荐文章
 
 //问答专区
 var module_ans_que = $('.module_ans_que');

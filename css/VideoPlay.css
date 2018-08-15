@@ -101,7 +101,6 @@ video {
     margin: 100px 0 0 0;
     position: relative;
     overflow: hidden;
-    height: 700px;
     background: url(../reduce/1.jpg) no-repeat;
     background-size: cover;
     background-position: 0px -300px;
@@ -109,6 +108,7 @@ video {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 50px 0;
 }
 
 .flex_box {
