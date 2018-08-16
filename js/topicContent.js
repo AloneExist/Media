@@ -32,7 +32,7 @@ function remove(n) {
 }
 
 $('.AndJoin').on('click', function () {
-    getNewEditor($(this).parent());
+    getNewEditor($(this).parent(), '.replaceLi');
 });
 
 $('.FirstAndJoin').on('click', function () {
@@ -130,7 +130,7 @@ function getNewFirstEditor(n) {
 
         //参与讨论的按钮
         $('.commentsAndjoin').on('click', function () {
-            getNewEditor($(this));
+            getNewEditor($(this), '.SocialTool');
         });
 
         $('.TitleA a').on('click', function () {
@@ -142,13 +142,13 @@ function getNewFirstEditor(n) {
     });
 }
 
-function getNewEditor(n) {
+function getNewEditor(n, m) {
     var NewGoodEditor = $('<div class="NewGoodEditor"><div class="NewEditor">' +
         '<div id="Newtoolbar" class="NewToolbar" style="width:100%;background: #fff;border-bottom: 1px solid #DDD;"></div>' +
         '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
         'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>');
     CodeSame($('.NewGoodEditor'));
-    n.parent().parent().append(NewGoodEditor);
+    n.parent().parent().find(m).after(NewGoodEditor);
     setTimeout(function () {
         $('.NewGoodEditor').css({
             opacity: '1',
@@ -188,10 +188,10 @@ function getNewEditor(n) {
         if (ContentNew == '') {
             alert('请您写一点内容再发送，当前状态不可发送');
         } else {
-            $('.NewGoodEditor').before('<div class="insertComment"><p class="TwoSecond"></p><span class="oneSpanTWO"></span><span class="TwoSpanTWO"></span><a href="javascript:;" class="ADDCommit">评论</a><a href="javascript:;" class="DEl">删除</a></div>');
-            $(this).parent().parent().parent().parent().find('.insertComment:last .TwoSecond').html(ContentNew);
-            $(this).parent().parent().parent().parent().find('.insertComment:last .oneSpanTWO').html('' + Year + '/' + Month + '/' + Day + '');
-            $(this).parent().parent().parent().parent().find('.insertComment:last .TwoSpanTWO').html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
+            $('.NewGoodEditor').after('<div class="insertComment"><p class="TwoSecond"></p><div><span class="oneSpanTWO"></span><span class="TwoSpanTWO"></span></div><div><a href="javascript:;" class="ADDCommit">评论</a><a href="javascript:;" class="DEl">删除</a></div></div>');
+            $(this).parent().parent().parent().parent().find('.insertComment:first .TwoSecond').html(ContentNew);
+            $(this).parent().parent().parent().parent().find('.insertComment:first .oneSpanTWO').html('' + Year + '/' + Month + '/' + Day + '');
+            $(this).parent().parent().parent().parent().find('.insertComment:first .TwoSpanTWO').html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
         }
 
         $('.NewGoodEditor .w-e-text').html('<p><br></p>');
@@ -204,14 +204,14 @@ function getNewEditor(n) {
                 btn: ['确定', '取消'], //按钮
                 title: '提示',
             }, function (index) {
-                This.parent().remove();
+                This.parent().parent().remove();
                 layer.close(index);
             });
         }); //删除评论
 
-
+        //添加评论
         $('.ADDCommit').on('click', function () {
-            getNewEditor($(this));
+            getNewEditor($(this).parent(), m);
         });
 
     });

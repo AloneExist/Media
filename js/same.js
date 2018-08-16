@@ -145,7 +145,7 @@ if (isChrome && isEdge) {
         };
 
         ST = e.screenY;
-        if (ST >= 1040) {
+        if (ST >= 1000) {
             MoveChange(1, ST);
         } else if (ST >= 0 && ST <= 200) {
             MoveChange(-1, ST);

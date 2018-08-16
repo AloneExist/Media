@@ -272,7 +272,8 @@
     border-left: 2px solid #999;
     margin-top: 20px;
     padding-left: 20px !important;
-    position: relative;
+    justify-content: space-between;
+    align-content: flex-start;
 }
 
 .NewList .insertComment p {
@@ -299,10 +300,9 @@
 }
 
 .insertComment p img {
-    position: relative;
-    top: 5px;
     padding: 0px 5px !important;
     display: inline-block;
+    margin-bottom: -5px;
 }
 
 .insertComment span {
@@ -314,21 +314,18 @@
 }
 
 .insertComment a {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     color: #999;
     font-size: 14px;
     display: none;
+    padding-right: 5px;
 }
 
 .insertComment .ADDCommit {
-    right: 50px;
+    padding-right: 10px;
 }
 
 .insertComment:hover a {
-    display: block;
-    padding-right: 10px;
+    display: inline-block;
 }
 
 .w-e-emoticon-container {
@@ -356,8 +353,7 @@
     height: auto !important;
 }
 
-.w-e-text img,
-.commentsMessage .bottomMessage img {
+.w-e-text img {
     display: inline-block !important;
     position: relative;
     top: 5px;
@@ -465,4 +461,8 @@
 
 .ShowUL {
     display: block;
+}
+
+.w-e-toolbar .w-e-menu {
+    z-index: inherit !important;
 }
