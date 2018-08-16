@@ -24,13 +24,13 @@ $('.leftParts .topA').on('click', function () {
 
 var firstPart = $('.firstPart');
 for (var i = 0; i < 17; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/2.jpg"></a><span>梨视频</span></div>');
+    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
     firstPart.append(select_one);
 };
 
 var secondPart = $('.secondPart');
 for (var i = 0; i < 17; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/dou.gif"></a><span>抖音短视频</span></div>');
+    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>抖音短视频</span></div>');
     secondPart.append(select_one);
 };
 
@@ -176,7 +176,7 @@ SelectDiv.eq(6).find(".bottom_two_span").append("<b>0</b>");
 SelectDiv.eq(6).find("p").html("从2015年我第一次踏上跑步机至今，我已经跑步满三年了，最初的动机是产后减肥，时至今日跑步已成为我的一种生活习惯。很多人认识我源于我2016年那篇关于自律的文字，不可否认跑步是我一切自律行动的开始，是跑步让我拥有了自律和坚韧的品质。总是有人不断问我如何跑步怎么坚持，所以今天我就来说说跑步这件神奇的事。");
 
 for (var i = 0; i < 10; i++) {
-    var five_block = $('<div><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div>');
+    var five_block = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
     $('.recommed_topic').append(five_block);
 }
 

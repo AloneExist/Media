@@ -99,13 +99,11 @@
 .same_module img {
     width: 100%;
     position: relative;
-    top: -15px;
     transition: all .5s;
 }
 
 .same_module a {
     width: 100%;
-    height: 130px;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     display: block;
@@ -156,9 +154,12 @@
     justify-content: space-between;
 }
 
-.recommed_topic div {
-    margin-left: calc((100% - 800px) / 8);
-    margin-right: calc((100% - 800px) / 8);
+.fourPart .recommed_topic {
+    margin: 0;
+}
+
+.fourPart .recommed_topic .issueOutContainer {
+    width: 25%;
 }
 
 .historySearch {

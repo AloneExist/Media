@@ -217,23 +217,15 @@
 }
 
 .Video_list,
-.article_list,
-.answer_list {
+.article_list{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.Video_list,
-.answer_list {
+.Video_list {
     justify-content: flex-start;
-}
-
-.answer_list div {
-    margin-left: calc((100% - 1200px) / 12);
-    margin-right: calc((100% - 1200px) / 12);
-    margin-bottom: 30px;
 }
 
 .Video_list .same_module {
@@ -272,45 +264,6 @@
     width: 45%;
 }
 
-.answer_list div,
-.collect_answer div {
-    width: 200px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.answer_list a,
-.collect_answer a {
-    width: 100%;
-    display: block;
-    position: relative;
-}
-
-.answer_list img {
-    width: 100%;
-}
-
-.answer_list .top_img_span,
-.collect_answer .top_img_span {
-    width: calc(100% - 24px);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 9px 12px;
-    color: #fff;
-    background: linear-gradient(0deg, rgba(0, 0, 0, .6), transparent);
-}
-
-.answer_list .issue,
-.collect_answer .issue {
-    width: calc(100% - 24px);
-    display: block;
-    padding: 9px 12px;
-    font-size: 12px;
-    color: #778087;
-}
-
 .Video_list .contain_a,
 .article_list .contain_a,
 .answer_list .contain_a {
@@ -347,6 +300,11 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
 }
 
+.answer_list .change_circle {
+    position: initial;
+    padding: 0;
+}
+
 .Video_list .change_circle .iconfont,
 .article_list .change_circle .iconfont,
 .answer_list .change_circle .iconfont {
@@ -361,23 +319,15 @@
 }
 
 .collect_video,
-.collect_article,
-.collect_answer {
+.collect_article {
     width: 100%;
     display: none;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.collect_video,
-.collect_answer {
+.collect_video {
     justify-content: flex-start;
-}
-
-.collect_answer div {
-    margin-left: calc((100% - 1200px) / 12);
-    margin-right: calc((100% - 1200px) / 12);
-    margin-bottom: 30px;
 }
 
 .collect_video .same_module {
@@ -405,4 +355,12 @@
 
 .collect_article .other_module {
     width: 100%;
+}
+
+.collect_answer {
+    display: none;
+}
+
+.collect_answer  .recommed_topic {
+    margin: 0;
 }

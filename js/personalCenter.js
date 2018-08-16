@@ -198,16 +198,16 @@ $(function () {
 
 for (var i = 0; i < 7; i++) {
     var five_block = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
-    $('.recommed_topic').append(five_block);
+    $('.Select_Three_Div .recommed_topic').append(five_block);
 }
 
 
 var Issue = new Array(1);
 Issue[0] = "../img/4.jpg";
 
-$('.recommed_topic').find("img").attr("src", Issue[0]);
-$('.recommed_topic').find("span").html("知识产权保卫战");
-$('.recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
+$('.Select_Three_Div .recommed_topic').find("img").attr("src", Issue[0]);
+$('.Select_Three_Div .recommed_topic').find("span").html("知识产权保卫战");
+$('.Select_Three_Div .recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
 
 var Video_list = $('.Video_list');
 var article_list = $('.article_list');
@@ -241,7 +241,7 @@ select_Btn.eq(0).find("p").html("原本打算五一跟朋友跑完半程马拉�
 
 var answer_list = $('.answer_list');
 for (var i = 0; i < 8; i++) {
-    var w_list = $('<div><a href="javascript:;"><img src=""><span class="top_img_span"></span></a><span class="issue"></span></div>');
+    var w_list = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
     answer_list.append(w_list);
 }
 answer_list.append(get_more_three);
@@ -252,16 +252,15 @@ $('.answer_list').find(".issue").html("该议题被浏览 2223661 次");
 
 var collect_video = $('.collect_video');
 var collect_article = $('.collect_article');
-var collect_answer = $('.collect_answer');
 
 for (var i = 0; i < 8; i++) {
-    var collect_answer_list = $('<div><a href="javascript:;"><img src=""><span class="top_img_span"></span></a><span class="issue"></span></div>');
-    collect_answer.append(collect_answer_list);
+    var collect_answer_list = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
+    $('.collect_answer .recommed_topic').append(collect_answer_list);
 }
 
-$('.collect_answer').find("img").attr("src", Issue[0]);
-$('.collect_answer').find(".top_img_span").html("知识产权保卫战");
-$('.collect_answer').find(".issue").html("该议题被浏览 2223661 次");
+$('.collect_answer .recommed_topic').find("img").attr("src", Issue[0]);
+$('.collect_answer .recommed_topic').find(".top_img_span").html("知识产权保卫战");
+$('.collect_answer .recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
 
 for (var i = 0; i < 22; i++) {
     var c_video = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');

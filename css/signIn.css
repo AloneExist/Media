@@ -75,7 +75,7 @@ form div {
     border: 1px solid #528870;
     display: flex;
     align-items: center;
-    padding: 15px 8px 15px 8px;
+    padding: 0 8px;
 }
 
 form label {
@@ -118,6 +118,8 @@ form .span_label {
 form .input_text {
     border: none;
     color: #969696;
+    padding: 15px 0;
+    width: 100%;
 }
 
 .signIn_btn {

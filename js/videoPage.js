@@ -6,7 +6,7 @@ const dp = new DPlayer({
     live: true,
     theme: '#FF5983', //主题颜色
     video: {
-        url: 'http://wsls.bj.bcebos.com/demo.mp4' //视频地址
+        url: 'http://pdc3kp6os.bkt.clouddn.com/Soda1.mp4' //视频地址
     }
 });
 

@@ -628,57 +628,11 @@ h6 {
 }
 
 .recommed_topic .issue {
-    width: 176px;
+    width: calc(100% - 24px);
     display: block;
     padding: 9px 12px;
     font-size: 12px;
     color: #778087;
-}
-
-.chrome_box {
-    width: 450px;
-    height: 126px;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px) perspective(600px) rotateX(10deg);
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px #000;
-    transition: all .5s linear;
-    opacity: 0;
-}
-
-.chrome_box span,
-.chrome_box p,
-.chrome_box a {
-    position: absolute;
-    color: #3B200C;
-}
-
-.chrome_box span {
-    top: 10px;
-    left: 10px;
-}
-
-.chrome_box p {
-    top: 50%;
-    transform: translateY(-50%);
-    left: 60px;
-}
-
-.chrome_box a {
-    bottom: 10px;
-}
-
-.chrome_box a:nth-of-type(1) {
-    left: 30px;
-    color: #DE8100;
-}
-
-.chrome_box a:nth-of-type(2) {
-    right: 30px;
-    color: #34352C;
 }
 
 .layui-layer-title {
