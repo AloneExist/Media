@@ -120,6 +120,8 @@ $('#fileLoad').change(function () {
             alert('不是视频文件，请重新选择');
             $(this).val(''); //清空file的value，为下一次做准备
         } else {
+            //删除多余的Uploadprogress
+            $('.Uploadprogress').remove();
             $('.previewDiv').before(Uploadprogress);
             $('.videoName').text(file_name);
             //点击删除视频
@@ -141,6 +143,7 @@ $('.rightLabel a').on('click', function () {
             'background': '',
             'color': '',
         });
+        $('.rightLabel').data('rightLabel', '');
         $(this).attr('data-a', '0'); //用来判断是否选择了标签
     } else if ($(this).attr('data-a') == '0') {
         OLdLabel.css({
@@ -158,10 +161,10 @@ $('.rightLabel a').on('click', function () {
     }
 });
 
-var onOff = false;
-
 //提交文件
 $('.release a').on('click', function () {
+    //用来判断用户是否有选择标签
+    var onOff = false;
     //拿上一次的数据和本次的数据对比，如果都是相同的，则不上传，反之，则上传
     if ($('#main').data('videoName') != undefined && $('#main').data('videoName')) {
         if ($('#main').data('videoName') == $('.videoName').html() && $('#main').data('CoverPreviewImg') == $('#CoverPreviewImg').attr('src') && $('#main').data('rightLabel') == $('.rightLabel').data('rightLabel') && $('#main').data('VideoTitle') == $('.VideoTitle input').val()) {
@@ -176,37 +179,39 @@ $('.release a').on('click', function () {
         }
     });
     // 检测是否有封面
-    if ($('#CoverPreviewImg').attr('src') != '') {
-        if (onOff) { //检测标签
-            if ($('.VideoTitle input').val() != '') { //检测标题
-                $('.ProgressFixed').css({
-                    'display': 'block',
-                    'opacity': '1',
-                });
-                CircleProgress('.ProgressFixed', '#83FCD8', 6, .5, '45px', '150', '.ProgressFixed'); //进度条
-                //存储数据带#main，查看是否需要上传文件
-                $('#main').data({
-                    'videoName': $('.videoName').html(),
-                    'CoverPreviewImg': $('#CoverPreviewImg').attr('src'),
-                    'rightLabel': $('.rightLabel').data('rightLabel'),
-                    'VideoTitle': $('.VideoTitle input').val(),
-                })
+    if ($('.FileLoadLabel').attr('againupload') == '1') {
+        if ($('#CoverPreviewImg').attr('src') != '') {
+            if (onOff) { //检测标签
+                if ($('.VideoTitle input').val() != '') { //检测标题
+                    $('.ProgressFixed').css({
+                        'display': 'block',
+                        'opacity': '1',
+                    });
+                    CircleProgress('.ProgressFixed', '#83FCD8', 6, .5, '45px', '150', '.ProgressFixed'); //进度条
+                    //存储数据带#main，查看是否需要上传文件
+                    $('#main').data({
+                        'videoName': $('.videoName').html(),
+                        'CoverPreviewImg': $('#CoverPreviewImg').attr('src'),
+                        'rightLabel': $('.rightLabel').data('rightLabel'),
+                        'VideoTitle': $('.VideoTitle input').val(),
+                    })
+                } else {
+                    alert('请输入视频标题');
+                }
             } else {
-                alert('请输入视频标题');
+                alert('请选择一个标签');
             }
         } else {
-            alert('请选择一个标签');
+            alert('请先编辑封面');
         }
     } else {
-        alert('请先编辑封面');
+        alert('请先上传视频');
     }
 });
 
 
 //环形进度条
 function CircleProgress(n, color, width, speed, fontSize, radiusSize, cover) {
-    //移除多余的环形进度条
-    $('.CanvasNumUploadVideo').remove();
     var CircleDraw = $('<div class="CanvasNumUploadVideo"><span class="NumTopCanvasUploadVideo">0%</span>' +
         '<canvas id="DrawProgressUploadVideo"></canvas><span class="WordProgress">文件正在上传，请稍等 ...</span></div>');
     $(n).append(CircleDraw);
@@ -242,16 +247,21 @@ function CircleProgress(n, color, width, speed, fontSize, radiusSize, cover) {
         //绘制百分比
         $('.NumTopCanvasUploadVideo').css('font-size', fontSize);
         $('.NumTopCanvasUploadVideo').html('' + parseInt((Result / 360) * 100) + '%');
+
         if (Result >= 360) {
             clearInterval(TimerStamp);
             $('.WordProgress').html('发布成功');
-            $(cover).on('click', function () {
+        }
+
+        $(cover).on('click', function () {
+            if ($('.WordProgress').html() == '发布成功') {
                 $(this).css('opacity', '0');
                 var This = $(this);
                 setTimeout(function () {
                     This.css('display', 'none');
+                    CircleDraw.remove();
                 }, 500);
-            });
-        }
+            }
+        });
     }, 0);
 }
