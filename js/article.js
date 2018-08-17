@@ -245,14 +245,18 @@ $('.NewEditor .publish_A').on('click', function () {
     '<div class="rightMessage"><div class="commentsName">白矖</div><div class="timeMessage"><span></span><span></span>' +
     '</div></div></div><div class="bottomMessage"><p class="OneFirst"></p><div class="toolBar_Btn"><a href="javascript:;"><i class="iconfont">&#xe606;</i>' +
     '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
-    '</a></div></div></div></li>'
+    '</a><a href="javascript:;" class="DeleteCommentSpecial"><i class="iconfont">&#xe622;</i>删除评论</a></div></div></div></li>'
   );
   var Content = $('.NewEditor .w-e-text').html();
   if (Content == '') {
     alert('请您写一点内容再发送，当前状态不可发送');
   } else {
-    var NumNumber = $('.commentsList li').length;
-    $('.commentsNum span').html(++NumNumber); //用于记录有多少条的评论
+    //监听内容的改变，来统计个数
+    $('.commentsList').bind('DOMNodeInserted', function () {
+      var NumNumber = $('.commentsList li').length;
+      $('.commentsNum span').html(NumNumber); //用于记录有多少条的评论
+    });
+
     $('.commentsList').prepend(addComments);
     $('.commentsList li:first-child .OneFirst').html(Content);
     $('.commentsList li:first-child .timeMessage span').eq(0).html('' + Year + '/' + Month + '/' + Day + '');
@@ -279,6 +283,21 @@ $('.NewEditor .publish_A').on('click', function () {
   $('.toolBar_Btn a').eq(1).on('click', function () {
     getNewEditor($(this));
   });
+
+  //删除评论
+  $('.DeleteCommentSpecial').unbind('click').on('click', function () {
+    var This = $(this);
+    layer.confirm('确定要删除此评论吗?', {
+      btn: ['确定', '取消'], //按钮
+      title: '提示',
+    }, function (index) {
+      This.parent().parent().parent().parent().remove();
+      var NumCommentSpan = parseInt($('.commentsNum span').html());
+      $('.commentsNum span').html(--NumCommentSpan);
+      layer.close(index);
+    });
+  });
+
 });
 
 function addZero(n) {
@@ -397,9 +416,7 @@ function CodeSame(n) {
   n.remove();
 }
 
-$(document).on('click', '.toolBar_Btn a,.NewEditor .publish_A', function () {
-  $('body')
-    .getNiceScroll()
-    .resize();
+$(document).on('click', '.toolBar_Btn a,.NewEditor .publish_A,.layui-layer-btn0', function () {
+  $('body').getNiceScroll().resize();
 });
 //重载滚动条

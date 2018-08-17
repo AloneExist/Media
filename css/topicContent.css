@@ -466,3 +466,7 @@
 .w-e-toolbar .w-e-menu {
     z-index: inherit !important;
 }
+
+.DeleteProblemASpecial {
+    padding-left: 15px;
+}

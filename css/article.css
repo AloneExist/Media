@@ -545,7 +545,8 @@ blockquote b {
   align-items: center;
 }
 
-.toolBar_Btn a:nth-of-type(2) {
+.toolBar_Btn a:nth-of-type(2),
+.toolBar_Btn a:nth-of-type(3) {
   padding-left: 20px;
 }
 

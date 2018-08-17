@@ -78,7 +78,8 @@ function getNewFirstEditor(n) {
         var addComments = $('<li class="countLiNum"><div class="TitleA"><a href="javascript:;" class="TitleAfterA">不合法的身份和第三方第三方电脑</a></div>' +
             '<div class="SocialTool"><a href="javascript:;" class="GuanFocus"><i class="iconfont">&#xe6e0;</i><span>关注</span></a>' +
             '<a href="javascript:;" class="ZanA"><i class="iconfont">&#xe60a;</i><span>赞</span><span class="Zan">2</span></a>' +
-            '<a href="javascript:;" class="commentsAndjoin"><i class="iconfont">&#xe66f;</i><span>参与讨论</span></a></div></li>');
+            '<a href="javascript:;" class="commentsAndjoin"><i class="iconfont">&#xe66f;</i><span>参与讨论</span></a>' +
+            '<a href="javascript:;" class="DeleteProblemASpecial"><i class="iconfont">&#xe622;</i><span>删除问题</span></a></div></li>');
         if (ContentNew == '') {
             alert('请您写一点内容再发送，当前状态不可发送');
         } else {
@@ -132,6 +133,24 @@ function getNewFirstEditor(n) {
         $('.commentsAndjoin').on('click', function () {
             getNewEditor($(this), '.SocialTool');
         });
+
+        // 删除问题
+        $('.DeleteProblemASpecial').unbind('click').on('click', function () {
+            var This = $(this);
+            layer.confirm('确定要删除此评论吗?', {
+                btn: ['确定', '取消'], //按钮
+                title: '提示',
+            }, function (index) {
+                This.parent().parent().remove();
+                var Len = $('.OneList .countLiNum').length;
+                if (Len > 0) {
+                    $('.OneMiddle span').html('' + Len + '个问题');
+                } else {
+                    $('.OneMiddle span').html('添加问题');
+                }
+                layer.close(index);
+            });
+        }); //删除评论
 
         $('.TitleA a').on('click', function () {
             var index = $(this).html();
@@ -205,6 +224,12 @@ function getNewEditor(n, m) {
                 title: '提示',
             }, function (index) {
                 This.parent().parent().remove();
+                var Len = $('.insertComment').length;
+                if (Len > 0) {
+                    $('.TwoMiddle span').html('' + Len + '条评论');
+                } else {
+                    $('.TwoMiddle span').html('添加评论');
+                }
                 layer.close(index);
             });
         }); //删除评论
@@ -262,7 +287,7 @@ $('.middleTopic a').on('click', function () {
 });
 
 //改变滚条的区域
-$(document).on('click', '.commentsAndjoin,.cancel_A,.publish_A,.middleTopic a,.FirstAndJoin,.AndJoin,.ADDCommit,.DEl', function () {
+$(document).on('click', '.commentsAndjoin,.cancel_A,.publish_A,.middleTopic a,.FirstAndJoin,.AndJoin,.ADDCommit,.DEl,.layui-layer-btn0', function () {
     $('body').getNiceScroll().resize();
 });
 

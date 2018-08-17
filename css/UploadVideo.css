@@ -78,6 +78,8 @@
     background: #F5F6EB;
 }
 
+/* 图片预览框 */
+
 .previewDiv {
     width: 100%;
     height: 400px;
@@ -90,6 +92,8 @@
     background: #EDEDED;
     position: relative;
 }
+
+/* 文件的删除 */
 
 .Uploadprogress {
     width: 100%;
@@ -105,24 +109,11 @@
     flex-wrap: wrap;
     align-content: flex-start;
     padding-left: 20px;
-    padding-bottom: 15px;
 }
 
 .videoName {
-    padding: 10px 0;
+    padding: 20px 0;
     overflow-y: auto;
-}
-
-.barProgress {
-    width: 100%;
-    height: 6px;
-    background: #d0d1d0;
-}
-
-.videoProgressBar {
-    height: 100%;
-    background: #363636;
-    transition: all .3s ease;
 }
 
 .rightProgress {
@@ -132,14 +123,18 @@
     align-items: center;
 }
 
-.rightProgress span {
-    font-size: 16px;
+.rightProgress a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #363636;
 }
 
-.rightProgress h2 {
-    font-size: 24px;
-    padding-left: 5px;
-}
+/* 设置标签 */
 
 .SetLabel {
     width: 100%;
@@ -173,9 +168,26 @@
     color: #EDEDED;
 }
 
+/* 视频标题 */
+
+.VideoTitle {
+    width: 100%;
+    margin: 45px 0;
+    position: relative;
+}
+
+.VideoTitle input {
+    border: none;
+    font-size: 24px;
+    color: #363636;
+    width: 100%;
+}
+
+/* 发布 */
+
 .release {
     width: 100%;
-    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
 .release a {
@@ -188,6 +200,8 @@
     color: #EDEDED;
 }
 
+/* 遮罩层 */
+
 .ProgressFixed {
     width: 100%;
     height: 100%;
@@ -196,4 +210,40 @@
     top: 0;
     display: none;
     z-index: 10;
+    transition: all .3s ease;
+    opacity: 1;
+}
+
+/* jcanvas绘制进度条 */
+
+.CanvasNumUploadVideo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+}
+
+.NumTopCanvasUploadVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #83FCD8;
+    transform: translate(-50%, -50%);
+}
+
+#DrawProgressUploadVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.WordProgress {
+    color: #83FCD8;
+    position: absolute;
+    top: calc(50% + 200px);
+    left: 50%;
+    font-size: 25px;
+    transform: translate(-50%, -50%);
 }

@@ -725,28 +725,3 @@ h6 {
     font-size: 80px;
     color: #000;
 }
-
-/* jcanvas绘制进度条 */
-
-.CanvasNumUploadVideo {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, .5);
-}
-
-.NumTopCanvasUploadVideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #83FCD8;
-    transform: translate(-50%, -50%);
-}
-
-#DrawProgressUploadVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
