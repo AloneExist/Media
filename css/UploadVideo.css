@@ -36,7 +36,6 @@
     align-items: center;
     padding: 20px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-    border-radius: 5px 0 0 5px;
 }
 
 .FileLoadLabel .iconfont,
@@ -52,8 +51,6 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    border-radius: 0 5px 5px 0;
-    overflow: hidden;
 }
 
 .editorCoverUpload a .iconfont {
@@ -90,4 +87,113 @@
     justify-content: center;
     color: #d0d1d0;
     font-size: 45px;
+    background: #EDEDED;
+    position: relative;
+}
+
+.Uploadprogress {
+    width: 100%;
+    margin-top: 30px;
+    background: #EDEDED;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.leftProgress {
+    width: 580px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+.videoName {
+    padding: 10px 0;
+    overflow-y: auto;
+}
+
+.barProgress {
+    width: 100%;
+    height: 6px;
+    background: #d0d1d0;
+}
+
+.videoProgressBar {
+    height: 100%;
+    background: #363636;
+    transition: all .3s ease;
+}
+
+.rightProgress {
+    width: calc(100% - 600px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightProgress span {
+    font-size: 16px;
+}
+
+.rightProgress h2 {
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+.SetLabel {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.LeftLabel {
+    font-size: 16px;
+    color: #000;
+}
+
+.LeftLabel span {
+    color: #7a7979;
+    font-size: 14px;
+    padding-right: 80px;
+}
+
+.rightLabel a {
+    background: #EDEDED;
+    padding: 6px 25px;
+    color: #363636;
+    font-size: 14px;
+    transition: all .3s ease;
+}
+
+.rightLabel a:hover {
+    background: #363636;
+    color: #EDEDED;
+}
+
+.release {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.release a {
+    background: #363636;
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    color: #EDEDED;
+}
+
+.ProgressFixed {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 10;
 }

@@ -277,6 +277,52 @@ function CutWord() {
     });
 }
 
+//环形进度条
+function CircleProgress(n, color, width, speed, fontSize, radiusSize, cover) {
+    var CircleDraw = $('<div class="CanvasNumUploadVideo"><span class="NumTopCanvasUploadVideo">0</span>' +
+        '<canvas id="DrawProgressUploadVideo"></canvas></div>');
+    $(n).append(CircleDraw);
+    var previewDivWidth = $('.CanvasNumUploadVideo').outerWidth();
+    var previewDivHeight = $('.CanvasNumUploadVideo').outerHeight();
+    $('#DrawProgressUploadVideo').attr({
+        'width': previewDivWidth,
+        'height': previewDivHeight,
+    });
+    //绘制环形进度条
+    $('#DrawProgressUploadVideo').drawArc({ //绘制环形
+        layer: true, //使动画可以实现
+        name: 'DrawProgress', //动画的名字
+        strokeStyle: color, //进度条的颜色
+        strokeWidth: width, //进度条的宽度
+        rounded: true, //进度条为圆角
+        x: previewDivWidth / 2, //进度条的x轴坐标
+        y: previewDivHeight / 2, //进度条的y轴坐标
+        radius: radiusSize, //进度条的半径
+        start: 0, //开始的角度
+        end: 0, //结束的角度
+    });
+
+    //模拟上传
+    var TimerStamp = null;
+    var Result = 0;
+    TimerStamp = setInterval(function () {
+        Result += speed;
+        //改变环形
+        $('#DrawProgressUploadVideo').animateLayer('DrawProgress', {
+            end: Result,
+        }, 0);
+        //绘制百分比
+        $('.NumTopCanvasUploadVideo').css('font-size', fontSize);
+        $('.NumTopCanvasUploadVideo').html('' + parseInt((Result / 360) * 100) + '%');
+        if (Result >= 360) {
+            clearInterval(TimerStamp);
+            setTimeout(function () {
+                $('.NumTopCanvasUploadVideo').html('发布成功');
+            }, 500);
+        }
+    }, 0);
+}
+
 console.log([
     "                   我佛慈悲",
     "                   _ooOoo_",

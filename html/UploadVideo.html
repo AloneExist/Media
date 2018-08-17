@@ -82,19 +82,64 @@
                     <div class="UPloadVIdeo">
                         <label for="fileLoad" class="FileLoadLabel">
                             <i class="iconfont">&#xe761;</i>
-                            上传视频
+                            <span>上传视频</span>
                         </label>
-                        <input type="file" id="fileLoad">
+                        <input type="file" id="fileLoad" data-Judge="0">
                     </div>
                     <div class="editorCoverUpload">
                         <a href="javascript:;" id="replaceImg">
                             <i class="iconfont">&#xe679;</i>
                             编辑封面
                         </a>
+                        <!-- 截图的功能 -->
+                        <div style="display: none" class="tailoring-container">
+                            <div class="black-cloth" onclick="closeTailor(this)"></div>
+                            <div class="tailoring-content">
+                                <div class="tailoring-content-one">
+                                    <label title="上传图片" for="chooseImg" class="l-btn choose-btn">
+                                        <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden" onchange="selectImg(this)"> 选择图片
+                                    </label>
+                                    <div class="close-tailoring" onclick="closeTailor(this)">
+                                        <i class="iconfont">&#xe61a;</i>
+                                    </div>
+                                </div>
+                                <div class="tailoring-content-two">
+                                    <div class="tailoring-box-parcel">
+                                        <img id="tailoringImg">
+                                    </div>
+                                    <div class="preview-box-parcel">
+                                        <p>图片预览：</p>
+                                        <div class="square previewImg"></div>
+                                    </div>
+                                </div>
+                                <div class="tailoring-content-three">
+                                    <button class="l-btn cropper-reset-btn">复位</button>
+                                    <button class="l-btn cropper-rotate-btn">旋转</button>
+                                    <button class="l-btn cropper-scaleX-btn">换向</button>
+                                    <button class="l-btn sureCut" id="sureCut">确定</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 截图的功能 -->
                     </div>
                     <div class="previewDiv">
-                        <p>预览</p>
+                        <p>封面预览</p>
+                        <img src="" id="CoverPreviewImg">
                     </div>
+                    <div class="SetLabel">
+                        <div class="LeftLabel">设置标签
+                            <span>(请选择1个)</span>
+                        </div>
+                        <div class="rightLabel">
+                            <a href="javascript:;">旅行</a>
+                            <a href="javascript:;">风光</a>
+                            <a href="javascript:;">人像</a>
+                        </div>
+                    </div>
+                    <div class="release">
+                        <a href="javascript:;">发布</a>
+                    </div>
+                    <div class="ProgressFixed"></div>
                 </div>
             </div>
         </div>
@@ -110,18 +155,10 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../layui/layer.js"></script>
     <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/jcanvas.min.js"></script>
     <script src="../js/same.js"></script>
     <script src="../js/cropper.min.js"></script>
-    <script>
-        // $('input[type=file]').change(function () {
-        //     var str = $(this).val();
-        //     if (str !== "") {
-        //         var arr = str.split("\\");
-        //         var file_name = arr[arr.length - 1];
-        //         $('#spanRecord').text(file_name);
-        //     }
-        // });
-    </script>
+    <script src="../js/UploadVideo.js"></script>
 </body>
 
 </html>
