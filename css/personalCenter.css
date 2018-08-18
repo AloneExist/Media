@@ -155,6 +155,15 @@
     padding-top: 25px;
 }
 
+/* 直播间设置 */
+
+.all_content .Select_Six_Div {
+    display: none;
+    width: 80%;
+}
+
+/* 直播间设置 */
+
 .all_content .Select_One_Div {
     justify-content: flex-start;
 }
@@ -217,7 +226,7 @@
 }
 
 .Video_list,
-.article_list{
+.article_list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -361,6 +370,166 @@
     display: none;
 }
 
-.collect_answer  .recommed_topic {
+.collect_answer .recommed_topic {
     margin: 0;
+}
+
+/* 开播设置 */
+
+.SelectStudioSetting {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    margin-top: 30px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.StudioVideo,
+.OnlineStudio,
+.OnlineStudioCover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.OnlineStudioCover {
+    padding: 45px;
+}
+
+.StudioVideo div p {
+    color: #34352C;
+    font-size: 16px;
+    padding: 0 0 6px 0;
+}
+
+.StudioVideo div a {
+    color: #C1194E;
+    font-size: 20px;
+}
+
+.CutHr {
+    width: calc(100% - 60px);
+    margin: 0;
+    margin: 0 auto;
+    border: none;
+    border-bottom: 1px solid #e3e8ec;
+}
+
+.topKindVideo p,
+.MiddleTitle p,
+.CoverToPreviewOnline p {
+    font-size: 20px;
+    color: #34352C;
+    padding: 0 0 10px 0;
+}
+
+.topKindVideo a,
+.topKindVideo span,
+.MiddleTitle a,
+.MiddleTitle span {
+    color: #FF5983;
+    font-size: 12px;
+}
+
+.topKindVideo span {
+    color: #AAB8A3;
+    padding-left: 35px;
+}
+
+.inputAndSave {
+    display: flex;
+}
+
+.inputAndSave a {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    color: #AAA;
+    transition: all .3s ease;
+}
+
+.MiddleTitle input {
+    border: none;
+}
+
+.MiddleTitle .FocusInputText {
+    border: 1px solid #DDD;
+    transition: all .3s ease;
+    padding: 5px 35px 5px 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 200px;
+    height: 20px;
+    font-size: 14px;
+}
+
+.FocusInputText:focus {
+    border: 1px solid #C1194E;
+}
+
+.InputWord {
+    position: relative;
+}
+
+.MiddleTitle span {
+    color: #AAA;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+}
+
+.StarVideoOnline a {
+    padding: 6px 20px;
+    background: #C1194E;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 14px;
+    transition: all .3s ease;
+}
+
+.StarVideoOnline a:hover {
+    background: #FF5983;
+}
+
+.CoverToPreviewOnline {
+    display: flex;
+    padding: 0 0 30px 0;
+}
+
+.CoverToPreviewOnline a {
+    padding: 10px 20px;
+    background: #363636;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: 50px;
+    font-size: 12px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+    transition: all .3s linear;
+}
+
+.CoverToPreviewOnline a:hover {
+    background: #1b1b1b;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, .5);
+}
+
+/* 图片预览框 */
+
+.PreviewDivForCover {
+    width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #AAA;
+    font-size: 35px;
+    border: 2px solid #AAA;
+}
+
+.PreviewDivForCover .ImgCoverPreview {
+    width: 100%;
+    height: 100%;
 }

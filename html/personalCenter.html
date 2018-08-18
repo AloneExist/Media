@@ -8,6 +8,8 @@
     <link rel="icon" href="http://p9ba3amn1.bkt.clouddn.com/title_logo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://p9ba3amn1.bkt.clouddn.com/title_logo.ico" type="image/x-icon">
     <title>问道</title>
+    <link rel="stylesheet" href="../css/cropper.min.css">
+    <link rel="stylesheet" href="../css/ImgCropping.css">
     <link rel="stylesheet" href="../font/iconfont.css">
     <link rel="stylesheet" href="../css/same.css">
     <link rel="stylesheet" href="../css/personalCenter.css">
@@ -226,6 +228,84 @@
                     <div class="recommed_topic"></div>
                 </div>
             </div>
+            <div class="Select_Six_Div Select">
+                <div class="SelectStudioSetting">
+                    <div class="StudioVideo">
+                        <div class="LeftStudioVideo">
+                            <p>直播间ID</p>
+                            <a href="javascript:;">1337446</a>
+                        </div>
+                        <div class="RightStudioVideo">
+                            <p>我的直播间地址</p>
+                            <a href="javascript:;">http://live.bilibili.com/13374496</a>
+                        </div>
+                    </div>
+                    <hr class="CutHr">
+                    <div class="OnlineStudio">
+                        <div class="topKindVideo">
+                            <p>直播分类</p>
+                            <a href="javascript:;">选择分类</a>
+                            <span>必须选择分类才能开播</span>
+                        </div>
+                        <div class="MiddleTitle">
+                            <p>房间标题</p>
+                            <div class="inputAndSave">
+                                <div class="InputWord">
+                                    <input type="text" class="FocusInputText" id="FocusTextForID">
+                                    <span>0/20</span>
+                                </div>
+                                <a href="javascript:;">保存</a>
+                            </div>
+                        </div>
+                        <div class="StarVideoOnline">
+                            <a href="javascript:;">开始直播</a>
+                        </div>
+                    </div>
+                    <hr class="CutHr">
+                    <div class="OnlineStudioCover">
+                        <div class="InsertOnlineCover">
+                            <div class="CoverToPreviewOnline">
+                                <p>直播封面</p>
+                                <a href="javascript:;" id="replaceImg">编辑封面</a>
+                                <!-- 截图的功能 -->
+                                <div style="display: none" class="tailoring-container">
+                                    <div class="black-cloth" onclick="closeTailor(this)"></div>
+                                    <div class="tailoring-content">
+                                        <div class="tailoring-content-one">
+                                            <label title="上传图片" for="chooseImg" class="l-btn choose-btn">
+                                                <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden" onchange="selectImg(this)"> 选择图片
+                                            </label>
+                                            <div class="close-tailoring" onclick="closeTailor(this)">
+                                                <i class="iconfont">&#xe61a;</i>
+                                            </div>
+                                        </div>
+                                        <div class="tailoring-content-two">
+                                            <div class="tailoring-box-parcel">
+                                                <img id="tailoringImg">
+                                            </div>
+                                            <div class="preview-box-parcel">
+                                                <p>图片预览：</p>
+                                                <div class="square previewImg"></div>
+                                            </div>
+                                        </div>
+                                        <div class="tailoring-content-three">
+                                            <button class="l-btn cropper-reset-btn">复位</button>
+                                            <button class="l-btn cropper-rotate-btn">旋转</button>
+                                            <button class="l-btn cropper-scaleX-btn">换向</button>
+                                            <button class="l-btn sureCut" id="sureCut">确定</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 截图的功能 -->
+                            </div>
+                            <div class="PreviewDivForCover">
+                                <span>封面预览</span>
+                                <img src="" id="ImgCoverPreviewForID">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="copyright">
             <p>© Copyright 2018. Powered by DXstudio. All rights reserved.</p>
@@ -241,6 +321,7 @@
     <script src="../layui/layer.js"></script>
     <script src="../js/jquery.nicescroll.min.js"></script>
     <script src="../js/same.js"></script>
+    <script src="../js/cropper.min.js"></script>
     <script src="../js/personalCenter.js"></script>
 </body>
 
