@@ -157,12 +157,19 @@
 
 /* 直播间设置 */
 
-.all_content .Select_Six_Div {
+/* 关注设置 */
+
+.all_content .Select_Six_Div,
+.all_content .Select_seven_Div {
     display: none;
     width: 80%;
 }
 
-/* 直播间设置 */
+.all_content .Select_seven_Div {
+    padding-top: 25px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
 .all_content .Select_One_Div {
     justify-content: flex-start;
@@ -668,4 +675,66 @@
 
 .kind-part span .iconfont {
     cursor: pointer;
+}
+
+/* 关注列表 */
+
+.FocusList {
+    margin-left: 12%;
+    width: 280px;
+}
+
+.FocusList ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FocusList li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.FocusList a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background: transparent;
+    transition: all .3s linear;
+}
+
+.FocusList a:hover {
+    background: #dbdada;
+}
+
+.FocusList a div {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #a0a0a0;
+}
+
+.FocusList .iconfont {
+    color: #fff;
+    font-size: 16px;
+}
+
+.FocusList a span {
+    padding-left: 20px;
+    color: #333;
+    font-size: 15px;
+}
+
+.problemFocus {
+    width: 60%;
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
 }

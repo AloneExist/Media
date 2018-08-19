@@ -9,7 +9,7 @@ $('.nav .same_a').on('click', function () {
     });
 });
 
-$(document).on("click", '.same_a,.user_list a,.second_list a', function () {
+$(document).on("click", '.same_a,.user_list a,.second_list a,.FocusList a', function () {
     $("body").getNiceScroll().resize();
 });
 //通过class绑定click事件，可以只点击一次就触发事件，否则需要点击两次
@@ -507,5 +507,18 @@ $('.Kind').on('click', function () {
         'display': '',
         'top': '',
         'opacity': '',
+    });
+});
+
+// 关注的列表
+var oLdFocusA = $('.FocusList a').eq(0);
+$('.FocusList a').on('click', function () {
+    var index = $('.FocusList a').index(this);
+    oLdFocusA.css({
+        'background': '',
+    })
+    oLdFocusA = $(this);
+    $(this).css({
+        'background': '#dbdada',
     });
 });
