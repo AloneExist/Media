@@ -39,7 +39,7 @@ img {
 }
 
 .presetFirstP {
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     font-size: 45px;
     color: #376956;
 }
@@ -60,7 +60,7 @@ img {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .Form span input {
@@ -99,7 +99,8 @@ img {
 
 /* .Newpreview {} */
 
-.Form span a {
+.Form span #replaceImg,
+.Form span .editArticle {
     padding: 10px 20px;
     background: #363636;
     color: #fff;
@@ -109,7 +110,8 @@ img {
     transition: all .3s linear;
 }
 
-.Form span a:hover {
+.Form span #replaceImg,
+.Form span .editArticle {
     background: #1b1b1b;
     box-shadow: 8px 8px 10px rgba(0, 0, 0, .5);
 }
@@ -131,4 +133,52 @@ img {
     color: #376956;
     font-size: 15px;
     padding-bottom: 20px;
+}
+
+/* 下拉列表 */
+
+.SelectList {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.SelectList ul {
+    list-style: none;
+}
+
+.SelectList a {
+    width: calc(100% - 50px);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #d0d1d0;
+    color: #8b8c8b;
+}
+
+.SelectList .FirstEditorArticle {
+    padding: 21.5px 25px;
+}
+
+.SelectList .iconfont {
+    padding-right: 10px;
+}
+
+.MoveTop {
+    width: 100%;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: all .5s ease;
+}
+
+.MoveTop a:hover {
+    color: #376956;
+}
+
+.MoveTop a {
+    padding: 10px 25px;
 }

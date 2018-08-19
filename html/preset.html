@@ -23,15 +23,62 @@
                     <form>
                         <span>
                             <div>
-                                <label>编辑文章标题</label>
-                                <input type="text">
+                                <label class="Titlelabel">编辑文章标题</label>
+                                <input type="text" class="BtnInput">
                             </div>
                         </span>
                         <span>
-                            <div>
-                                <label>编辑文章类型</label>
-                                <input type="text">
-                            </div>
+                            <ul class="SelectList">
+                                <li>
+                                    <a href="javascript:;" class="FirstEditorArticle">编辑文章类型</a>
+                                </li>
+                                <li class="MoveTop">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="iconfont">&#xe653;</i>
+                                                互联网
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="iconfont">&#xe608;</i>
+                                                法律
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="iconfont">&#xe603;</i>
+                                                医药
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="iconfont">&#xe623;</i>
+                                                经济
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="iconfont">&#xe639;</i>
+                                                历史
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="iconfont">&#xe700;</i>
+                                                理工
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="iconfont">&#xe62e;</i>
+                                                艺术
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </span>
                         <span style="justify-content: space-around">
                             <a href="javascript:;" id="replaceImg">编辑封面图片</a>
@@ -80,71 +127,45 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/cropper.min.js"></script>
     <script>
-        $('.Form div label,.Form div input').on('click', function () {
-            initTarget();
-            $(this).parent().find('label').attr({
-                'data-target': '1',
-            });
-            $(this).parent().find('input').attr({
-                'data-target': '1',
-            });
-            targetChange();
-            stopBubble();
-        });
-
-        $(document).on('click', function () {
-            JudgeTarget(1);
-            JudgeTarget(0);
-        });
-
-        function JudgeTarget(n) {
-            if ($('.Form input[data-target="' + n + '"]').val() == '') {
-                $('.Form label[data-target="' + n + '"]').css({
-                    'top': '',
-                    'transform': '',
-                    'color': '',
-                });
-                $('.Form input[data-target="' + n + '"]').css({
-                    'background': '',
-                    'border': '',
-                });
-                $('.Form input[data-target="' + n + '"]').blur();
-            }
-        }
-
-        function initTarget() {
-            $('.Form div label').attr({
-                'data-target': '0',
-            });
-            $('.Form div input').attr({
-                'data-target': '0',
-            });
-        }
-
-        function targetChange() {
-            if ($('.Form input[data-target="0"]').val() == '') {
-                $('.Form label[data-target="0"]').css({
-                    'top': '',
-                    'transform': '',
-                    'color': '',
-                });
-                $('.Form input[data-target="0"]').css({
-                    'background': '',
-                    'border': '',
-                });
-                $('.Form input[data-target="0"]').blur();
-            }
-            $('.Form label[data-target="1"]').css({
+        $('.Titlelabel,.BtnInput').on('click', function () {
+            $('.Titlelabel').css({
                 'top': -25,
                 'transform': 'none',
                 'color': '#376956',
             });
-            $('.Form input[data-target="1"]').css({
+            $('.BtnInput').css({
                 'background': '#fff',
                 'border': '2px solid #376956',
             });
-            $('.Form input[data-target="1"]').focus();
-        }
+            $('.BtnInput').focus();
+            stopBubble();
+        });
+
+        $(document).on('click', function () {
+            if ($('.BtnInput').val() == '') {
+                $('.Titlelabel').css({
+                    'top': '',
+                    'transform': '',
+                    'color': '',
+                });
+                $('.BtnInput').css({
+                    'background': '',
+                    'border': '',
+                });
+                $('.BtnInput').blur();
+            }
+        });
+
+        // 点击显示下载按钮
+        $('.FirstEditorArticle').on('click', function () {
+            $('.MoveTop').css('transform', 'scaleY(1)');
+            $(this).css('color', '#376956');
+        });
+
+        $('.MoveTop a').on('click', function () {
+            $('.FirstEditorArticle').html($(this).html());
+            $('.MoveTop').css('transform', '');
+        });
 
         //取消冒泡
         function stopBubble(e) {
@@ -156,6 +177,7 @@
                 window.event.cancelBubble = true;
         }
 
+        //编辑图片
         $('#replaceImg').on('click', function () {
             $('.tailoring-container').toggle();
         });
@@ -260,10 +282,10 @@
 
         //编辑按钮判断
         $('.editArticle').on('click', function () {
-            if ($('.Form input').eq(0).val() == '') {
+            if ($('.BtnInput').val() == '') {
                 alert('请您填写文章标题');
-            } else if ($('.Form input').eq(1).val() == '') {
-                alert('请您填写文章类型');
+            } else if ($('.FirstEditorArticle').html() == '编辑文章类型') {
+                alert('请您选择文章类型')
             } else if ($('#finalImg').attr('src') == '') {
                 alert('请您选择文章的封面');
             } else {
