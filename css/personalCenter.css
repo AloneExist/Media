@@ -533,3 +533,139 @@
     width: 100%;
     height: 100%;
 }
+
+/* 选择分类 */
+
+.SelectKindFixed {
+    position: fixed;
+    top: calc(50% + 20px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, .1);
+    width: 420px;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .2s ease;
+    display: none;
+}
+
+.CancleBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: #999;
+    transform: rotate(0deg);
+    transition: all .3s ease;
+    font-size: 14px;
+}
+
+.CancleBtn:hover {
+    transform: rotate(180deg);
+}
+
+.KindVideoOnline p {
+    color: #FF5983;
+}
+
+.FourKindVideo {
+    padding: 20px 0 0 0;
+}
+
+.FourKindVideo ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.FourKindVideo li {
+    flex: 1;
+    border-right: 1px solid #DDD;
+}
+
+.FourKindVideo li:last-child {
+    border: none;
+}
+
+.FourKindVideo a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    transition: all .3s ease;
+    font-size: 14px;
+}
+
+.FourKindVideo a:hover {
+    color: #FF5983;
+}
+
+/* 分割线 */
+
+.CutLineForDiv {
+    width: 100%;
+    height: 5px;
+    background-image: -webkit-radial-gradient(circle, transparent, transparent 3px, #FF5983 3px, #FF5983 5px, transparent 5px, transparent);
+    background-image: -moz-radial-gradient(circle, transparent, transparent 3px, #FF5983 3px, #FF5983 5px, transparent 5px, transparent);
+    background-image: radial-gradient(circle, transparent, transparent 3px, #FF5983 3px, #FF5983 5px, transparent 5px, transparent);
+    background-size: 10px 10px;
+    margin: 10px 0 15px 0;
+}
+
+.specificKindStle {
+    height: 150px;
+}
+
+.specificKindStle .Kind {
+    float: left;
+    padding: 0 12px;
+    height: 26px;
+    border-radius: 12px;
+    overflow: hidden;
+    line-height: 26px;
+    font-size: 12px;
+    display: block;
+    margin: 6px 0 0 10px;
+    color: #fff;
+    box-sizing: border-box;
+    background: #FF5983;
+    transition: all .3s ease;
+}
+
+.specificKindStle .Kind:hover {
+    background: #C1194E;
+}
+
+/* 清浮动 */
+
+.OneKindDiv:before,
+.OneKindDiv:after {
+    content: "";
+    display: table;
+}
+
+.OneKindDiv:after {
+    clear: both;
+}
+
+.kind-part {
+    display: none;
+}
+
+.kind-part div {
+    height: 120px;
+}
+
+.kind-part span {
+    float: right;
+}
+
+.kind-part span .iconfont {
+    cursor: pointer;
+}
