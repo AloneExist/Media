@@ -29,16 +29,14 @@
 }
 
 .contain_tou_photo a {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
     display: block;
     margin-right: 35px;
 }
 
 .contain_tou_photo a img {
-    width: 100%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
 .contain_tou_photo span {
@@ -732,9 +730,335 @@
     font-size: 15px;
 }
 
-.problemFocus {
+.problemFocus,
+.AuthorFocus,
+.courseFocus,
+.IssueFocus,
+.liveFocus {
     width: 60%;
     display: none;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.IssueFocus {
+    justify-content: space-between;
+}
+
+.user-base-information {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.AuthorFocus .user-base-information:first-child {
+    padding-top: 0;
+}
+
+.contain-two-part {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.user-head-photo img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.user-name-focus-article {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+}
+
+.user-name-focus-article a {
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.base-message,
+.simple-introduce {
+    width: 100%;
+}
+
+.base-message span {
+    color: #969696;
+    font-size: 12px;
+}
+
+.base-message span:nth-of-type(2n) {
+    border-right: 1px solid #969696;
+    padding-right: 8px;
+}
+
+.base-message span:nth-of-type(2n+1) {
+    padding-left: 5px;
+}
+
+.base-message span:last-child {
+    border: none;
+    padding: 0;
+}
+
+.base-message span:first-child {
+    padding: 0;
+}
+
+.simple-introduce p {
+    color: #969696;
+    font-size: 12px;
+}
+
+.focus-btn a {
+    padding: 8px 15px;
+    background: #969696;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    transition: all .3s ease;
+}
+
+.focus-btn .change-color {
+    background: #1b1b1b;
+}
+
+.focus-btn .iconfont {
+    font-size: 12px;
+    padding-right: 5px;
+}
+
+.Issue-main-content {
+    width: 382px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    margin-bottom: 80px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.photp-title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.photp-title img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.photp-title p {
+    padding-left: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.problem-num,
+.Focus-person-num {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.problem-num span,
+.Focus-person-num span {
+    width: 100%
+}
+
+.introduce-for-issue {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.introduce-for-issue p {
+    text-indent: 28px;
+    font-size: 14px;
+    height: 57px;
+    overflow: hidden;
+}
+
+.main-host-institution {
+    padding: 10px 0;
+}
+
+.main-host-institution .iconfont,
+.main-host-institution span {
+    font-size: 15px;
+}
+
+.main-host-institution span:nth-of-type(1) {
+    padding: 0 10px 0 5px;
+}
+
+.problem-Focus-person {
+    display: flex;
+}
+
+.problem-Focus-person div {
+    width: 50%;
+    text-align: center;
+}
+
+.problem-Focus-person a {
+    display: flex;
+    flex-wrap: wrap;
+    color: #000;
+}
+
+.problem-Focus-person span:nth-of-type(2n) {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.problem-Focus-person span:nth-of-type(2n+1) {
+    font-size: 15px;
+}
+
+.focus-whether-not {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.focus-whether-not a {
+    display: block;
+    color: #fff;
+    background: #FF5983;
+    transition: all .3s ease;
+    padding: 8px 45px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.focus-whether-not a:hover {
+    background: #C1194E;
+}
+
+.problem-content {
+    width: calc(100% - 30px);
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.stay-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+}
+
+.problem-content a {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    transition: all .3s ease;
+}
+
+.problem-content .skip-page:hover {
+    color: #528870;
+}
+
+.problem-content span {
+    color: #7C8489;
+    font-size: 14px;
+}
+
+.all-live-content {
+    width: 100%;
+}
+
+.live-three-part {
+    width: 33.333333333333%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 10px;
+}
+
+.live-message {
+    width: 250px;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+}
+
+.photo-title-focus-btn {
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.photo-title-focus-btn div {
+    padding-left: 25px;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.photo-title-focus-btn div p {
+    width: 100%;
+    color: #333;
+    font-size: 14px;
+}
+
+.photo-title-focus-btn div a {
+    color: #999;
+    border: 1px solid #dfdfdf;
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    transition: all .3s ease;
+    background: transparent;
+}
+
+.photo-title-focus-btn div .change-color-background {
+    border: 1px solid transparent;
+    background: #FF5983;
+    color: #fff;
+}
+
+.img-a {
+    display: block;
+}
+
+.img-a img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.live-room-status {
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+}
+
+.live-room-status p {
+    color: #999;
+    font-size: 12px;
+    padding-right: 20px;
+}
+
+.live-room-status a {
+    color: #FF5983;
+    font-size: 12px;
 }

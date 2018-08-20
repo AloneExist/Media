@@ -44,6 +44,7 @@ blockquote b {
   width: 55px;
   height: 55px;
   border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
 
 .right_message {
@@ -234,11 +235,7 @@ blockquote b {
 }
 
 .PhotoImg {
-  width: 50px;
-  height: 50px;
   display: block;
-  border-radius: 50%;
-  overflow: hidden;
   margin-right: 20px;
   position: absolute;
   top: 0;
@@ -246,7 +243,10 @@ blockquote b {
 }
 
 .PhotoImg img {
-  width: 100%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
 
 .TextEdit {

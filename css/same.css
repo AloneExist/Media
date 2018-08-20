@@ -79,15 +79,11 @@ h6 {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .2);
 }
 
-.left_list .photo_cicle {
+.photo_cicle img {
     width: 45px;
     height: 45px;
-    overflow: hidden;
     border-radius: 50%;
-}
-
-.photo_cicle img {
-    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
 
 .logo {

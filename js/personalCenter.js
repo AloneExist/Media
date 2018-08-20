@@ -512,13 +512,111 @@ $('.Kind').on('click', function () {
 
 // 关注的列表
 var oLdFocusA = $('.FocusList a').eq(0);
+var oLdFocusSame = $('.Focus-Same').eq(0);
 $('.FocusList a').on('click', function () {
     var index = $('.FocusList a').index(this);
     oLdFocusA.css({
         'background': '',
-    })
+    });
+    oLdFocusSame.css('display', '');
+    oLdFocusSame = $('.Focus-Same').eq(index);
     oLdFocusA = $(this);
     $(this).css({
         'background': '#dbdada',
     });
+    $('.Focus-Same').eq(index).css('display', 'flex');
+});
+
+for (var i = 0; i < 5; i++) {
+    var userBaseInformation = $('<div class="user-base-information"><div class="contain-two-part"><div class="user-head-photo">' +
+        '<img src="../img/11.jpg"></div><div class="user-name-focus-article"><a href="javascript:;">wumingzhi111</a><div class="base-message">' +
+        '<span class="base-focus">关注</span><span class="base-num">39</span><span class="base-article">文章</span><span class="base-num">527</span>' +
+        '</div><div class="simple-introduce"><p>遇见更好的自己</p></div></div></div><div class="focus-btn"><a href="javascript:;" data-focusWhetherOrNot="1"><i class="iconfont">&#xe642;</i>' +
+        '<span>已关注</span></a></div></div>');
+    $('.AuthorFocus').append(userBaseInformation);
+}
+
+// 关注按钮
+$('.focus-btn a').on('click', function () {
+    if ($(this).attr('data-focusWhetherOrNot') == '1') {
+        $(this).attr('data-focusWhetherOrNot', '0');
+        $(this).find('.iconfont').html('&#xe604;');
+        $(this).find('span').html('关注');
+        $(this).addClass('change-color');
+    } else {
+        $(this).attr('data-focusWhetherOrNot', '1');
+        $(this).find('.iconfont').html('&#xe642;');
+        $(this).find('span').html('已关注');
+        $(this).removeClass('change-color');
+    }
+});
+
+for (var i = 0; i < 5; i++) {
+    var IssueMainContent = $('<div class="Issue-main-content"><div class="photp-title"><a href="topicContent.html" target="_blank"><img src="../img/newPeople.jpg"></a><p>职场新人须知</p>' +
+        '</div><div class="introduce-for-issue"><p>盛夏，骄阳和暴雨在天空轮番控场，捉摸不定，路人衣衫被淋透又晒干，有点像初入职场的你，在「毕业生」和' +
+        '「职场新人」角色切换中无所适从的样子。要如何才能快速脱掉身上的「学生气」？工作中人际关系怎么处理？提升工作效率有什么方法？本期圆桌，一起来聊聊初入' +
+        '职场会面临的种种疑惑。</p></div><div class="main-host-institution"><i class="iconfont">&#xe60c;</i><span>组织单位</span><span>知乎圆桌</span>' +
+        '</div><div class="problem-Focus-person"><div class="problem-num"><a href="topicContent.html" target="_blank"><span>问题</span><span>2</span>' +
+        '</div><div class="Focus-person-num"><a href="topicContent.html" target="_blank"><span>关注者</span><span>52</span></a></div></div>' +
+        '<div class="focus-whether-not"><a href="javascript:;" data-Whether="1">已关注</a></div></div>');
+    $('.IssueFocus').append(IssueMainContent);
+}
+
+$('.focus-whether-not a').on('click', function () {
+    if ($(this).attr('data-Whether') == '1') {
+        $(this).attr('data-Whether', '0');
+        $(this).css('background', '#C1194E');
+        $(this).html('关注议题');
+    } else {
+        $(this).attr('data-Whether', '1');
+        $(this).css('background', '');
+        $(this).html('已关注');
+    }
+});
+
+$('.introduce-for-issue p').each(function () {
+    var maxwidth = 78;
+    if ($(this).text().length > maxwidth) {
+        $(this).text($(this).text().substring(0, maxwidth));
+        $(this).html($(this).html() + "...");
+    };
+});
+
+for (var i = 0; i < 5; i++) {
+    var problemContent = $('<div class="problem-content"><a href="AnswerQuestion.html" target="_blank" class="skip-page">' +
+        '林丹用左手打球对他的成功到底有没有影响？</a><div class="time-answer-focus-num"><span>2018-07-21</span><span>&nbsp;·&nbsp;</span>' +
+        '<span>13个回答</span><span>&nbsp;·&nbsp;</span><span>60个关注</span></div><a href="javascript:;" class="stay-right">' +
+        '<i class="iconfont">&#xe622;</i></a></div>');
+    $('.problemFocus').append(problemContent);
+}
+
+$('.stay-right').on('click', function () {
+    var This = $(this);
+    layer.confirm('确定要取消关注吗?', {
+        btn: ['确定', '取消'], //按钮
+        title: '提示',
+    }, function (index) {
+        This.parent().remove();
+        layer.close(index);
+    });
+});
+
+for (var i = 0; i < 5; i++) {
+    var liveThreePart = $('<div class="live-three-part"><div class="live-message"><div class="photo-title-focus-btn">' +
+        '<a href="videoPage.html" target="_blank" class="img-a"><img src="../img/11.jpg"></a><div><p>养乐多了</p>' +
+        '<a href="javascript:;" class="btn-whether-focus" data-btn-focus="1">取消关注</a></div></div><div class="live-room-status"><p>直播间</p>' +
+        '<a href="videoPage.html" target="_blank" class="status">直播中</a></div></div></div>');
+    $('.all-live-content').append(liveThreePart);
+}
+
+$('.btn-whether-focus').on('click', function () {
+    if ($(this).attr('data-btn-focus') == '1') {
+        $(this).attr('data-btn-focus', '0');
+        $(this).addClass('change-color-background');
+        $(this).html('关注');
+    } else {
+        $(this).attr('data-btn-focus', '1');
+        $(this).removeClass('change-color-background');
+        $(this).html('取消关注');
+    }
 });
