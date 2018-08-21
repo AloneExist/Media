@@ -371,14 +371,6 @@
     width: 100%;
 }
 
-.collect_answer {
-    display: none;
-}
-
-.collect_answer .recommed_topic {
-    margin: 0;
-}
-
 /* 开播设置 */
 
 .SelectStudioSetting {

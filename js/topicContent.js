@@ -20,7 +20,6 @@ $(".describe p").each(function () {
     };
 });
 
-
 function add(n) {
     n.find('.iconfont').addClass('HoverA');
     n.find('span').addClass('HoverA');
@@ -305,4 +304,22 @@ $('.TwoList').on('DOMNodeInserted', function () {
     if (Len > 0) {
         $('.TwoMiddle span').html('' + Len + '条评论');
     };
+});
+
+// 最佳评论
+for (var i = 0; i < 5; i++) {
+    var BestDiscuss = $('<div class="MainMessageImg ChangeImgMessage"><a href="javascript:;"><img src="../img/11.jpg"></a><div class="owner"><p>邹小强</p>' +
+        '<p class="discuss-number">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</p>' +
+        '</div></div>');
+    $('.bottomRightTopic .Hold').append(BestDiscuss);
+}
+
+// 最佳评论的限定字数
+// 限定100个字
+$('.discuss-number').each(function () {
+    var maxwidth = 100;
+    if ($(this).text().length > maxwidth) {
+        $(this).text($(this).text().substring(0, maxwidth));
+        $(this).html($(this).html() + "...");
+    }
 });

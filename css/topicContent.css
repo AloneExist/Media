@@ -400,6 +400,11 @@
     width: 50px;
     height: 50px;
     border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.bottomRightTopic a img {
+    border-radius: 50%;
 }
 
 .owner p {
@@ -421,10 +426,6 @@
 
 .owner p:first-child {
     padding-bottom: 8px;
-}
-
-.bestComments {
-    padding-top: 35px;
 }
 
 .ChangeMainMessage img {

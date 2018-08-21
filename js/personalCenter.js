@@ -253,15 +253,6 @@ $('.answer_list').find(".issue").html("该议题被浏览 2223661 次");
 var collect_video = $('.collect_video');
 var collect_article = $('.collect_article');
 
-for (var i = 0; i < 8; i++) {
-    var collect_answer_list = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
-    $('.collect_answer .recommed_topic').append(collect_answer_list);
-}
-
-$('.collect_answer .recommed_topic').find("img").attr("src", Issue[0]);
-$('.collect_answer .recommed_topic').find(".top_img_span").html("知识产权保卫战");
-$('.collect_answer .recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
-
 for (var i = 0; i < 22; i++) {
     var c_video = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
     collect_video.append(c_video);
