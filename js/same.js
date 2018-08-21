@@ -24,13 +24,9 @@ $(function () {
         var clientHeight = getBigHeight();
         var osTop = document.documentElement.scrollTop || document.body.scrollTop;
         if (osTop >= clientHeight) { //如果滚动高度大于可视区域高度，则显示回到顶部按钮
-            toTop.css({
-                opacity: 1,
-            });
+            toTop.css('display', 'block');
         } else { //否则隐藏
-            toTop.css({
-                opacity: 0,
-            });
+            toTop.css('display', 'none');
         };
         //判断当点击回到顶部按钮后，滚动条在回滚过程中，若手动滚动滚动条，则清除定时器
         if (!isTop) {

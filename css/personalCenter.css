@@ -963,6 +963,17 @@
     right: 30px;
 }
 
+.stay-right .iconfont {
+    font-size: 20px;
+    color: #000;
+    transition: all .3s ease;
+    font-weight: 700;
+}
+
+.stay-right:hover .iconfont {
+    color: #FF5983;
+}
+
 .problem-content a {
     font-size: 18px;
     font-weight: 700;
@@ -1061,4 +1072,68 @@
 .live-room-status a {
     color: #FF5983;
     font-size: 12px;
+}
+
+.course-main-content {
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.course-main-content img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.title-introduce-article-focus-num {
+    padding-left: 30px;
+}
+
+.title-introduce-article-focus-num a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    transition: all .3s ease;
+}
+
+.title-introduce-article-focus-num a:hover {
+    color: #FF5983;
+}
+
+.title-introduce-article-focus-num p {
+    color: #333;
+    font-size: 15px;
+    padding: 5px 0 0 0;
+}
+
+.title-introduce-article-focus-num span {
+    color: #AAA;
+    font-size: 14px;
+}
+
+.cancel-focus-btn {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cancel-focus-btn .iconfont {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    transition: all .3s ease;
+}
+
+.cancel-focus-btn:hover .iconfont {
+    color: #FF5983
 }

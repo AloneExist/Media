@@ -223,6 +223,8 @@ body {
 
 .ContainerOutVideo {
     width: 55%;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .dplayer-bar-wrap {

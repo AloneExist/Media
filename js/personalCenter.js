@@ -582,6 +582,7 @@ $('.introduce-for-issue p').each(function () {
     };
 });
 
+// stay-right
 for (var i = 0; i < 5; i++) {
     var problemContent = $('<div class="problem-content"><a href="AnswerQuestion.html" target="_blank" class="skip-page">' +
         '林丹用左手打球对他的成功到底有没有影响？</a><div class="time-answer-focus-num"><span>2018-07-21</span><span>&nbsp;·&nbsp;</span>' +
@@ -590,7 +591,16 @@ for (var i = 0; i < 5; i++) {
     $('.problemFocus').append(problemContent);
 }
 
-$('.stay-right').on('click', function () {
+// cancel-focus-btn
+
+for (var i = 0; i < 5; i++) {
+    var courseMainContent = $('<div class="course-main-content"><img src="../img/11.jpg"><div class="title-introduce-article-focus-num">' +
+        '<a href="javascript:;">自由财务评论</a><p>霞乃云魂魄 蜂是花精神</p><span>共</span><span>43</span><span>篇文章</span><span>·</span>' +
+        '<span>8432人关注</span></div><a href="javascript:;" class="cancel-focus-btn"><i class="iconfont">&#xe622;</i></a></div>');
+    $('.courseFocus').append(courseMainContent);
+}
+
+$('.stay-right,.cancel-focus-btn').on('click', function () {
     var This = $(this);
     layer.confirm('确定要取消关注吗?', {
         btn: ['确定', '取消'], //按钮
