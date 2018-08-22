@@ -9,7 +9,7 @@ $('.nav .same_a').on('click', function () {
     });
 });
 
-$(document).on("click", '.same_a,.user_list a,.second_list a,.FocusList a', function () {
+$(document).on("click", '.same_a,.user_list a,.FocusList a', function () {
     $("body").getNiceScroll().resize();
 });
 //通过class绑定click事件，可以只点击一次就触发事件，否则需要点击两次
@@ -28,13 +28,8 @@ $('.nav .same_a').on('click', function () {
         display: 'none',
     });
     oLd_div = $('.all_content .Select').eq(index);
-    $('.all_content .Select')
-        .eq(index)
-        .css({
-            display: 'flex',
-        });
-    $('.lastLong').css({
-        'display': 'none',
+    $('.all_content .Select').eq(index).css({
+        display: 'flex',
     });
 });
 
@@ -249,64 +244,6 @@ answer_list.append(get_more_three);
 $('.answer_list').find("img").attr("src", Issue[0]);
 $('.answer_list').find(".top_img_span").html("知识产权保卫战");
 $('.answer_list').find(".issue").html("该议题被浏览 2223661 次");
-
-var collect_video = $('.collect_video');
-var collect_article = $('.collect_article');
-
-for (var i = 0; i < 22; i++) {
-    var c_video = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
-    collect_video.append(c_video);
-}
-
-$('.same_module a').hover(function () {
-    $(this).addClass("a_hover a_hover_a");
-}, function () {
-    $(this).removeClass("a_hover a_hover_a");
-});
-
-var select_Article = $('<div class="Select_Much" style="display:flex;"></div>');
-
-for (var i = 0; i < 7; i++) {
-    var wen_list = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>');
-    select_Article.append(wen_list);
-}
-
-collect_article.append(select_Article);
-
-select_Article.eq(0).find("img").attr("src", ImgArray[0]);
-select_Article.eq(0).find(".under_line").html("五一，差点只剩半条命！");
-select_Article.eq(0).find(".bottom_first_a").html("5312Ana");
-select_Article.eq(0).find(".bottom_two_a").append("<b>20</b>");
-select_Article.eq(0).find(".bottom_first_span").append("<b>19</b>");
-select_Article.eq(0).find(".bottom_two_span").append("<b>1</b>");
-select_Article.eq(0).find("p").html("原本打算五一跟朋友跑完半程马拉松后就去北海拍海景，然而不幸的是，她准备跑到终点时突然晕倒了，虽然我没体验过这种晕倒的感觉，但可以想象出这种从鬼门关出来人的有多不易。");
-
-$('.nav .same_a').eq(4).on('click', function () {
-    $('.lastLong').css({
-        'display': 'block',
-    });
-});
-
-var OldElement = $('.collect').eq(0);
-var OldLISecond = $('.second_list a').eq(0);
-$('.second_list a').on('click', function () {
-    var index = $('.second_list a').index(this);
-    OldElement.css({
-        'display': 'none',
-    });
-    OldElement = $('.collect').eq(index);
-    $('.collect').eq(index).css({
-        'display': 'flex',
-    });
-
-    OldLISecond.css({
-        'color': '',
-    });
-    OldLISecond = $(this);
-    $(this).css({
-        'color': '#DE8100',
-    });
-});
 
 //开播设置
 $('.inputAndSave a').on('click', function () {
@@ -620,4 +557,18 @@ $('.btn-whether-focus').on('click', function () {
         $(this).removeClass('change-color-background');
         $(this).html('取消关注');
     }
+});
+
+// 关注视频
+var videoFocus = $('.videoFocus');
+for (var i = 0; i < 12; i++) {
+    var videoFocusOne = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
+    videoFocus.append(videoFocusOne);
+};
+
+// 移过视频的效果
+$('.same_module a').hover(function () {
+    $(this).addClass("a_hover a_hover_a");
+}, function () {
+    $(this).removeClass("a_hover a_hover_a");
 });

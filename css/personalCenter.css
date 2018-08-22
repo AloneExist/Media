@@ -89,35 +89,6 @@
     border-bottom: 2px solid #1A2D27;
 }
 
-.nav .first_ul .lastLong {
-    width: 100%;
-    padding: 0px;
-    padding-top: 25px;
-    display: none;
-}
-
-.nav .first_ul .lastLong li {
-    padding: 0;
-}
-
-.second_list {
-    display: flex;
-    justify-content: center;
-}
-
-.second_list li:nth-of-type(2) {
-    padding: 0px 20px !important;
-}
-
-.second_list li a {
-    color: #3B200C;
-    transition: all .5s;
-}
-
-.second_list li a:hover {
-    color: #DE8100;
-}
-
 .data_set {
     position: absolute;
     top: 50%;
@@ -144,8 +115,7 @@
 .all_content .Select_One_Div,
 .all_content .Select_Two_Div,
 .all_content .Select_Three_Div,
-.all_content .Select_Four_Div,
-.all_content .Select_Five_Div {
+.all_content .Select_Four_Div {
     width: 80%;
     display: none;
     flex-wrap: wrap;
@@ -182,13 +152,8 @@
     padding-top: 50px;
 }
 
-.all_content .Select_Five_Div {
-    padding-top: 50px;
-}
-
 .Select_One_Div .same_module,
-.Select_Four_Div .same_module,
-.Select_Five_Div .same_module {
+.Select_Four_Div .same_module {
     width: 18%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
     border-radius: 10px;
@@ -224,10 +189,6 @@
 
 .user_list {
     margin-left: 12%;
-}
-
-.Select_Five_Div .user_list {
-    margin: 0;
 }
 
 .Video_list,
@@ -330,45 +291,6 @@
 .article_list .contain_span:hover .iconfont,
 .answer_list .contain_span:hover .iconfont {
     margin-left: 20px;
-}
-
-.collect_video,
-.collect_article {
-    width: 100%;
-    display: none;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.collect_video {
-    justify-content: flex-start;
-}
-
-.collect_video .same_module {
-    margin-left: 1%;
-    margin-right: 1%;
-}
-
-.collect_article {
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.collect_video {
-    margin-bottom: 20px;
-}
-
-.collect_article .Select_Much {
-    width: 100%;
-    justify-content: space-between;
-}
-
-.collect_article .Select_Much .other_module {
-    width: 48%;
-}
-
-.collect_article .other_module {
-    width: 100%;
 }
 
 /* 开播设置 */
@@ -726,11 +648,16 @@
 .AuthorFocus,
 .courseFocus,
 .IssueFocus,
-.liveFocus {
+.liveFocus,
+.videoFocus {
     width: 60%;
     display: none;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.videoFocus {
+    justify-content: flex-start;
 }
 
 .IssueFocus {
@@ -1128,4 +1055,14 @@
 
 .cancel-focus-btn:hover .iconfont {
     color: #FF5983
+}
+
+/* 关注视频 */
+
+.videoFocus .same_module {
+    width: 30%;
+    margin-left: 1.66666666666666666%;
+    margin-right: 1.66666666666666666%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+    border-radius: 10px;
 }
