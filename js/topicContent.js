@@ -31,12 +31,31 @@ function remove(n) {
 }
 
 $('.AndJoin').on('click', function () {
-    getNewEditor($(this).parent(), '.replaceLi');
+    statistic_data();
+    getNewEditor($(this).parent(), 1);
 });
 
 $('.FirstAndJoin').on('click', function () {
+    statistic_data();
     getNewFirstEditor($(this).parent().parent());
 });
+
+// 记录上一个countLiNum的数据
+function statistic_data() {
+    $('.countLiNum').each(function () {
+        if ($(this).data('statistic_data') == '1') {
+            $(this).data('statistic_data', '0');
+            if ($(this).find('.comments-not-or-yes').html() == '还没有讨论') {
+                $(this).find('.commentsAndjoin span').html('参加讨论');
+            } else {
+                $(this).find('.commentsAndjoin span').html($(this).find('.comments-not-or-yes').html());
+                $(this).find('.commentsAndjoin').attr('packUp', '1');
+            }
+            $(this).find('.comments-not-or-yes').css('display', '');
+            $(this).find('.insertComment').css('display', 'none');
+        }
+    });
+}
 
 function getNewFirstEditor(n) {
     var NewGoodEditor = $('<div class="NewGoodEditor"><div class="NewEditor">' +
@@ -77,8 +96,8 @@ function getNewFirstEditor(n) {
         var addComments = $('<li class="countLiNum"><div class="TitleA"><a href="javascript:;" class="TitleAfterA">不合法的身份和第三方第三方电脑</a></div>' +
             '<div class="SocialTool"><a href="javascript:;" class="GuanFocus"><i class="iconfont">&#xe6e0;</i><span>关注</span></a>' +
             '<a href="javascript:;" class="ZanA"><i class="iconfont">&#xe60a;</i><span>赞</span><span class="Zan">2</span></a>' +
-            '<a href="javascript:;" class="commentsAndjoin"><i class="iconfont">&#xe66f;</i><span>参与讨论</span></a>' +
-            '<a href="javascript:;" class="DeleteProblemASpecial"><i class="iconfont">&#xe622;</i><span>删除问题</span></a></div></li>');
+            '<a href="javascript:;" class="commentsAndjoin" packUp="1"><i class="iconfont">&#xe66f;</i><span>参与讨论</span></a>' +
+            '<a href="javascript:;" class="DeleteProblemASpecial"><i class="iconfont">&#xe622;</i><span>删除问题</span></a><div class="comments-not-or-yes">还没有讨论</div><div class="Load-animated"><div class="spinner spinnerTwo"><span></span></div></div></div></li>');
         if (ContentNew == '') {
             alert('请您写一点内容再发送，当前状态不可发送');
         } else {
@@ -128,9 +147,42 @@ function getNewFirstEditor(n) {
             }
         });
 
-        //参与讨论的按钮
-        $('.commentsAndjoin').on('click', function () {
-            getNewEditor($(this), '.SocialTool');
+        // 参与讨论
+        $('.commentsAndjoin').unbind('click').on('click', function () {
+            var This = $(this);
+            if ($(this).attr('packUp') == '1') {
+                statistic_data();
+                $(this).attr('packUp', '0');
+                $(this).find('span').html('收起讨论');
+                $(this).parent().find('.comments-not-or-yes').css('display', 'block');
+                $(this).parent().find('.Load-animated').css('display', 'flex');
+                setTimeout(function () {
+                    This.parent().find('.Load-animated').css('display', '');
+                    This.parent().parent().find('.insertComment').css('display', 'flex');
+                }, 900);
+                getNewEditor($(this), 0);
+
+                $(this).parent().parent().data('statistic_data', '1');
+
+                $(this).parent().parent().find('.publish_A').on('click', function () {
+                    if (This.parent().parent().find('.comments-not-or-yes').html() == '还没有讨论') {
+                        This.parent().parent().find('.comments-not-or-yes').html('1条讨论');
+                    } else {
+                        var Len = This.parent().parent().find('.insertComment').length;
+                        This.parent().parent().find('.comments-not-or-yes').html('' + Len + '条讨论');
+                    }
+                });
+            } else {
+                $(this).attr('packUp', '1');
+                if ($(this).parent().parent().find('.comments-not-or-yes').html() == '还没有讨论') {
+                    $(this).find('span').html('参与讨论');
+                } else {
+                    $(this).find('span').html($(this).parent().parent().find('.comments-not-or-yes').html());
+                }
+                $(this).parent().find('.comments-not-or-yes').css('display', '');
+                $(this).parent().parent().find('.insertComment').css('display', 'none');
+                CodeSame($('.NewGoodEditor'));
+            }
         });
 
         // 删除问题
@@ -166,7 +218,11 @@ function getNewEditor(n, m) {
         '<div id="NewUser_edit" class="EditorNew" style="width:100%;height:200px;display: flex;justify-content: center;' +
         'align-content: center;flex-wrap:wrap;background:#fff;"></div></div></div>');
     CodeSame($('.NewGoodEditor'));
-    n.parent().parent().find(m).after(NewGoodEditor);
+    if (m) {
+        n.parent().parent().find('.replaceLi').after(NewGoodEditor);
+    } else {
+        n.parent().parent().find('.SocialTool').after(NewGoodEditor);
+    }
     setTimeout(function () {
         $('.NewGoodEditor').css({
             opacity: '1',
@@ -202,7 +258,7 @@ function getNewEditor(n, m) {
         var Hour = Now.getHours();
         var Minute = Now.getMinutes();
         var Second = Now.getSeconds();
-        var ContentNew = $('.NewGoodEditor .w-e-text').html();
+        var ContentNew = $('.NewGoodEditor .w-e-text').html().replace(/<(?!img).*?>/g, "");
         if (ContentNew == '') {
             alert('请您写一点内容再发送，当前状态不可发送');
         } else {
@@ -216,14 +272,15 @@ function getNewEditor(n, m) {
 
         cancel();
 
-        $('.DEl').unbind('click').on('click', function () {
+        //删除评论
+        $('.TwoList .DEl').unbind('click').on('click', function () {
             var This = $(this);
             layer.confirm('确定要删除此评论吗?', {
                 btn: ['确定', '取消'], //按钮
                 title: '提示',
             }, function (index) {
                 This.parent().parent().remove();
-                var Len = $('.insertComment').length;
+                var Len = $('.TwoList .insertComment').length;
                 if (Len > 0) {
                     $('.TwoMiddle span').html('' + Len + '条评论');
                 } else {
@@ -231,11 +288,43 @@ function getNewEditor(n, m) {
                 }
                 layer.close(index);
             });
-        }); //删除评论
+        });
+
+        //删除评论
+        $('.OneList .DEl').unbind('click').on('click', function () {
+            var There = $(this);
+            layer.confirm('确定要删除此评论吗?', {
+                btn: ['确定', '取消'], //按钮
+                title: '提示',
+            }, function (index) {
+                var Len = There.parent().parent().parent().find('.insertComment').length - 1;
+                if (Len > 0) {
+                    There.parent().parent().parent().find('.comments-not-or-yes').html('' + Len + '条讨论');
+                } else {
+                    There.parent().parent().parent().find('.comments-not-or-yes').html('还没有讨论');
+                }
+                There.parent().parent().remove();
+                layer.close(index);
+            });
+        });
 
         //添加评论
-        $('.ADDCommit').on('click', function () {
-            getNewEditor($(this).parent(), m);
+        $('.TwoList .ADDCommit').unbind('click').on('click', function () {
+            statistic_data();
+            getNewEditor($(this).parent(), 1);
+        });
+
+        $('.OneList .ADDCommit').unbind('click').on('click', function () {
+            var That = $(this);
+            getNewEditor($(this).parent(), 0);
+            $(this).parent().parent().parent().find('.publish_A').on('click', function () {
+                if (That.parent().parent().parent().find('.comments-not-or-yes').html() == '还没有讨论') {
+                    That.parent().parent().parent().find('.comments-not-or-yes').html('1条讨论');
+                } else {
+                    var Len = That.parent().parent().parent().find('.insertComment').length;
+                    That.parent().parent().parent().find('.comments-not-or-yes').html('' + Len + '条讨论');
+                }
+            });
         });
 
     });
@@ -300,7 +389,7 @@ $('.OneList').on('DOMNodeInserted', function () {
 
 //检测TwoList内容的改变从而去判断评论的条数
 $('.TwoList').on('DOMNodeInserted', function () {
-    var Len = $('.insertComment').length;
+    var Len = $('.TwoList .insertComment').length;
     if (Len > 0) {
         $('.TwoMiddle span').html('' + Len + '条评论');
     };
