@@ -51,8 +51,8 @@ SelectDiv.find(".bottom_first_span").append("<b>19</b>");
 SelectDiv.find(".bottom_two_span").append("<b>1</b>");
 SelectDiv.find("p").html("原本打算五一跟朋友跑完半程马拉松后就去北海拍海景，然而不幸的是，她准备跑到终点时突然晕倒了，虽然我没体验过这种晕倒的感觉，但可以想象出这种从鬼门关出来人的有多不易。");
 
-CutWordColumns('.wordP', 60);
 CutWordColumns('.draw_text', 72);
+CutWordColumns('.wordP', 60);
 
 function CutWordColumns(n, num) {
     $(n).each(function () {
@@ -63,6 +63,19 @@ function CutWordColumns(n, num) {
         };
     });
 }
+
+$('#editor-word').on('click', function () {
+    $('.editor-question-word').css('display', 'flex');
+    $('#editor-question-word-textarea').focus();
+});
+
+$('.confirm-btn').on('click', function () {
+    var Del_space_newline = $('#editor-question-word-textarea').val().replace(/\ +/g, "").replace(/[\r\n]/g, "");
+    $('.editor-question-word').css('display', '');
+    $('.topImgColumns .wordP').html(Del_space_newline);
+    CutWordColumns('.wordP', 60);
+    $('#editor-question-word-textarea').val('');
+});
 
 //获取地址栏传递的信息
 function getUrlParam(name) {

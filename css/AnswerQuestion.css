@@ -43,3 +43,50 @@
     height: 100%;
     border-radius: 5px;
 }
+
+/* 编辑文字 */
+
+#editor-word {
+    margin-left: 20px;
+}
+
+.editor-question-word {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    display: none;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.editor-question-word textarea {
+    width: 50%;
+    height: 50%;
+    border: none;
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.editor-question-word div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.editor-question-word div a {
+    padding: 10px 25px;
+    background: #37C6C0;
+    color: #34352C;
+    border-radius: 5px;
+    font-size: 14px;
+}
