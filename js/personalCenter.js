@@ -9,14 +9,14 @@ $('.nav .same_a').on('click', function () {
     });
 });
 
-$(document).on("click", '.same_a,.user_list a,.FocusList a', function () {
+$(document).on("click", '.same_a,.user_list a,.FocusList a,.layui-layer-btn0', function () {
     $("body").getNiceScroll().resize();
 });
 //通过class绑定click事件，可以只点击一次就触发事件，否则需要点击两次
 
 var Select_One_Div = $('.Select_One_Div');
 for (var i = 0; i < 12; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
+    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></i>');
     Select_One_Div.append(select_one);
 };
 
@@ -71,37 +71,37 @@ $('.user_list a').on('click', function () {
 
 var SelectDiv = $('.Select_Much');
 for (var i = 0; i < 3; i++) {
-    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>')
+    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/><div class="Delect-article"><i class="iconfont">&#xe622;</i></div></a></div>')
     SelectDiv.eq(0).append(AddDiv);
 };
 
 for (var i = 0; i < 4; i++) {
-    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>')
+    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/><div class="Delect-article"><i class="iconfont">&#xe622;</i></div></a></div>')
     SelectDiv.eq(1).append(AddDiv);
 };
 
 for (var i = 0; i < 5; i++) {
-    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>')
+    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/><div class="Delect-article"><i class="iconfont">&#xe622;</i></div></a></div>')
     SelectDiv.eq(2).append(AddDiv);
 };
 
 for (var i = 0; i < 6; i++) {
-    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>')
+    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/><div class="Delect-article"><i class="iconfont">&#xe622;</i></div></a></div>')
     SelectDiv.eq(3).append(AddDiv);
 };
 
 for (var i = 0; i < 7; i++) {
-    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>')
+    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/><div class="Delect-article"><i class="iconfont">&#xe622;</i></div></a></div>')
     SelectDiv.eq(4).append(AddDiv);
 };
 
 for (var i = 0; i < 8; i++) {
-    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>')
+    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/><div class="Delect-article"><i class="iconfont">&#xe622;</i></div></a></div>')
     SelectDiv.eq(5).append(AddDiv);
 };
 
 for (var i = 0; i < 9; i++) {
-    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>')
+    var AddDiv = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/><div class="Delect-article"><i class="iconfont">&#xe622;</i></div></a></div>')
     SelectDiv.eq(6).append(AddDiv);
 };
 
@@ -179,7 +179,6 @@ SelectDiv.eq(6).find("p").html("从2015年我第一次踏上跑步机至今，�
 // SelectDiv.eq().find("p").html("");
 //模板
 
-
 $(function () {
     $(".draw_text").each(function () {
         var maxwidth = 72;
@@ -192,7 +191,7 @@ $(function () {
 });
 
 for (var i = 0; i < 7; i++) {
-    var five_block = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
+    var five_block = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span><div class="Delect-question"><i class="iconfont Del-this">&#xe622;</i><br><i class="iconfont enter-this">&#xe650;</i></div></div></div>');
     $('.Select_Three_Div .recommed_topic').append(five_block);
 }
 
@@ -212,14 +211,14 @@ var get_more_two = $('<div class="contain_a"><a class="contain_span" href="javas
 var get_more_three = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 
 for (var i = 0; i < 6; i++) {
-    var v_list = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
+    var v_list = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></div>');
     Video_list.append(v_list);
 }
 
 Video_list.append(get_more_one);
 
 for (var i = 0; i < 5; i++) {
-    var a_list = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/></aa></div>');
+    var a_list = $('<div class="other_module"><div class="left_part"><a href="javascript:;" class="under_line"></a><p class="draw_text"></p><div class="bottom_meta"><a href="javascript:;" class="bottom_first_a"></a><a href="javascript:;" class="bottom_two_a"><i class="iconfont">&#xe684;</i></a><span class="bottom_first_span"><i class="iconfont">&#xe602;</i></span><span class="bottom_two_span"><i class="iconfont">&#xe672;</i></span></div></div><a href="javascript:;" class="replace_img"><img src=""/><div class="Delect-article"><i class="iconfont">&#xe622;</i></div></a></div>');
     select_Btn.append(a_list);
 }
 
@@ -234,9 +233,21 @@ select_Btn.eq(0).find(".bottom_first_span").append("<b>19</b>");
 select_Btn.eq(0).find(".bottom_two_span").append("<b>1</b>");
 select_Btn.eq(0).find("p").html("原本打算五一跟朋友跑完半程马拉松后就去北海拍海景，然而不幸的是，她准备跑到终点时突然晕倒了，虽然我没体验过这种晕倒的感觉，但可以想象出这种从鬼门关出来人的有多不易。");
 
+// 删除文章
+$('.Delect-article').on('click', function () {
+    var This = $(this);
+    layer.confirm('确定要删除此文章吗?', {
+        btn: ['确定', '取消'], //按钮
+        title: '提示',
+    }, function (index) {
+        This.parent().parent().remove();
+        layer.close(index);
+    });
+});
+
 var answer_list = $('.answer_list');
 for (var i = 0; i < 8; i++) {
-    var w_list = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span></div></div>');
+    var w_list = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span><div class="Delect-question"><i class="iconfont Del-this">&#xe622;</i><br><i class="iconfont enter-this">&#xe650;</i></div></div></div>');
     answer_list.append(w_list);
 }
 answer_list.append(get_more_three);
@@ -244,6 +255,28 @@ answer_list.append(get_more_three);
 $('.answer_list').find("img").attr("src", Issue[0]);
 $('.answer_list').find(".top_img_span").html("知识产权保卫战");
 $('.answer_list').find(".issue").html("该议题被浏览 2223661 次");
+
+$('.ShadowBoxConatiner').hover(function () {
+    $(this).find('.Delect-question').css('opacity', '1');
+}, function () {
+    $(this).find('.Delect-question').css('opacity', '');
+});
+
+$('.Del-this').on('click', function () {
+    var This = $(this);
+    layer.confirm('确定要删除此问答吗?', {
+        btn: ['确定', '取消'], //按钮
+        title: '提示',
+    }, function (index) {
+        This.parent().parent().parent().remove();
+        layer.close(index);
+    });
+});
+
+// 进入问答
+// $('.enter-this').on('click', function () {
+
+// });
 
 //开播设置
 $('.inputAndSave a').on('click', function () {
@@ -562,13 +595,25 @@ $('.btn-whether-focus').on('click', function () {
 // 关注视频
 var videoFocus = $('.videoFocus');
 for (var i = 0; i < 12; i++) {
-    var videoFocusOne = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
+    var videoFocusOne = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></div>');
     videoFocus.append(videoFocusOne);
 };
 
 // 移过视频的效果
 $('.same_module a').hover(function () {
-    $(this).addClass("a_hover a_hover_a");
+    $(this).addClass("a_hover a_hover_a Delect-show");
 }, function () {
-    $(this).removeClass("a_hover a_hover_a");
+    $(this).removeClass("a_hover a_hover_a Delect-show");
+});
+
+// 删除按钮
+$('.Delect-Video').on('click', function () {
+    var This = $(this);
+    layer.confirm('确定要删除此视频吗?', {
+        btn: ['确定', '取消'], //按钮
+        title: '提示',
+    }, function (index) {
+        This.parent().parent().remove();
+        layer.close(index);
+    });
 });
