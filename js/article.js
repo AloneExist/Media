@@ -357,6 +357,8 @@ function getNewEditor(n) {
 
   cancel();
 
+  improveAreduceZIndex();
+
   //解决火狐不能自动去除占位符的问题
   var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
   var isFF = userAgent.indexOf('Firefox') > -1; //判断是否Firefox浏览器
@@ -406,6 +408,39 @@ function getNewEditor(n) {
 
   });
 }
+
+// 检测一个页面中是否存在一个元素
+(function ($) {
+  $.fn.exist = function () {
+    if ($(this).length >= 1) {
+      return true;
+    }
+    return false;
+  };
+})(jQuery);
+
+// 提高和减低一个元素的层级
+function improveAreduceZIndex() {
+  $('.hoverSameA5,.hoverSameA17').on('click', function () {
+    var timer = null;
+    timer = setInterval(function () {
+      if ($('.cover_big').exist()) {
+        $('.ContentShare').css('z-index', 'initial');
+        $('.title').css('z-index', 'initial');
+        $('.toTop').css('z-index', '-1');
+        $('.toolbar').css('z-index', '-1');
+      } else {
+        $('.ContentShare').css('z-index', '');
+        $('.title').css('z-index', '');
+        $('.toTop').css('z-index', '');
+        $('.toolbar').css('z-index', '');
+        clearInterval(timer);
+      }
+    }, 0);
+  });
+}
+
+improveAreduceZIndex();
 
 function CodeSame(n) {
   $('.NewGoodEditor').css({

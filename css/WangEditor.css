@@ -26,7 +26,8 @@ a {
 
 .insertA {
     color: #3B200C;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 body {
@@ -300,13 +301,6 @@ p {
     margin-right: 5px;
 }
 
-iframe {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 .w-e-droplist .w-e-list .w-e-item h1,
 .w-e-droplist .w-e-list .w-e-item h2,
 .w-e-droplist .w-e-list .w-e-item h3,
@@ -326,4 +320,13 @@ iframe {
         margin: 0 !important;
         margin-bottom: 15px !important;
     }
+}
+
+.entire-line {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 25px !important;
 }

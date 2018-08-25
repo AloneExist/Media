@@ -1,0 +1,475 @@
+.videoToWatchMain {
+    margin-top: 100px;
+    padding-top: 30px;
+}
+
+#video-page-play-interface video,
+.dplayer-danmaku {
+    cursor: pointer;
+}
+
+.dplayer-bar-wrap {
+    bottom: inherit;
+    top: -15px;
+}
+
+.dplayer-controller {
+    padding-bottom: 5px;
+}
+
+.dplayer-controller .dplayer-icons {
+    bottom: inherit;
+    top: 0;
+}
+
+.dplayer.dplayer-hide-controller .dplayer-controller,
+.dplayer.dplayer-hide-controller .dplayer-controller-mask {
+    transform: translateY(calc(100% + 15px));
+}
+
+.top-video-danmuList {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.video-content {
+    width: 1100px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    transition: all .3s ease;
+}
+
+/* 弹幕列表 */
+
+.danmu-list-content {
+    width: 350px;
+    height: 617.85px;
+    margin-left: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    transition: all .3s ease;
+}
+
+.danmu-list-packUp-unfold {
+    width: 100%;
+}
+
+.danmu-list-main-content {
+    height: calc(100% - 48px);
+    padding-bottom: 7px;
+}
+
+.top-danmu-message-for-time-content-sendTime {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px 15px;
+}
+
+.top-danmu-message-for-time-content-sendTime span:nth-of-type(2) {
+    padding-right: 15px;
+}
+
+.top-danmu-message-for-time-content-sendTime span span:nth-of-type(2) {
+    margin-left: 20px;
+}
+
+.danmu-list-main-content span {
+    color: #6d757a;
+    font-size: 12px;
+}
+
+.all-danmu-message {
+    height: calc(100% - 26px);
+}
+
+.send-danmu-Message-content {
+    padding: 6px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.send-danmu-Message-content span {
+    white-space: nowrap;
+}
+
+.send-danmu-Message-content span:nth-of-type(1) {
+    display: flex;
+}
+
+.send-danmu-Message-content span span:nth-of-type(1) {
+    width: 35px;
+    display: block;
+    text-align: start;
+}
+
+.send-danmu-Message-content span span:nth-of-type(2) {
+    margin-left: 13px;
+}
+
+.danmu_list_set {
+    padding: 0 15px;
+    background: #f4f4f4;
+}
+
+.danmu_list_set a {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+    color: #000;
+    font-size: 16px;
+}
+
+/* 评论 */
+
+p {
+    width: 100%;
+    margin: 0px 0px 25px;
+}
+
+.comments {
+    width: 100%;
+}
+
+.CanEdit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.commentsArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.PhotoImg {
+    display: block;
+    float: left;
+    margin-left: -70px;
+}
+
+.PhotoImg img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.commentsArea .w-e-text {
+    padding: 5px 20px !important;
+    height: 100% !important;
+}
+
+.commentsDetail,
+.containContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    padding-top: 30px;
+}
+
+.containContent {
+    width: 700px;
+    flex-wrap: wrap;
+}
+
+.commentsNum,
+.commentsNum span {
+    font-size: 20px;
+    color: #1a2d27;
+    font-weight: 700;
+}
+
+.commentsNum {
+    width: 100%;
+    margin: 0 !important;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DDD;
+}
+
+.input_Time {
+    display: none;
+}
+
+.NewEditor {
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.toolbar {
+    position: relative;
+}
+
+.comments-main-content {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.left-comments-contents-all {
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.publish_A {
+    width: auto;
+    margin: 0 !important;
+    padding: 0px 15px !important;
+}
+
+.publish_A .iconfont {
+    margin: 0px;
+    padding-right: 10px;
+}
+
+.w-e-toolbar .w-e-menu {
+    z-index: inherit !important;
+}
+
+.w-e-panel-tab-title {
+    display: none !important;
+}
+
+.w-e-emoticon-container {
+    display: block !important;
+}
+
+.w-e-panel-container h4 {
+    margin: 0 !important;
+    padding: 20px 0 20px 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+}
+
+.w-e-panel-tab-content {
+    height: auto !important;
+}
+
+.w-e-text-container .w-e-panel-container {
+    padding: 20px 20px 45px 20px !important;
+}
+
+.commentsList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.commentsList li {
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px solid #DDD;
+}
+
+.commentsMessage {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.commentsMessage .OneFirst {
+    padding: 10px 0 !important;
+    font-size: 15px;
+}
+
+.commentsMessage .OneFirst p:last-child {
+    padding: 0 !important;
+}
+
+.topMessage a {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: block;
+}
+
+.topMessage a img {
+    width: 100%;
+}
+
+.topMessage {
+    width: 100%;
+    display: flex;
+}
+
+.rightMessage {
+    padding-left: 15px;
+    width: calc(100% - 65px);
+}
+
+.commentsName,
+.timeMessage {
+    width: 100%;
+}
+
+.timeMessage span {
+    font-size: 14px;
+}
+
+.timeMessage span:nth-of-type(2) {
+    padding-left: 5px;
+}
+
+.commentsName {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.toolBar_Btn .iconfont {
+    color: #373E40;
+    transition: all .3s ease;
+    padding-right: 5px;
+}
+
+.toolBar_Btn a {
+    color: #000;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toolBar_Btn a:nth-of-type(2),
+.toolBar_Btn a:nth-of-type(3) {
+    padding-left: 20px;
+}
+
+.toolBar_Btn span {
+    font-size: 14px;
+}
+
+.OneFirst img {
+    display: inline-block !important;
+    margin-bottom: -5px;
+    padding: 0 5px !important;
+}
+
+.commentsMessage .OneFirst {
+    padding: 10px 0 !important;
+    font-size: 15px;
+}
+
+.commentsMessage .OneFirst p:last-child {
+    padding: 0 !important;
+}
+
+.bottomMessage p {
+    margin: 0 !important;
+    padding-bottom: 5px;
+    word-break: break-word !important;
+}
+
+.w-e-text img {
+    display: inline-block !important;
+    position: relative;
+    top: 5px;
+}
+
+.w-e-text p {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 15px;
+}
+
+.NewGoodEditor {
+    padding-top: 30px;
+    position: relative;
+    top: -20px;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.EditorNew .w-e-text {
+    padding: 5px 20px !important;
+    height: 100% !important;
+}
+
+.NewToolbar {
+    position: relative;
+}
+
+.insertComment {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-left: 2px solid #999;
+    margin-top: 20px;
+    padding-left: 20px !important;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+.insertComment p {
+    width: 100%;
+    padding: 0 !important;
+    line-height: 1.5;
+    padding-bottom: 5px !important;
+    font-size: 14px;
+}
+
+.insertComment span {
+    font-size: 12px;
+}
+
+.insertComment p img {
+    padding: 0px 5px !important;
+}
+
+.insertComment span:nth-of-type(1) {
+    padding-right: 5px !important;
+}
+
+.insertComment a {
+    color: #999;
+    font-size: 14px;
+    display: none;
+    padding-right: 22px;
+}
+
+.insertComment .ADDCommit {
+    padding-right: 10px;
+}
+
+.insertComment:hover a {
+    display: inline-block;
+}
+
+.TwoSecond img {
+    display: inline-block;
+    margin-bottom: -5px;
+}
+
+.bottomMessage {
+    width: 100%;
+}
+
+.copyright p {
+    margin: 0 !important;
+    text-align: center;
+}
+
+#bottom_content {
+    z-index: initial !important;
+}
+
+.w-e-text-container {
+    position: static !important;
+}

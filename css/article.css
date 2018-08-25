@@ -231,15 +231,13 @@ blockquote b {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  position: relative;
+  align-items: flex-start;
 }
 
 .PhotoImg {
   display: block;
-  margin-right: 20px;
-  position: absolute;
-  top: 0;
-  left: -70px;
+  margin-left: -70px;
+  float: left;
 }
 
 .PhotoImg img {
@@ -306,7 +304,6 @@ blockquote b {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
   overflow: hidden;
   border-radius: 5px;
-  position: relative;
 }
 
 .publish_A {
@@ -355,18 +352,13 @@ blockquote b {
 
 .w-e-text img {
   display: inline-block !important;
-  position: relative;
-  top: 5px;
+  margin-bottom: -5px;
 }
 
 .OneFirst img {
   display: inline-block !important;
   margin-bottom: -5px;
   padding: 0 5px !important;
-}
-
-.photoIMg img {
-  top: 0 !important;
 }
 
 #ContainEditor blockquote {
@@ -647,4 +639,12 @@ blockquote b {
 .TwoSecond img {
   display: inline-block;
   margin-bottom: -5px;
+}
+
+#bottom_content {
+  z-index: initial !important;
+}
+
+.w-e-text-container {
+  position: static !important;
 }

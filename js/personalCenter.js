@@ -574,9 +574,9 @@ $('.stay-right,.cancel-focus-btn').on('click', function () {
 
 for (var i = 0; i < 5; i++) {
     var liveThreePart = $('<div class="live-three-part"><div class="live-message"><div class="photo-title-focus-btn">' +
-        '<a href="videoPage.html" target="_blank" class="img-a"><img src="../img/11.jpg"></a><div><p>养乐多了</p>' +
+        '<a href="livePage.html" target="_blank" class="img-a"><img src="../img/11.jpg"></a><div><p>养乐多了</p>' +
         '<a href="javascript:;" class="btn-whether-focus" data-btn-focus="1">取消关注</a></div></div><div class="live-room-status"><p>直播间</p>' +
-        '<a href="videoPage.html" target="_blank" class="status">直播中</a></div></div></div>');
+        '<a href="livePage.html" target="_blank" class="status">直播中</a></div></div></div>');
     $('.all-live-content').append(liveThreePart);
 }
 

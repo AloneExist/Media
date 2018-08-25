@@ -1,0 +1,428 @@
+#DPlayerVideo video {
+    cursor: pointer;
+}
+
+.dplayer-bar-wrap {
+    bottom: inherit;
+    top: -15px;
+}
+
+.dplayer-controller {
+    padding-bottom: 5px;
+}
+
+.dplayer-controller .dplayer-icons {
+    bottom: inherit;
+    top: 0;
+}
+
+.dplayer.dplayer-hide-controller .dplayer-controller,
+.dplayer.dplayer-hide-controller .dplayer-controller-mask {
+    transform: translateY(calc(100% + 15px));
+}
+
+.MiddleContent {
+    width: 100%;
+    padding-top: 120px;
+}
+
+.KeepSame {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.containrAllVideoElement {
+    width: 1200px;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.DanMuListKeepSame {
+    width: 300px;
+    height: 770px;
+    background: #fff;
+    margin-left: 20px;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    background: #f8f8f8;
+    transition: all .3s ease;
+}
+
+.userInformationList {
+    width: 100%;
+    display: flex;
+    padding: 15px 15px 15px 20px;
+    background: #fff;
+}
+
+.HeadPicture img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.leftRightImg {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 30px;
+}
+
+.topLocation {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.MainContain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.MainContain span {
+    color: #999;
+    font-size: 14px;
+}
+
+.MainContain span:nth-of-type(1) {
+    padding: 0 0 0 20px;
+}
+
+.MainContain p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #000;
+}
+
+.NameColumn {
+    width: 100%;
+}
+
+.NameColumn a {
+    font-size: 12px;
+    color: #999;
+    transition: all .3s ease;
+}
+
+.NameColumn a:hover {
+    color: #FF6E97;
+}
+
+.rightImgLocation {
+    display: flex;
+    justify-content: flex-end;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.topImgL a:hover span,
+.topImgL a:hover span .iconfont {
+    color: #FF6E97;
+}
+
+.topImgL span:nth-of-type(2n-1) {
+    padding: 0 5px 0 0;
+}
+
+.topImgL span:nth-of-type(2n),
+.topImgL span:nth-of-type(2n-1) .iconfont,
+.bottomImgL .NUmCounts {
+    padding: 0 10px 0 0;
+    font-size: 14px;
+    color: #999;
+    transition: all .3s ease;
+}
+
+.topImgL span:nth-of-type(2n-1) .iconfont {
+    padding: 0;
+}
+
+.bottomImgL {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bottomImgL a {
+    background: #FF6E97;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 4px 0 0 4px;
+}
+
+.bottomImgL a,
+.bottomImgL a .iconfont {
+    color: #fff;
+    font-size: 14px;
+}
+
+.bottomImgL .NUmCounts {
+    padding: 1px 15px 1px 15px;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 0 4px 4px 0;
+}
+
+.Cute {
+    width: 100%;
+    display: flex;
+    height: 75px;
+    padding: 0 0 20px 0;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, .1);
+    background: #fff;
+}
+
+.Cute div {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cute img {
+    height: 100%;
+}
+
+.SendArea {
+    height: calc(100% - 195px);
+    padding: 0 9px 0 9px;
+    margin: 0 0 10px 0;
+}
+
+.SendFunction {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 9px 0 9px;
+    align-content: flex-start;
+    position: relative;
+}
+
+.editorDanMu {
+    height: 36px;
+    width: calc(100% - 16px);
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    padding: 6px 8px 10px 8px;
+    font-size: 12px;
+    line-height: 19px;
+    background: #fff;
+    color: #000;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+.editorDanMu:focus {
+    border: 1px solid #FF6E97;
+}
+
+.SendFunction .DanMUSendP {
+    font-size: 12px;
+    color: #FF6E97;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 3px;
+}
+
+.SendFunction a {
+    padding: 5px 15px;
+    font-size: 12px;
+    background: #e3e8ec;
+    color: #fff;
+    border-radius: 3px;
+    margin-top: 5px;
+    cursor: not-allowed;
+}
+
+.SendFunction .RecordNUM {
+    color: #999;
+    position: absolute;
+    top: 32px;
+    right: 16px;
+    font-size: 12px;
+}
+
+.DanMuSet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.DanMuSet .iconSEt {
+    color: #999;
+    transition: all .3s ease;
+}
+
+.DanMuSet:hover .iconSEt {
+    color: #FF6E97;
+}
+
+.DanMUSetIng {
+    position: absolute;
+    right: -82px;
+    bottom: 39px;
+    width: 220px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 5px 12px 0 rgba(0, 0, 0, .2);
+    z-index: 1;
+    border-radius: 8px;
+    display: none;
+}
+
+.DanMUSetIng::before {
+    content: '';
+    position: absolute;
+    left: 163px;
+    bottom: -10px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid #fff;
+}
+
+.DanMUSetIng p {
+    color: #FF6E97;
+    padding: 0 0 20px 0;
+}
+
+.DanMuLocation {
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.DanMuLocation .iconfont {
+    font-size: 30px;
+}
+
+.DanMUSetIng span {
+    flex: 1;
+    color: #999;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+}
+
+.DanMUSetIng span .iconfont {
+    color: #999;
+    transition: all .3s ease;
+}
+
+.DanMuLocation p {
+    padding: 0;
+    color: #999;
+    transition: all .3s ease;
+}
+
+.DanMUSetIng span:hover .iconfont,
+.DanMUSetIng span:hover p {
+    color: #FF6E97;
+}
+
+.DanMUSetIng .SetColorPink p {
+    color: #FF6E97 !important;
+}
+
+.DanMUSetIng .SetColorPink .iconfont {
+    color: #FF6E97 !important;
+}
+
+.MuchColors {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 20px;
+}
+
+.MuchColors div {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.MuchColors span {
+    width: 15px;
+    height: 15px;
+    display: block;
+    border-radius: 50%;
+    flex: inherit;
+    border: 1px solid #CCC;
+    transition: all .3s ease;
+}
+
+.MuchColors span:hover {
+    width: 20px;
+    height: 20px;
+}
+
+.bigER {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.userMessageDiv {
+    padding: 5px;
+}
+
+.userMessageDiv a {
+    color: #FF6E97;
+    font-size: 14px;
+}
+
+.userMessageDiv .MainMessageP {
+    font-size: 14px;
+    color: #646c7a;
+}
+
+.nicescroll-cursors {
+    transition: all .5s ease;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
