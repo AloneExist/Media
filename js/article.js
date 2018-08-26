@@ -7,8 +7,7 @@ var getFirstContent = $('.w-e-text h1').eq(0).html();
 
 var ListLan = $('.circle').attr('list-title');
 
-$('.timeBar').hover(
-  function () {
+$('.timeBar').hover(function () {
     $('.bottom_message').append(alertTitle);
     $('.alertSpan').html(DataTitle);
     setTimeout(function () {
@@ -27,8 +26,7 @@ $('.timeBar').hover(
   }
 );
 
-$('.circle').hover(
-  function () {
+$('.circle').hover(function () {
     $('.ContentShare').append(alertTitle);
     $('.alertSpan').html(ListLan);
     setTimeout(function () {

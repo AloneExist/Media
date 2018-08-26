@@ -13,11 +13,20 @@ const dp = new DPlayer({
     },
 });
 
+//当video加载完成发送的事件
+var VideoInterface = document.getElementById('VideoInterface');
+VideoInterface.oncanplay = function () { //当视频加载完成时
+    var videoContent = $('.video-content').outerHeight();
+    $('.danmu-list-content').css({
+        'height': videoContent,
+    });
+}
+
 //编辑滚动条
 $(function () {
-    $(".all-danmu-message").getNiceScroll().hide(); //使body为overflow:hidden
-    $(".all-danmu-message").getNiceScroll().resize(); //在页面尺寸变化的时候整个页面会有一种变化
-    $(".all-danmu-message").niceScroll({
+    $(".all-danmu-message,.YScroll").getNiceScroll().hide(); //使body为overflow:hidden
+    $(".all-danmu-message,.YScroll").getNiceScroll().resize(); //在页面尺寸变化的时候整个页面会有一种变化
+    $(".all-danmu-message,.YScroll").niceScroll({
         cursorcolor: '#999',
         cursorwidth: "6px", //隐藏滚动的关键
         zindex: "9",
@@ -310,6 +319,23 @@ function CodeSame(n) {
     $('.NewGoodEditor .w-e-text').remove();
     n.remove();
 }
+
+var UrlAddress = 'https://music.163.com';
+var getFirstContent = $('.video-title p').html();
+
+//配置share.js的参数
+socialShare('.social-share', {
+    title: getFirstContent, //分享的标题
+    image: 'http://pctnq9rfg.bkt.clouddn.com/daoLogo.png', //分享的图片  一般是正文的第一张图片 现在是我们的logo
+    url: UrlAddress, //填写当前页面的地址     window.location.href      分享的地址
+    description: getFirstContent, //分享到额描述
+});
+
+$('#QRcode-weixin').qrcode({
+    width: 100,
+    height: 100,
+    text: UrlAddress,
+});
 
 $(document).on('click', '.toolBar_Btn a,.publish_A,.layui-layer-btn0,.ADDCommit,.DEl,.cancel_A', function () {
     $('body').getNiceScroll().resize();

@@ -45,7 +45,7 @@
 
 .danmu-list-content {
     width: 350px;
-    height: 617.85px;
+    height: 669.75px;
     margin-left: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     transition: all .3s ease;
@@ -133,12 +133,7 @@ p {
     margin: 0px 0px 25px;
 }
 
-.comments {
-    width: 100%;
-}
-
 .CanEdit {
-    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -214,6 +209,126 @@ p {
     position: relative;
 }
 
+.introduce-word {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.introduce-word .first-first-div,
+.introduce-word .first-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.introduce-word .first-div {
+    width: 1480px !important;
+    justify-content: flex-start !important;
+}
+
+.introduce-word .share-area {
+    width: 320px !important;
+    margin-left: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.introduce-word .share-area .social-share {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #e9eaec;
+}
+
+.introduce-word .share-area .social-share a:nth-last-child(2) {
+    margin: 0 20px;
+}
+
+/* 分享 */
+
+.icon-qq:before,
+.icon-linkedin::before,
+.icon-douban::before,
+.icon-diandian::before,
+.icon-facebook::before,
+.icon-google::before {
+    content: '';
+}
+
+.social-share .social-share-icon {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-size: initial;
+    transition: all .3s ease;
+    position: static;
+    background: #6d757a;
+    border-radius: 50%;
+}
+
+.social-share .social-share-icon .iconfont {
+    font-size: 20px;
+}
+
+.social-share .social-share-icon:hover {
+    background: #FF5983;
+}
+
+#QRcode-weixin {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.introduce-word .synopsis {
+    padding: 15px 0;
+    margin: 0 0 0 30px;
+    border-bottom: 3px solid #FF5983;
+}
+
+.QRcode-content span {
+    color: #3B200C;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+
+.introduce-word .synopsis a {
+    color: #FF5983;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.introduce-main-content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.introduce-main-content .show-height {
+    margin: 0 !important;
+    width: 1040px !important;
+    height: 200px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    padding: 20px 30px;
+    border-radius: 12px;
+}
+
+.introduce-main-content .show-height i {
+    font-style: normal;
+    display: block;
+    height: 100%;
+    padding-right: 15px;
+}
+
 .comments-main-content {
     margin-top: 50px;
     display: flex;
@@ -221,10 +336,15 @@ p {
     align-items: flex-start;
 }
 
+.left-part {
+    width: 1480px !important;
+}
+
 .left-comments-contents-all {
     width: 1100px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-content: flex-start;
 }
 
@@ -485,6 +605,7 @@ p {
 }
 
 .video-title p {
+    width: auto;
     margin: 0 !important;
-    padding: 10px 20px;
+    padding: 15px 20px;
 }
