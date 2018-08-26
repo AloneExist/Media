@@ -167,7 +167,7 @@ $('.release a').on('click', function () {
     var onOff = false;
     //拿上一次的数据和本次的数据对比，如果都是相同的，则不上传，反之，则上传
     if ($('#main').data('videoName') != undefined && $('#main').data('videoName')) {
-        if ($('#main').data('videoName') == $('.videoName').html() && $('#main').data('CoverPreviewImg') == $('#CoverPreviewImg').attr('src') && $('#main').data('rightLabel') == $('.rightLabel').data('rightLabel') && $('#main').data('VideoTitle') == $('.VideoTitle input').val()) {
+        if ($('#main').data('videoName') == $('.videoName').html() && $('#main').data('CoverPreviewImg') == $('#CoverPreviewImg').attr('src') && $('#main').data('rightLabel') == $('.rightLabel').data('rightLabel') && $('#main').data('VideoTitle') == $('.VideoTitle input').val() && $('#main').data('introduce-for-video') == $('#introduce-for-video').val()) {
             alert('文件已上传!!!');
             return false;
         }
@@ -183,18 +183,23 @@ $('.release a').on('click', function () {
         if ($('#CoverPreviewImg').attr('src') != '') {
             if (onOff) { //检测标签
                 if ($('.VideoTitle input').val() != '') { //检测标题
-                    $('.ProgressFixed').css({
-                        'display': 'block',
-                        'opacity': '1',
-                    });
-                    CircleProgress('.ProgressFixed', '#83FCD8', 6, .5, '45px', '150', '.ProgressFixed'); //进度条
-                    //存储数据带#main，查看是否需要上传文件
-                    $('#main').data({
-                        'videoName': $('.videoName').html(),
-                        'CoverPreviewImg': $('#CoverPreviewImg').attr('src'),
-                        'rightLabel': $('.rightLabel').data('rightLabel'),
-                        'VideoTitle': $('.VideoTitle input').val(),
-                    })
+                    if ($('#introduce-for-video').val() != '') { //检测是否有视频简介
+                        $('.ProgressFixed').css({
+                            'display': 'block',
+                            'opacity': '1',
+                        });
+                        CircleProgress('.ProgressFixed', '#83FCD8', 6, .5, '45px', '150', '.ProgressFixed'); //进度条
+                        //存储数据带#main，查看是否需要上传文件
+                        $('#main').data({
+                            'videoName': $('.videoName').html(),
+                            'CoverPreviewImg': $('#CoverPreviewImg').attr('src'),
+                            'rightLabel': $('.rightLabel').data('rightLabel'),
+                            'VideoTitle': $('.VideoTitle input').val(),
+                            'introduce-for-video': $('#introduce-for-video').val(),
+                        })
+                    } else {
+                        alert('请输入视频简介');
+                    }
                 } else {
                     alert('请输入视频标题');
                 }

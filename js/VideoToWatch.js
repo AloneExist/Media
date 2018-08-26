@@ -78,6 +78,8 @@ function danmuSend(n, m) {
             $(this).html($(this).html() + "...");
         };
     });
+    var Len = $('.send-danmu-Message-content').length;
+    $('.danmu-content-and-number').html('弹幕内容(' + Len + ')');
 }
 
 //创建一个新的编辑器

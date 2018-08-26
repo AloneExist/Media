@@ -178,9 +178,16 @@
 
 .VideoTitle input {
     border: none;
-    font-size: 24px;
+    font-size: 18px;
     color: #363636;
-    width: 100%;
+    width: calc(100% - 34px);
+    transition: all .3s ease;
+    border: 2px solid #7a7979;
+    padding: 10px 15px;
+}
+
+.VideoTitle input:focus {
+    border: 2px solid #FF5983;
 }
 
 /* 发布 */
@@ -246,4 +253,23 @@
     left: 50%;
     font-size: 25px;
     transform: translate(-50%, -50%);
+}
+
+/* 简介 */
+
+#introduce-for-video {
+    width: calc(100% - 34px);
+    height: 150px;
+    border: none;
+    border: 2px solid #7a7979;
+    font-size: 18px;
+    color: #363636;
+    margin-top: 20px;
+    transition: all .3s ease;
+    padding: 10px 15px;
+    font-family: Arial;
+}
+
+#introduce-for-video:focus {
+    border: 2px solid #FF5983;
 }

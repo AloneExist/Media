@@ -37,6 +37,8 @@
     width: 1100px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .2);
     transition: all .3s ease;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
 }
 
 /* 弹幕列表 */
@@ -47,6 +49,8 @@
     margin-left: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     transition: all .3s ease;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
 }
 
 .danmu-list-packUp-unfold {
@@ -472,4 +476,15 @@ p {
 
 .w-e-text-container {
     position: static !important;
+}
+
+/* 视频标题 */
+
+.video-title {
+    width: 100%;
+}
+
+.video-title p {
+    margin: 0 !important;
+    padding: 10px 20px;
 }
