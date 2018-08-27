@@ -565,3 +565,17 @@
         transform: rotate(360deg);
     }
 }
+
+/* 加载更多 */
+
+.loading-more {
+    text-align: center;
+}
+
+.loading-more a {
+    padding: 10px 15px;
+    background: #3B200C;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+    color: #fff;
+    font-size: 14px;
+}

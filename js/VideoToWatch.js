@@ -22,6 +22,14 @@ VideoInterface.oncanplay = function () { //当视频加载完成时
     });
 }
 
+//当页面变化时盖度随之改变
+$(window).resize(function () {
+    var videoContent = $('.video-content').outerHeight();
+    $('.danmu-list-content').css({
+        'height': videoContent,
+    });
+});
+
 //编辑滚动条
 $(function () {
     $(".all-danmu-message,.YScroll").getNiceScroll().hide(); //使body为overflow:hidden

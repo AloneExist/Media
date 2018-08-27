@@ -414,6 +414,11 @@ $('#sureCut').on('click', function () {
         $('#ImgCoverPreviewForID').prop('src', base64url); //显示为图片的形式
         //关闭裁剪框
         closeTailor();
+        var animatedLoading = $('<div class="Load-animated"><div class="spinner spinnerTwo"><span></span></div></div>');
+        $('.PreviewDivForCover').append(animatedLoading);
+        setTimeout(function () {
+            animatedLoading.remove();
+        }, 2000);
     }
 });
 
@@ -423,8 +428,7 @@ function closeTailor() {
 }
 
 // 4个主要的分类
-// 记录数据
-$('.SelectKindFixed').data('SelectKindFixed', '娱乐');
+// 现已取消show
 var LastAForHappy = $('.FourKindVideo a').eq(0);
 var LastKindPart = $('.kind-part').eq(0);
 $('.FourKindVideo a').on('click', function () {
@@ -432,7 +436,6 @@ $('.FourKindVideo a').on('click', function () {
     LastAForHappy.css('color', '');
     LastKindPart.css('display', '');
     LastAForHappy = $(this);
-    $('.SelectKindFixed').data('SelectKindFixed', $(this).html());
     LastKindPart = $('.kind-part').eq(index);
     $('.kind-part').eq(index).css('display', 'block');
     $(this).css('color', '#FF5983');
@@ -460,7 +463,7 @@ $('.CancleBtn').on('click', function () {
 
 var LastKind = $('.Kind').eq(0);
 $('.Kind').on('click', function () {
-    $('.topKindVideo span').html($('.SelectKindFixed').data('SelectKindFixed') + '&nbsp;&nbsp;·&nbsp;&nbsp;' + $(this).html());
+    $('.topKindVideo span').html($(this).html());
     LastKind.css('background', '');
     LastKind = $(this);
     $(this).css('background', '#C1194E');

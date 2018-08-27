@@ -441,3 +441,17 @@ function improveAreduceZIndex() {
         }, 0);
     });
 }
+
+// 加载更多
+var JudgeAnimate = true;
+$('.loading-more a').on('click', function () {
+    if (JudgeAnimate) {
+        JudgeAnimate = false;
+        var animatedLoading = $('<div class="Load-animated" style="display:flex;padding:0 0 35px 0;"><div class="spinner spinnerTwo"><span></span></div></div>');
+        $(this).parent().before(animatedLoading);
+        setTimeout(function () {
+            animatedLoading.remove();
+            JudgeAnimate = true;
+        }, 900);
+    }
+});

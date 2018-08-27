@@ -167,6 +167,11 @@ $('#sureCut').on('click', function () {
         $('#finalImg').prop('src', base64url); //显示为图片的形式
         //关闭裁剪框
         closeTailor();
+        var animatedLoading = $('<div class="Load-animated"><div class="spinner spinnerTwo"><span></span></div></div>');
+        $('.rightColumns a').append(animatedLoading);
+        setTimeout(function () {
+            animatedLoading.remove();
+        }, 2000);
     }
 });
 
