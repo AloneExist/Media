@@ -340,9 +340,19 @@ socialShare('.social-share', {
 });
 
 $('#QRcode-weixin').qrcode({
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     text: UrlAddress,
+});
+
+$('.focus-btn a').on('click', function () {
+    if ($(this).html() == '关注') {
+        $(this).html('取消关注');
+        $(this).css('background', '#FF5983');
+    } else if ($(this).html() == '取消关注') {
+        $(this).html('关注');
+        $(this).css('background', '');
+    }
 });
 
 $(document).on('click', '.toolBar_Btn a,.publish_A,.layui-layer-btn0,.ADDCommit,.DEl,.cancel_A', function () {

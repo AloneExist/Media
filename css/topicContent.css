@@ -447,10 +447,6 @@
     margin: 0 !important;
 }
 
-.TwoList .replaceLi {
-    margin-bottom: 0;
-}
-
 .containerNewOneList {
     display: none;
 }
@@ -578,4 +574,14 @@
     box-shadow: 0 0 30px rgba(0, 0, 0, .3);
     color: #fff;
     font-size: 14px;
+}
+
+.TwoList .NewGoodEditor {
+    padding: 0;
+    padding-bottom: 30px;
+}
+
+.TwoList .insertComment {
+    margin: 0;
+    margin-bottom: 30px;
 }
