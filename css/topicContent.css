@@ -33,13 +33,12 @@
 }
 
 .innerDiv .imgContain {
-    width: 200px;
-    height: 200px;
     display: block;
 }
 
 .innerDiv .imgContain img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
     border-radius: 5px 0 0 5px;
 }
 

@@ -12,77 +12,51 @@
     <link rel="stylesheet" href="../css/ImgCropping.css">
     <link rel="stylesheet" href="../font/iconfont.css">
     <link rel="stylesheet" href="../css/preset.css">
+    <style>
+        #editor-issue-introduce {
+            border: none;
+            outline: none;
+            border: 2px solid #aaa;
+            width: 310px;
+            height: 130px;
+            padding: 10px;
+            transition: all .3s ease;
+            resize: none;
+            font-family: Arial;
+            font-size: 15px;
+            color: #aaa;
+        }
+
+        #editor-issue-introduce:focus {
+            border: 2px solid #376956;
+        }
+
+        .Newpreview .cutImg {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
 </head>
 
 <body>
     <div id="main">
         <div class="preset">
-            <p class="presetFirstP">创建文章</p>
+            <p class="presetFirstP">创建议题</p>
             <div class="InsertPreset">
                 <div class="Form">
                     <form>
                         <span>
                             <div>
-                                <label class="Titlelabel">编辑文章标题</label>
+                                <label class="Titlelabel">编辑议题标题</label>
                                 <input type="text" class="BtnInput">
                             </div>
                         </span>
                         <span>
-                            <ul class="SelectList">
-                                <li>
-                                    <a href="javascript:;" class="FirstEditorArticle">编辑文章类型</a>
-                                </li>
-                                <li class="MoveTop">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="iconfont">&#xe653;</i>
-                                                互联网
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="iconfont">&#xe608;</i>
-                                                法律
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="iconfont">&#xe603;</i>
-                                                医药
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="iconfont">&#xe623;</i>
-                                                经济
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="iconfont">&#xe639;</i>
-                                                历史
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="iconfont">&#xe700;</i>
-                                                理工
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="iconfont">&#xe62e;</i>
-                                                艺术
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <textarea id="editor-issue-introduce"></textarea>
                         </span>
                         <span style="justify-content: space-around">
                             <a href="javascript:;" id="replaceImg">编辑封面图片</a>
-                            <a href="javascript:;" class="editArticle">编辑文章</a>
+                            <a href="javascript:;" class="editArticle">前往议题</a>
                         </span>
                     </form>
                 </div>
@@ -199,7 +173,7 @@
         //cropper图片裁剪
         $('#tailoringImg').cropper({
             viewMode: 1,
-            aspectRatio: 5 / 4,
+            aspectRatio: 1 / 1,
             preview: '.previewImg', //预览视图
             guides: false, //裁剪框的虚线(九宫格)
             autoCropArea: 0.5, //0-1之间的数值，定义自动剪裁区域的大小，默认0.8
@@ -283,14 +257,14 @@
         //编辑按钮判断
         $('.editArticle').on('click', function () {
             if ($('.BtnInput').val() == '') {
-                alert('请您填写文章标题');
-            } else if ($('.FirstEditorArticle').html() == '编辑文章类型') {
-                alert('请您选择文章类型')
+                alert('请您填写议题标题');
+            } else if ($('#editor-issue-introduce').val() == '') {
+                alert('请您编辑议题简介');
             } else if ($('#finalImg').attr('src') == '') {
-                alert('请您选择文章的封面');
+                alert('请您选择议题的封面');
             } else {
                 $(this).attr({
-                    'href': 'RichEditor.html',
+                    'href': 'topicContent.html',
                     'target': '_blank',
                 });
             }

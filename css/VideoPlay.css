@@ -3,31 +3,40 @@ video {
 }
 
 .live_list {
-    width: 190px;
-    height: 574px;
-    padding: 10px 10px 10px 10px;
+    width: 210px;
+    height: 621px;
+    padding: 0 10px;
     background: #fff;
     border-radius: 5px;
     background: rgba(240, 246, 247, .5);
     margin-left: 10px;
     display: flex;
-    align-content: space-between;
+    align-content: center;
     flex-wrap: wrap;
     transition: all .3s ease;
 }
 
+.video-loading-error {
+    width: 180px;
+    height: 540px;
+}
+
 .live_list div {
     width: 100%;
-    height: 18.5%;
+    height: 105px;
     background: #333;
     border-radius: 5px;
-    background: url(../img/Soda.jpg) no-repeat;
+    background: url(../img/15.jpg) no-repeat;
     background-size: cover;
-    background-position: 0px -45px;
     cursor: pointer;
     position: relative;
     box-shadow: 0px 0px 0px 2px transparent inset;
     transition: all .2s ease;
+    margin-bottom: 17px;
+}
+
+.live_list div:last-child {
+    margin: 0;
 }
 
 .live_list div::before {
@@ -42,6 +51,10 @@ video {
     border-radius: 5px;
     content: "";
     opacity: 1;
+}
+
+.video-loading-error div {
+    height: 90px;
 }
 
 .live_list .live_hover::before {
@@ -94,6 +107,10 @@ video {
     bottom: 5px;
     left: 10px;
     transition: all .3s ease;
+    width: calc(100% - 20px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .pic {

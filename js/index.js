@@ -81,10 +81,6 @@ $(function () {
     $(".left_part").eq(9).find("p").html("别人“略施小计”就能让体重蹭蹭往下掉，而自己努力了半天似乎都是白费功夫……估计很多投身于减肥事业的人们都经历过这种无奈，为什么自己减肥效果不明显？难道减肥这件事真的因人而异?");
     //10个推荐文章
 
-    $('.other_module').css({
-        width: (parseInt($('.module_hall').css("width")) / 2) - 20,
-    });
-
     //限制显示字符个数，超出显示省略号
     $(".draw_text").each(function () {
         var maxwidth = 72;
@@ -123,7 +119,7 @@ $('.recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
 //推荐直播
 var module_scene = $('.module_scene');
 for (var i = 0; i < 12; i++) {
-    var scene_1 = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
+    var scene_1 = $('<div class="same_module"><a href="javascript:;"></a><span>梨视频</span></div>');
     module_scene.append(scene_1);
 }
 var span_scene = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
@@ -132,7 +128,7 @@ module_scene.append(span_scene);
 //推荐视频
 var module_news = $('.module_news');
 for (var i = 0; i < 12; i++) {
-    var news_1 = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
+    var news_1 = $('<div class="same_module"><a href="javascript:;"></a><span>梨视频</span></div>');
     module_news.append(news_1);
 }
 var span_scene = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
@@ -170,14 +166,6 @@ const dp = new DPlayer({
     }
 });
 
-//视频加载完
-dp.on('canplay', function () {
-    var ContainerOutVideoH = $('.ContainerOutVideo').outerHeight();
-    $('.live_list').css({
-        'height': ContainerOutVideoH - 20,
-    });
-});
-
 //第一个的样式
 $('.live_list div').eq(0).addClass('live_two list live_after');
 
@@ -197,10 +185,20 @@ $('.live_list div').click(function () {
     dp.toggle(); //切换播放和暂停
 });
 
-//页页面的尺寸发生变化
+dp.on('error', function () {
+    $('.live_list').addClass('video-loading-error');
+});
+
+// 设置图片的高度
+function SetImgHeight() {
+    var cutHalf = (parseFloat($('.module_scene a').css('width'))) / 2;
+    $('.module_scene a, .module_news a').css('height', cutHalf);
+}
+
+$(function () {
+    SetImgHeight();
+});
+
 $(window).resize(function () {
-    var ContainerOutVideoH = $('.ContainerOutVideo').outerHeight();
-    $('.live_list').css({
-        'height': ContainerOutVideoH - 20,
-    });
+    SetImgHeight();
 });

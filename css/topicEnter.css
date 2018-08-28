@@ -86,3 +86,13 @@
 .recommed_topic .issue {
     background: #fff;
 }
+
+.recommed_topic img {
+    width: 100%;
+    height: auto;
+}
+
+.recommed_topic .InRecommed img {
+    width: 200px;
+    height: 200px;
+}

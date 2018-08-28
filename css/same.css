@@ -570,16 +570,14 @@ h6 {
 }
 
 .replace_img {
-    width: 125px;
-    height: 100px;
     display: block;
-    overflow: hidden;
-    border-radius: 5px;
 }
 
 .replace_img img {
-    width: 100%;
+    width: 125px;
+    height: 100px;
     position: relative;
+    border-radius: 5px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -605,13 +603,13 @@ h6 {
 }
 
 .recommed_topic a {
-    width: 200px;
     display: block;
     position: relative;
 }
 
 .recommed_topic img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
 }
 
 .recommed_topic a span {
