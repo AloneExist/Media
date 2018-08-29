@@ -16,6 +16,7 @@ video {
     transition: all .3s ease;
 }
 
+/* 当视频加载发生错误时 */
 .video-loading-error {
     width: 180px;
     height: 540px;
@@ -53,6 +54,7 @@ video {
     opacity: 1;
 }
 
+/* 当视频加载发生错误时 */
 .video-loading-error div {
     height: 90px;
 }

@@ -107,6 +107,9 @@
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     display: block;
+    background: url(../img/Soda.jpg) no-repeat;
+    background-size: cover;
+    background-position: -50%;
 }
 
 .same_module .a_hover::before {

@@ -185,20 +185,18 @@ $('.live_list div').click(function () {
     dp.toggle(); //切换播放和暂停
 });
 
-dp.on('error', function () {
-    $('.live_list').addClass('video-loading-error');
-});
-
 // 设置图片的高度
 function SetImgHeight() {
     var cutHalf = (parseFloat($('.module_scene a').css('width'))) / 2;
     $('.module_scene a, .module_news a').css('height', cutHalf);
 }
 
+// 设置图片的高度
 $(function () {
     SetImgHeight();
 });
 
+// 设置图片的高度
 $(window).resize(function () {
     SetImgHeight();
 });

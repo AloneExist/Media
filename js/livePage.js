@@ -164,9 +164,11 @@ $('.bottomImgL a').on('click', function () {
     if ($(this).find('.focusFocusTwo').html() == '关注') {
         $('.NUmCounts').html(parseInt($('.NUmCounts').html()) + 1);
         $(this).find('.focusFocusTwo').html('已关注');
+        $(this).find('.iconfont').html('&#xe602;');
     } else {
         $('.NUmCounts').html(parseInt($('.NUmCounts').html()) - 1);
         $(this).find('.focusFocusTwo').html('关注');
+        $(this).find('.iconfont').html('&#xe638;');
     }
 });
 

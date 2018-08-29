@@ -16,7 +16,7 @@ $(document).on("click", '.same_a,.user_list a,.FocusList a,.layui-layer-btn0', f
 
 var Select_One_Div = $('.Select_One_Div');
 for (var i = 0; i < 12; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></i>');
+    var select_one = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></i>');
     Select_One_Div.append(select_one);
 };
 
@@ -211,7 +211,7 @@ var get_more_two = $('<div class="contain_a"><a class="contain_span" href="javas
 var get_more_three = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 
 for (var i = 0; i < 6; i++) {
-    var v_list = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></div>');
+    var v_list = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></div>');
     Video_list.append(v_list);
 }
 
@@ -613,7 +613,7 @@ $('.btn-whether-focus').on('click', function () {
 // 关注视频
 var videoFocus = $('.videoFocus');
 for (var i = 0; i < 12; i++) {
-    var videoFocusOne = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></div>');
+    var videoFocusOne = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></div>');
     videoFocus.append(videoFocusOne);
 };
 
@@ -634,4 +634,20 @@ $('.Delect-Video').on('click', function () {
         This.parent().parent().remove();
         layer.close(index);
     });
+});
+
+// 设置图片的高度
+function SetImgHeight() {
+    var cutHalf = (parseFloat($('.same_module a').css('width'))) / 2;
+    $('.same_module a').css('height', cutHalf);
+}
+
+// 设置图片的高度
+$(function () {
+    SetImgHeight();
+});
+
+// 设置图片的高度
+$(window).resize(function () {
+    SetImgHeight();
 });

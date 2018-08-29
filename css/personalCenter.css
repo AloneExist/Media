@@ -165,6 +165,9 @@
     overflow: hidden;
     display: block;
     position: relative;
+    background: url(../img/Soda.jpg) no-repeat;
+    background-size: cover;
+    background-position: -50%;
 }
 
 .same_module img {

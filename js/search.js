@@ -24,13 +24,13 @@ $('.leftParts .topA').on('click', function () {
 
 var firstPart = $('.firstPart');
 for (var i = 0; i < 17; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>梨视频</span></div>');
+    var select_one = $('<div class="same_module"><a href="javascript:;"></a><span>梨视频</span></div>');
     firstPart.append(select_one);
 };
 
 var secondPart = $('.secondPart');
 for (var i = 0; i < 17; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><img src="../img/15.jpg"></a><span>抖音短视频</span></div>');
+    var select_one = $('<div class="same_module"><a href="javascript:;"></a><span>抖音短视频</span></div>');
     secondPart.append(select_one);
 };
 
@@ -225,4 +225,20 @@ $('.HiddenSpan').on('click', function () {
     } else {
         $(this).parent().parent().remove();
     }
+});
+
+// 设置图片的高度
+function SetImgHeight() {
+    var cutHalf = (parseFloat($('.same_module a').css('width'))) / 2;
+    $('.same_module a').css('height', cutHalf);
+}
+
+// 设置图片的高度
+$(function () {
+    SetImgHeight();
+});
+
+// 设置图片的高度
+$(window).resize(function () {
+    SetImgHeight();
 });

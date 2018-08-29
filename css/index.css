@@ -221,7 +221,6 @@ body {
 }
 
 /* 视频 */
-
 .ContainerOutVideo {
     border-radius: 5px;
     overflow: hidden;
@@ -247,10 +246,9 @@ body {
 }
 
 #VideoInterface {
-    max-width: 1104px;
-    max-height: 621px;
-    min-width: 960px;
-    min-height: 540px;
+    width: 1104px;
+    height: 621px;
+    transition: all .5s ease;
 }
 
 .contain_other .other_module {
@@ -262,10 +260,12 @@ body {
         align-items: initial;
         align-content: center;
     }
+
     #VideoInterface {
         width: 960px;
         height: 540px;
     }
+
     .live_list {
         width: 940px;
         height: auto;
@@ -276,11 +276,13 @@ body {
         margin-top: 20px;
         padding: 10px;
     }
+
     .live_list div {
         width: 178px;
         height: 89px;
         margin: 0;
     }
+
     .live_list div::after {
         border-bottom: 6px solid #000;
         border-left: 6px solid transparent;
@@ -290,27 +292,32 @@ body {
         transform: initial;
         transform: translateX(-50%);
     }
+
     .module_scene,
     .module_news,
     .module_hall,
     .module_ans_que {
         padding: 50px 0 0 0;
     }
+
     .module_scene .same_module,
     .module_news .same_module {
         width: 30%;
         margin-left: 1.666666666666666666666%;
         margin-right: 1.666666666666666666666%;
     }
+
     .module_scene .contain_a,
     .module_news .contain_a,
     .module_hall .contain_a,
     .module_ans_que .contain_a {
         padding-top: 30px;
     }
+
     .recommed_topic .issueOutContainer {
         width: 33.33333333333333333333333333%;
     }
+
     .toTop {
         right: 30px;
     }
