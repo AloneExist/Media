@@ -118,7 +118,8 @@
         <div class="tailoring-content">
             <div class="tailoring-content-one">
                 <label title="上传图片" for="chooseImg" class="l-btn choose-btn">
-                    <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden" onchange="selectImg(this)"> 选择图片
+                    <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden"
+                        onchange="selectImg(this)"> 选择图片
                 </label>
                 <div class="close-tailoring" onclick="closeTailor(this)">
                     <i class="iconfont">&#xe61a;</i>
@@ -143,6 +144,9 @@
     </div>
     <!-- 编辑文字 -->
     <div class="editor-question-word">
+        <div class="input_introduce">
+            <p>请输入简介：</p>
+        </div>
         <textarea id="editor-question-word-textarea"></textarea>
         <div>
             <a href="javascript:;" class="confirm-btn">确定</a>

@@ -46,54 +46,82 @@
 }
 
 /* 编辑文字 */
-
 #editor-word {
     margin-left: 20px;
 }
 
 .editor-question-word {
-    width: 100%;
-    height: 100%;
     position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, .8);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
     z-index: 10;
     display: none;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    padding: 30px 20px;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    border-radius: 12px;
+}
+
+.editor-question-word .input_introduce {
+    margin: 0;
+    padding: 0;
+    padding-left: 30px;
+    width: 770px;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #34352C;
+}
+
+.editor-question-word .input_introduce p {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .editor-question-word textarea {
-    width: 50%;
-    height: 50%;
-    border: none;
+    width: 776px;
+    height: 276px;
+    padding: 10px;
+    border: 2px solid #34352C;
     background: #fff;
     color: #000;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
     line-height: 25px;
+    font-family: Arial;
+    transition: all .3s ease;
+    margin-top: 20px;
+}
+
+.editor-question-word textarea:focus {
+    border: 2px solid #FF5983;
 }
 
 .editor-question-word div {
-    width: 100%;
+    width: 750px;
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    justify-content: flex-end;
+    margin-top: 25px;
+    padding-right: 50px;
 }
 
 .editor-question-word div a {
-    padding: 10px 25px;
-    background: #37C6C0;
-    color: #34352C;
-    border-radius: 5px;
+    padding: 8px 30px;
+    background: #34352C;
+    color: #fff;
     font-size: 14px;
+    transition: all .3s ease;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+}
+
+.editor-question-word div a:hover {
+    background: #FF5983;
 }
 
 /* 加载动画 */
-
 .Load-animated {
     width: 100%;
     justify-content: center;
@@ -159,6 +187,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -168,6 +197,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -177,6 +207,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }

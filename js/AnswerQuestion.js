@@ -72,8 +72,13 @@ $('#editor-word').on('click', function () {
 $('.confirm-btn').on('click', function () {
     var Del_space_newline = $('#editor-question-word-textarea').val().replace(/\ +/g, "").replace(/[\r\n]/g, "");
     $('.editor-question-word').css('display', '');
-    $('.topImgColumns .wordP').html(Del_space_newline);
-    CutWordColumns('.wordP', 60);
+    if (Del_space_newline == '') {
+        $('.topImgColumns .wordP').html($('.topImgColumns .wordP').html());
+    } else {
+        $('.topImgColumns .wordP').html(Del_space_newline);
+    }
+
+    CutWordColumns('.wordP', 100);
     $('#editor-question-word-textarea').val('');
 });
 
