@@ -273,6 +273,23 @@ function CutWord() {
     });
 }
 
+// 发布
+$('.editor_article').hover(function () {
+    $('.three-part-for-article-video-issue').css('transform', 'scaleY(1)');
+}, function () {
+    $('.three-part-for-article-video-issue').css('transform', '');
+});
+
+$('.three-part-for-article-video-issue a').on('click', function () {
+    var This = $(this);
+    $('.three-part-for-article-video-issue').css('transform', '');
+    setTimeout(function () {
+        if (This.attr('data-href') != '1') { //为了实现本页面不跳转
+            window.open(This.attr('data-href'));
+        }
+    }, 300);
+});
+
 console.log([
     "                   我佛慈悲",
     "                   _ooOoo_",

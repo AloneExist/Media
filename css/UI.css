@@ -88,6 +88,7 @@
     border-radius: 4px;
     font-size: 14px;
     color: #a0a0a0;
+    font-family: Arial;
 }
 
 .user_information #replaceImg,
@@ -128,7 +129,6 @@
 }
 
 /* 加载动画 */
-
 .Load-animated {
     width: 100%;
     justify-content: center;
@@ -194,6 +194,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -203,6 +204,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -212,6 +214,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }

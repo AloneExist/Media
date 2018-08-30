@@ -301,24 +301,39 @@ h6 {
 
 .editor_article {
     margin-left: 30px;
-    width: 120px;
-    height: 45px;
+    position: relative;
+    width: 110px;
+    height: 37px;
 }
 
-.editor_article a {
-    background: #AAB8A3;
-    border-radius: 45px;
+.three-part-for-article-video-issue {
+    width: 100%;
+    background: #34352C;
+    transform: scaleY(0);
+    transition: all .3s ease;
+    transform-origin: 0 0;
+}
+
+.three-part-for-article-video-issue a {
+    font-size: 14px;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.editor_article .editor-first-a {
+    background: #34352C;
     color: #EBEDF4;
-    font-size: 17px;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 5px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+    transition: all .3s ease;
 }
 
-.editor_article span {
-    padding-right: 10px;
-}
-
-.left_list .editor_article a:hover {
-    background: #869B74;
-    color: #EBEDF4;
+.editor_article .editor-first-a:hover {
+    background: #FF5983;
+    color: #fff;
 }
 
 .msg_index_dance {
@@ -336,6 +351,7 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .msg_index_dance::before {
@@ -646,7 +662,6 @@ h6 {
 }
 
 /* 分页样式 */
-
 .pagingTool {
     width: 100%;
     display: flex;
@@ -699,7 +714,6 @@ h6 {
 }
 
 /* NO MORE */
-
 .NOMore {
     display: flex;
     flex-wrap: wrap;

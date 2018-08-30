@@ -329,7 +329,7 @@ function CodeSame(n) {
 }
 
 var UrlAddress = 'https://music.163.com';
-var getFirstContent = $('.video-title p').html();
+var getFirstContent = $('.title-span').html();
 
 //配置share.js的参数
 socialShare('.social-share', {
