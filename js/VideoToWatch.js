@@ -355,6 +355,41 @@ $('.focus-btn a').on('click', function () {
     }
 });
 
+// 播放器全屏事件
+$('#full-screen-btn').on('click', function () {
+    // 使之成为百分百显示
+    $('#VideoInterface').css({
+        width: '100%',
+        height: '100%',
+    });
+});
+
+// 监听退出全屏
+window.onresize = function () {
+    if (!checkFull()) {
+        // 恢复播放器的宽高
+        $('#VideoInterface').css({
+            width: '',
+            height: '',
+        });
+        // 重新设置右边栏的高度
+        var videoContent = $('.video-content').outerHeight();
+        $('.danmu-list-content').css({
+            'height': videoContent,
+        });
+    }
+}
+
+// 监听退出全屏事件的函数
+function checkFull() {
+    var isFull = document.fullscreenEnabled || window.fullScreen || document.webkitIsFullScreen || document.msFullscreenEnabled;
+    //to fix : false || undefined == undefined
+    if (isFull === undefined) {
+        isFull = false;
+    }
+    return isFull;
+}
+
 $(document).on('click', '.toolBar_Btn a,.publish_A,.layui-layer-btn0,.ADDCommit,.DEl,.cancel_A', function () {
     $('body').getNiceScroll().resize();
 });

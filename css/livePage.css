@@ -1,3 +1,10 @@
+html,
+body,
+#main {
+    width: 100%;
+    height: 100%;
+}
+
 #DPlayerVideo video {
     cursor: pointer;
 }
@@ -23,7 +30,11 @@
 
 .MiddleContent {
     width: 100%;
-    padding-top: 120px;
+    height: calc(100% - 100px);
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .KeepSame {
@@ -61,6 +72,25 @@
     display: flex;
     padding: 15px 15px 15px 20px;
     background: #fff;
+}
+
+.HeadPicture a {
+    display: block;
+}
+
+/* 直播状态--闲置和直播 */
+.live-status {
+    border: 1px solid #23ade5;
+    color: #23ade5;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 0 7px;
+}
+
+/* 闲置 */
+.idle {
+    border: 1px solid #999;
+    color: #999;
 }
 
 .HeadPicture img {
@@ -106,6 +136,8 @@
     justify-content: center;
     font-size: 16px;
     color: #000;
+    line-height: 16px;
+    padding: 0 0 0 15px;
 }
 
 .NameColumn {
@@ -113,7 +145,7 @@
 }
 
 .NameColumn a {
-    font-size: 12px;
+    font-size: 14px;
     color: #999;
     transition: all .3s ease;
 }

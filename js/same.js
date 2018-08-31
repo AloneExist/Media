@@ -195,9 +195,6 @@ $('.InputTextBtn').on('click', function () {
         '<p class="pastP">上大学后，我一直坚持的三件事情</p></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
         '<p class="pastP">上大学后，我一直坚持的三件事情</p></a></li></ul></div>');
     $('.searchLi form').append(HotPast);
-    $('.InputTextBtn').css({
-        'width': '180px',
-    });
     $('.search_special').css({
         'background': '#BBB',
     });

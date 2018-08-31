@@ -248,7 +248,6 @@ body {
 #VideoInterface {
     width: 1104px;
     height: 621px;
-    transition: all .5s ease;
 }
 
 .contain_other .other_module {

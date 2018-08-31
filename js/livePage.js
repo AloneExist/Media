@@ -189,3 +189,38 @@ function stopBubble(e) {
         //否则，我们需要使用IE的方式来取消事件冒泡 
         window.event.cancelBubble = true;
 }
+
+// 播放器全屏事件
+$('#full-screen-btn').on('click', function () {
+    // 使之成为百分百显示
+    $('#VideoInterface').css({
+        width: '100%',
+        height: '100%',
+    });
+});
+
+// 监听退出全屏
+window.onresize = function () {
+    if (!checkFull()) {
+        // 恢复播放器的宽高
+        $('#VideoInterface').css({
+            width: '',
+            height: '',
+        });
+        // 重设右边栏高度
+        var containrAllVideoElementHeight = $('.containrAllVideoElement').outerHeight();
+        $('.DanMuListKeepSame').css({
+            'height': containrAllVideoElementHeight,
+        });
+    }
+}
+
+// 监听退出全屏事件的函数
+function checkFull() {
+    var isFull = document.fullscreenEnabled || window.fullScreen || document.webkitIsFullScreen || document.msFullscreenEnabled;
+    //to fix : false || undefined == undefined
+    if (isFull === undefined) {
+        isFull = false;
+    }
+    return isFull;
+}
