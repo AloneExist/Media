@@ -430,12 +430,21 @@ $('.discuss-number').each(function () {
 // 提高和减低一个元素的层级
 function improveAreduceZIndex() {
     $('.hoverSameA5,.hoverSameA17').on('click', function () {
+        var This = $(this);
         var timer = null;
         timer = setInterval(function () {
             if ($('.cover_big').exist()) {
                 $('.title').css('z-index', 'initial');
+                $('.toTop').css('z-index', '-1');
+                $('.NewGoodEditor').css('position', 'static');
+                $('.NewToolbar').css('z-index', '-1');
+                This.parent().parent().parent().parent().parent().css('background', 'transparent');
             } else {
                 $('.title').css('z-index', '');
+                $('.toTop').css('z-index', '');
+                $('.NewGoodEditor').css('position', '');
+                $('.NewToolbar').css('z-index', '');
+                This.parent().parent().parent().parent().parent().css('background', '');
                 clearInterval(timer);
             }
         }, 0);

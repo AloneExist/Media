@@ -641,7 +641,8 @@ blockquote b {
   margin-bottom: -5px;
 }
 
-#bottom_content {
+#bottom_content,
+#NewUser_edit {
   z-index: initial !important;
 }
 

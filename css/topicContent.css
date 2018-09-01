@@ -145,6 +145,7 @@
     background: #EDEDED;
     padding: 20px;
     margin-bottom: 30px;
+    transition: all .3s ease;
 }
 
 .TitleA {
@@ -204,7 +205,6 @@
 }
 
 /* 编辑器参与评论 */
-
 .NewGoodEditor {
     padding-top: 30px;
     position: relative;
@@ -221,7 +221,6 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
     overflow: hidden;
     border-radius: 5px;
-    position: relative;
 }
 
 .input_Time {
@@ -359,7 +358,6 @@
 }
 
 /* 结束 */
-
 .Hold {
     background: #f2f2f2;
     color: #3B200C;
@@ -469,7 +467,6 @@
 }
 
 /* 是否有讨论 */
-
 .comments-not-or-yes {
     font-size: 18px;
     font-weight: 700;
@@ -478,7 +475,6 @@
 }
 
 /* 加载动画 */
-
 .Load-animated {
     width: 100%;
     justify-content: center;
@@ -538,6 +534,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -547,6 +544,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -556,19 +554,19 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
 }
 
 /* 加载更多 */
-
 .loading-more {
     text-align: center;
 }
 
 .loading-more a {
-    padding: 10px 15px;
+    padding: 10px 25px;
     background: #3B200C;
     box-shadow: 0 0 30px rgba(0, 0, 0, .3);
     color: #fff;
@@ -583,4 +581,9 @@
 .TwoList .insertComment {
     margin: 0;
     margin-bottom: 30px;
+}
+
+#NewUser_edit {
+    z-index: inherit !important;
+    position: static !important;
 }

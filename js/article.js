@@ -427,11 +427,15 @@ function improveAreduceZIndex() {
         $('.title').css('z-index', 'initial');
         $('.toTop').css('z-index', '-1');
         $('.toolbar').css('z-index', '-1');
+        $('.NewGoodEditor').css('position', 'static');
+        $('.NewToolbar').css('z-index', '-1');
       } else {
         $('.ContentShare').css('z-index', '');
         $('.title').css('z-index', '');
         $('.toTop').css('z-index', '');
         $('.toolbar').css('z-index', '');
+        $('.NewGoodEditor').css('position', '');
+        $('.NewToolbar').css('z-index', '');
         clearInterval(timer);
       }
     }, 0);
