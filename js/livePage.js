@@ -10,17 +10,6 @@ const dp = new DPlayer({
     }
 });
 
-//当video加载完成发送的事件
-var VideoInterface = document.getElementById('VideoInterface');
-VideoInterface.oncanplay = function () { //当视频加载完成时
-    var containrAllVideoElementHeight = $('.containrAllVideoElement').outerHeight();
-    $('.DanMuListKeepSame').css({
-        'height': containrAllVideoElementHeight,
-    });
-    var userInformationListHeight = $('.userInformationList').outerHeight();
-    $('.Cute').height(userInformationListHeight - 20);
-}
-
 //编辑滚动条
 $(function () {
     $(".SendArea").getNiceScroll().hide(); //使body为overflow:hidden
@@ -88,6 +77,7 @@ $('.SendFunction a').hover(function () {
     }
 });
 
+// 弹幕的设置--点击
 $('.DanMuSet').on('click', function () {
     $('.iconSEt').css({
         'color': '#FF6E97',
@@ -95,14 +85,6 @@ $('.DanMuSet').on('click', function () {
     $('.DanMUSetIng').css('display', 'block');
     $('.DanMUSetIng').addClass('fadeIn');
     stopBubble();
-});
-
-//当页面变化时盖度随之改变
-$(window).resize(function () {
-    var containrAllVideoElementHeight = $('.containrAllVideoElement').outerHeight();
-    $('.DanMuListKeepSame').css({
-        'height': containrAllVideoElementHeight,
-    });
 });
 
 var LastSpanStyle = $('.DanMuLocation span').eq(0);

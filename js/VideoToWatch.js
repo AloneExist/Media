@@ -13,23 +13,6 @@ const dp = new DPlayer({
     },
 });
 
-//当video加载完成发送的事件
-var VideoInterface = document.getElementById('VideoInterface');
-VideoInterface.oncanplay = function () { //当视频加载完成时
-    var videoContent = $('.video-content').outerHeight();
-    $('.danmu-list-content').css({
-        'height': videoContent,
-    });
-}
-
-//当页面变化时盖度随之改变
-$(window).resize(function () {
-    var videoContent = $('.video-content').outerHeight();
-    $('.danmu-list-content').css({
-        'height': videoContent,
-    });
-});
-
 //编辑滚动条
 $(function () {
     $(".all-danmu-message,.YScroll").getNiceScroll().hide(); //使body为overflow:hidden
@@ -72,12 +55,22 @@ function danmuMessage(n) {
 $('.dplayer-comment-input').keydown(function () {
     var keyCode = event.keyCode ? event.keyCode : event.which;
     if (keyCode == '13') {
-        danmuMessage($(this));
+        if ($(this).val() == '') {
+            alert('不能发送空弹幕，请您写一点弹幕再发送');
+            $(this).focus();
+        } else {
+            danmuMessage($(this));
+        }
     }
 });
 
 $('#send-button-for-danmu').on('click', function () {
-    danmuMessage($('.dplayer-comment-input'));
+    if ($('.dplayer-comment-input').val() == '') {
+        alert('不能发送空弹幕，请您写一点弹幕再发送');
+        $('.dplayer-comment-input').focus();
+    } else {
+        danmuMessage($('.dplayer-comment-input'));
+    }
 });
 
 function danmuSend(n, m) {

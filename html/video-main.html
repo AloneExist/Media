@@ -76,7 +76,11 @@
         </div>
         <div class="main-video-page">
             <div class="main-content">
-                <p>视频教学</p>
+                <p class="first-p-for-title">视频教学</p>
+                <div class="classification">
+                    <span class="kind-span">分类：</span>
+                    <div class="all-classification"></div>
+                </div>
             </div>
         </div>
         <!-- 分页 -->
@@ -96,9 +100,51 @@
     <script src="../js/paging.js"></script>
     <script src="../js/same.js"></script>
     <script>
+        // 视频的Json
+        // "video_background": "background: url(../img/Soda.jpg) no-repeat;"
+        //  "video_title": "梨视频"
+        // "video_owner_name": "双马尾lolita/我是你的新同桌呀"
+        //  "online_people_number": "1000"
+
+        // 背景
+        videoAllContent = {
+            videoBackgroundData: [
+                "background: url(../img/Soda.jpg) no-repeat;",
+                "background: url(../img/15.jpg) no-repeat;",
+                "background: url(../img/13.jpg) no-repeat;",
+                "background: url(../img/dog.jpg) no-repeat;",
+                "background: url(../img/newPeople.jpg) no-repeat;",
+                "background: url(../img/4.jpg) no-repeat;",
+                "background: url(../img/5.jpg) no-repeat;",
+                "background: url(../img/6.jpg) no-repeat;",
+                "background: url(../img/7.jpg) no-repeat;",
+            ],
+            videoTitleData: [
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+            ],
+            videoOwnerName: [
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+            ],
+            onlinePeopleNumber: [
+                "1000",
+                "1001",
+                "2000",
+                "10001",
+            ]
+        }
+
         var mainContent = $('.main-content');
         for (var i = 0; i < 18; i++) {
-            var Content_one = $('<div class="same_module"><a href="javascript:;"></a><span>梨视频</span></div>');
+            var Content_one = $('<div class="same_module"><a href="javascript:;" style="' +
+                videoAllContent.videoBackgroundData[0] + ';background-size:cover;background-position:-50%;"></a>' +
+                '<span><p class="title-span-p">' + videoAllContent.videoTitleData[0] +
+                '</p>' + '<p class="cute-name-live-people"><b>' + videoAllContent.videoOwnerName[0] +
+                '</b><b><i class="iconfont">&#xe60d;</i>' + videoAllContent.onlinePeopleNumber[0] +
+                '</b></p></span></div>'
+            );
             mainContent.append(Content_one);
         }
 
@@ -145,6 +191,27 @@
 
         //NO MORE
         // $('.pagingTool').append('<div class="NOMore"><i class="iconfont">&#xe670;</i><p>没有更多了</p></div>');
+
+        // Josn用来存放a标签内的内容
+        var Json = {
+            "content": ["全部", "娱乐", "综艺", "文化", "游戏", "少儿", "音乐", "教育", "生活", "汽车", "科技", "时尚", "自拍", "拍客", "VR",
+                "广告", "微电影", "动漫"
+            ],
+        }
+
+        // 获取Json里面的数据
+        for (var Item in Json.content) {
+            var Add_Json_Data = $('<span><a href="javascript:;">' + Json.content[Item] + '</a></span>');
+            $('.all-classification').append(Add_Json_Data);
+        }
+
+        $('.all-classification span a').eq(0).addClass('click-hover-after');
+        var Last_A = $('.all-classification span a').eq(0);
+        $('.all-classification span a').on('click', function () {
+            Last_A.removeClass('click-hover-after');
+            Last_A = $(this);
+            $(this).addClass('click-hover-after');
+        });
     </script>
 </body>
 
