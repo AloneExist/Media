@@ -1,0 +1,34 @@
+.pageMain {
+    padding-top: 100px;
+}
+
+.pageMain img {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.pageMain h3,
+.pageMain p,
+.pageMain div {
+    text-align: center;
+}
+
+.pageMain div {
+    padding-top: 42px;
+}
+
+.pageMain p {
+    padding-top: 20px;
+}
+
+.pageMain div a {
+    padding: 12px 20px;
+    background: #74b5be;
+    color: #fff;
+    border-radius: 45px;
+    transition: all .3s ease;
+}
+
+.pageMain div a:hover {
+    background: #86D0DB;
+}
