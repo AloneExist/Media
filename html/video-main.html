@@ -99,115 +99,100 @@
     <script src="../js/jquery.nicescroll.min.js"></script>
     <script src="../js/paging.js"></script>
     <script src="../js/same.js"></script>
+    <script src="../js/video-live-main.js"></script>
     <script>
-        // 视频的Json
-        // "video_background": "background: url(../img/Soda.jpg) no-repeat;"
-        //  "video_title": "梨视频"
-        // "video_owner_name": "双马尾lolita/我是你的新同桌呀"
-        //  "online_people_number": "1000"
-
         // 背景
         videoAllContent = {
             videoBackgroundData: [
-                "background: url(../img/Soda.jpg) no-repeat;",
-                "background: url(../img/15.jpg) no-repeat;",
-                "background: url(../img/13.jpg) no-repeat;",
-                "background: url(../img/dog.jpg) no-repeat;",
-                "background: url(../img/newPeople.jpg) no-repeat;",
-                "background: url(../img/4.jpg) no-repeat;",
-                "background: url(../img/5.jpg) no-repeat;",
-                "background: url(../img/6.jpg) no-repeat;",
-                "background: url(../img/7.jpg) no-repeat;",
+                "background-image: url(../img/Soda.jpg)",
+                "background-image: url(../img/15.jpg)",
+                "background-image: url(../img/13.jpg)",
+                "background-image: url(../img/dog.jpg)",
+                "background-image: url(../img/newPeople.jpg)",
+                "background-image: url(../img/4.jpg)",
+                "background-image: url(../img/5.jpg)",
+                "background-image: url(../img/6.jpg)",
+                "background-image: url(../img/7.jpg)",
+                "background-image: url(../img/Soda.jpg)",
+                "background-image: url(../img/15.jpg)",
+                "background-image: url(../img/13.jpg)",
+                "background-image: url(../img/dog.jpg)",
+                "background-image: url(../img/newPeople.jpg)",
+                "background-image: url(../img/4.jpg)",
+                "background-image: url(../img/5.jpg)",
+                "background-image: url(../img/6.jpg)",
+                "background-image: url(../img/7.jpg)"
             ],
             videoTitleData: [
                 "梨视频",
                 "只想凭实力让你喜欢",
                 "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】"
             ],
             videoOwnerName: [
                 "双马尾lolita/我是你的新同桌呀",
                 "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪"
             ],
             onlinePeopleNumber: [
                 "1000",
                 "1001",
                 "2000",
                 "10001",
+                "1000",
+                "1001",
+                "2000",
+                "10001",
+                "1000",
+                "1001",
+                "2000",
+                "10001",
+                "1000",
+                "1001",
+                "2000",
+                "10001",
+                "11052",
+                "72537"
             ]
         }
 
-        var mainContent = $('.main-content');
-        for (var i = 0; i < 18; i++) {
-            var Content_one = $('<div class="same_module"><a href="javascript:;" style="' +
-                videoAllContent.videoBackgroundData[0] + ';background-size:cover;background-position:-50%;"></a>' +
-                '<span><p class="title-span-p">' + videoAllContent.videoTitleData[0] +
-                '</p>' + '<p class="cute-name-live-people"><b>' + videoAllContent.videoOwnerName[0] +
-                '</b><b><i class="iconfont">&#xe60d;</i>' + videoAllContent.onlinePeopleNumber[0] +
-                '</b></p></span></div>'
-            );
-            mainContent.append(Content_one);
-        }
+        // 初始化
+        JsonAddData(random_number, 0, '&#xe611;');
 
-        // 设置图片的高度
-        function SetImgHeight() {
-            var cutHalf = (parseFloat($('.same_module a').css('width'))) / 2;
-            $('.same_module a').css('height', cutHalf);
-        }
-
-        $('.same_module a').hover(function () {
-            $(this).addClass("a_hover a_hover_a");
-        }, function () {
-            $(this).removeClass("a_hover a_hover_a");
-        });
-
-        // 设置图片的高度
-        $(function () {
-            SetImgHeight();
-        });
-
-        // 设置图片的高度
-        $(window).resize(function () {
-            SetImgHeight();
-        });
-
-        // 分页
-        $('.pagingTool').Paging({
-            pagesize: 10,
-            count: 100,
-            prevTpl: '<i class="iconfont">&#xe78c;</i>',
-            nextTpl: '<i class="iconfont">&#xe77c;</i>',
-            firstTpl: '<i class="iconfont">&#xe609;</i>',
-            lastTpl: '<i class="iconfont">&#xe6de;</i>',
-        });
-
-        $('.pagingTool li').on('click', function () {
-            $('.pagingTool').css({
-                '-webkit-user-select': 'none',
-                '-moz-user-select': 'none',
-                '-ms-user-select': 'none',
-                'user-select': 'none',
-            });
-        });
-
-        //NO MORE
-        // $('.pagingTool').append('<div class="NOMore"><i class="iconfont">&#xe670;</i><p>没有更多了</p></div>');
-
-        // Josn用来存放a标签内的内容
-        var Json = {
-            "content": ["全部", "娱乐", "综艺", "文化", "游戏", "少儿", "音乐", "教育", "生活", "汽车", "科技", "时尚", "自拍", "拍客", "VR",
-                "广告", "微电影", "动漫"
-            ],
-        }
-
-        // 获取Json里面的数据
-        for (var Item in Json.content) {
-            var Add_Json_Data = $('<span><a href="javascript:;">' + Json.content[Item] + '</a></span>');
-            $('.all-classification').append(Add_Json_Data);
-        }
-
-        $('.all-classification span a').eq(0).addClass('click-hover-after');
         var Last_A = $('.all-classification span a').eq(0);
         $('.all-classification span a').on('click', function () {
+            var index = $('.all-classification span a').index(this);
+            var random_number = Math.floor(Math.random() * 6 + 15);
+            JsonAddData(random_number, index, '&#xe611;');
             Last_A.removeClass('click-hover-after');
             Last_A = $(this);
             $(this).addClass('click-hover-after');

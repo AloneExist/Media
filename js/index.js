@@ -119,7 +119,7 @@ $('.recommed_topic').find(".issue").html("该议题被浏览 2223661 次");
 //推荐直播
 var module_scene = $('.module_scene');
 for (var i = 0; i < 12; i++) {
-    var scene_1 = $('<div class="same_module"><a href="javascript:;"></a><span>梨视频</span></div>');
+    var scene_1 = $('<div class="same_module"><a href="javascript:;"></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe60d;</i>1000</b></p></span></div>');
     module_scene.append(scene_1);
 }
 var span_scene = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
@@ -128,7 +128,7 @@ module_scene.append(span_scene);
 //推荐视频
 var module_news = $('.module_news');
 for (var i = 0; i < 12; i++) {
-    var news_1 = $('<div class="same_module"><a href="javascript:;"></a><span>梨视频</span></div>');
+    var news_1 = $('<div class="same_module"><a href="javascript:;"></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>2001</b></p></span></div>');
     module_news.append(news_1);
 }
 var span_scene = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');

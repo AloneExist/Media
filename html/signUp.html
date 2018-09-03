@@ -62,7 +62,7 @@
                     <div style="border-top: none;position: relative;background: transparent;padding: 0 8px;">
                         <i class="iconfont">&#xe607;</i>
                         <input type="text" id="textPhone" placeholder="手机验证码" class="input_text" style="width: calc(100% - 28px);padding: 18px 0;background: transparent;z-index: 1;">
-                        <a href="javascript:;" class="confirmRight">发送验证码</a>
+                        <a href="javascript:;" class="confirmRight" stop="1">发送验证码</a>
                     </div>
                     <div style="border-top: none;border-radius: 0 0 4px 4px;">
                         <i class="iconfont">&#xe657;</i>
@@ -112,6 +112,27 @@
             $(this).css({
                 'background': '#528870',
             });
+        });
+
+        // 验证60秒倒计时
+        $('.confirmRight').on('click', function () {
+            if ($(this).attr('stop') == '1') {
+                $(this).attr('stop', '0');
+                $(this).html('重新发送(60s)');
+                var Time_num = 60;
+                var This = $(this);
+                var timer = setInterval(function () {
+                    Time_num--;
+                    This.html('重新发送(' + Time_num + 's)');
+                    if (Time_num == 0) {
+                        clearInterval(timer);
+                        This.html('发送验证码');
+                        This.attr('stop', '1');
+                    }
+                }, 1000);
+            } else {
+                alert('操作太过频繁,请您稍后再操作!!!');
+            }
         });
 
         function checkNumber(theObj) {

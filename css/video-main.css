@@ -18,10 +18,11 @@
 }
 
 .main-content .first-p-for-title {
+    padding-left: 1%;
     width: 100%;
     color: #3B200C;
     padding-bottom: 20px;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
     font-weight: 600;
 }
@@ -102,7 +103,7 @@
 
 .cute-name-live-people b .iconfont {
     padding-right: 5px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .cute-name-live-people b:first-child {
@@ -112,6 +113,7 @@
 
 .cute-name-live-people b:last-child {
     text-align: center;
+    font-size: 14px;
 }
 
 .main-content .same_module {
@@ -131,4 +133,7 @@
     overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -50%;
 }

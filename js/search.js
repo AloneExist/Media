@@ -23,14 +23,14 @@ $('.leftParts .topA').on('click', function () {
 });
 
 var firstPart = $('.firstPart');
-for (var i = 0; i < 17; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"></a><span>梨视频</span></div>');
+for (var i = 0; i < 11; i++) {
+    var select_one = $('<div class="same_module"><a href="javascript:;"></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe60d;</i>1000</b></p></span></div>');
     firstPart.append(select_one);
 };
 
 var secondPart = $('.secondPart');
-for (var i = 0; i < 17; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"></a><span>抖音短视频</span></div>');
+for (var i = 0; i < 8; i++) {
+    var select_one = $('<div class="same_module"><a href="javascript:;"></a><span><p class="title-span-p">抖音短视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>2001</b></p></span></div>');
     secondPart.append(select_one);
 };
 

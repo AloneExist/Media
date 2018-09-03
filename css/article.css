@@ -16,8 +16,7 @@ p {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 50px;
-  margin-top: 50px;
+  padding-top: 100px;
 }
 
 blockquote b {

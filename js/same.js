@@ -198,6 +198,8 @@ $('.InputTextBtn').on('click', function () {
     $('.search_special').css({
         'background': '#BBB',
     });
+
+    $(this).css('width', '180px');
     stopBubble();
 
     CutWord();
@@ -286,6 +288,16 @@ $('.three-part-for-article-video-issue a').on('click', function () {
         }
     }, 300);
 });
+
+// 当页面变化时使搜索框有一些变化
+(window.onresize = function () {
+    var Body_width = $('body').outerWidth();
+    if (Body_width == 1024) {
+        $('.InputTextBtn').on('click', function () {
+            $(this).css('width', '120px');
+        });
+    }
+})();
 
 console.log([
     "                   我佛慈悲",

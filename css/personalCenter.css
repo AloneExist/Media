@@ -124,9 +124,7 @@
 }
 
 /* 直播间设置 */
-
 /* 关注设置 */
-
 .all_content .Select_Six_Div,
 .all_content .Select_seven_Div {
     display: none;
@@ -173,10 +171,6 @@
 .same_module img {
     width: 100%;
     transition: all .5s;
-}
-
-.same_module span {
-    font-size: 15px;
 }
 
 .Select_Much {
@@ -298,7 +292,6 @@
 }
 
 /* 开播设置 */
-
 .SelectStudioSetting {
     width: 100%;
     background: #fff;
@@ -440,7 +433,6 @@
 }
 
 /* 图片预览框 */
-
 .PreviewDivForCover {
     width: 600px;
     height: 300px;
@@ -460,7 +452,6 @@
 }
 
 /* 选择分类 */
-
 .SelectKindFixed {
     position: fixed;
     top: calc(50% + 20px);
@@ -533,7 +524,6 @@
 }
 
 /* 分割线 */
-
 .CutLineForDiv {
     width: 100%;
     height: 5px;
@@ -569,7 +559,6 @@
 }
 
 /* 清浮动 */
-
 .OneKindDiv:before,
 .OneKindDiv:after {
     content: "";
@@ -597,7 +586,6 @@
 }
 
 /* 关注列表 */
-
 .FocusList {
     margin-left: 12%;
     width: 280px;
@@ -1065,7 +1053,6 @@
 }
 
 /* 关注视频 */
-
 .videoFocus .same_module {
     width: 30%;
     margin-left: 1.66666666666666666%;
@@ -1075,7 +1062,6 @@
 }
 
 /* 删除video */
-
 .Delect-Video {
     position: absolute;
     top: 12px;
@@ -1132,7 +1118,6 @@
 }
 
 /* 加载动画 */
-
 .Load-animated {
     width: 100%;
     justify-content: center;
@@ -1196,6 +1181,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -1205,6 +1191,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -1214,13 +1201,13 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
 }
 
 /* 取消开播设置分类的一级标题 */
-
 .FourKindVideo,
 .CutLineForDiv {
     display: none;
@@ -1228,4 +1215,51 @@
 
 .specificKindStle {
     padding: 30px 0 0 0;
+}
+
+/* 直播和视频播放 */
+.same_module span {
+    flex-wrap: wrap;
+    align-content: center;
+    height: auto;
+    padding: 6px 0;
+}
+
+.title-span-p {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    padding-bottom: 5px;
+    color: #000;
+}
+
+.cute-name-live-people {
+    width: 100%;
+}
+
+.cute-name-live-people b {
+    display: inline-block;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #9ba3ab;
+}
+
+.cute-name-live-people b .iconfont {
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.cute-name-live-people b:first-child {
+    width: calc(50% - 10px);
+    padding-left: 10px;
+}
+
+.cute-name-live-people b:last-child {
+    text-align: center;
+    font-size: 14px;
 }

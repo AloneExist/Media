@@ -25,7 +25,7 @@
                         <a href="index.html" target="_blank">首页</a>
                     </li>
                     <li>
-                        <a href="javascript:;">名师讲堂</a>
+                        <a href="live-main.html" target="_blank">名师讲堂</a>
                     </li>
                     <li>
                         <a href="video-main.html" target="_blank">视频教学</a>
@@ -51,7 +51,7 @@
                     </li>
                     <li class="same_li last_li">
                         <!-- <a href="javascript:;" id="login_a">登录</a>
-                                <a href="javascript:;" id="register_a">注册</a> -->
+                        <a href="javascript:;" id="register_a">注册</a> -->
                         <!-- 登录前 -->
                         <div class="location_div_a">
                             <a href="personalCenter.html" class="photo_cicle" target="_blank">
@@ -76,7 +76,11 @@
         </div>
         <div class="main-video-page">
             <div class="main-content">
-                <p>名师讲堂</p>
+                <p class="first-p-for-title">名师讲堂</p>
+                <div class="classification">
+                    <span class="kind-span">分类：</span>
+                    <div class="all-classification"></div>
+                </div>
             </div>
         </div>
         <!-- 分页 -->
@@ -95,56 +99,104 @@
     <script src="../js/jquery.nicescroll.min.js"></script>
     <script src="../js/paging.js"></script>
     <script src="../js/same.js"></script>
+    <script src="../js/video-live-main.js"></script>
     <script>
-        var mainContent = $('.main-content');
-        for (var i = 0; i < 12; i++) {
-            var Content_one = $('<div class="same_module"><a href="javascript:;"></a><span>梨视频</span></div>');
-            mainContent.append(Content_one);
+        // 背景
+        videoAllContent = {
+            videoBackgroundData: [
+                "background-image: url(../img/15.jpg)",
+                "background-image: url(../img/Soda.jpg)",
+                "background-image: url(../img/13.jpg)",
+                "background-image: url(../img/dog.jpg)",
+                "background-image: url(../img/newPeople.jpg)",
+                "background-image: url(../img/4.jpg)",
+                "background-image: url(../img/5.jpg)",
+                "background-image: url(../img/6.jpg)",
+                "background-image: url(../img/7.jpg)",
+                "background-image: url(../img/Soda.jpg)",
+                "background-image: url(../img/15.jpg)",
+                "background-image: url(../img/13.jpg)",
+                "background-image: url(../img/dog.jpg)",
+                "background-image: url(../img/newPeople.jpg)",
+                "background-image: url(../img/4.jpg)",
+                "background-image: url(../img/5.jpg)",
+                "background-image: url(../img/6.jpg)",
+                "background-image: url(../img/7.jpg)"
+            ],
+            videoTitleData: [
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】",
+                "梨视频",
+                "只想凭实力让你喜欢",
+                "初音11周年】静默少女【bilibili音乐×初心社米库喵 联合出品】"
+            ],
+            videoOwnerName: [
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪",
+                "双马尾lolita/我是你的新同桌呀",
+                "撩你没道理❤零底噪"
+            ],
+            onlinePeopleNumber: [
+                "1000",
+                "1001",
+                "2000",
+                "10001",
+                "1000",
+                "1001",
+                "2000",
+                "10001",
+                "1000",
+                "1001",
+                "2000",
+                "10001",
+                "1000",
+                "1001",
+                "2000",
+                "10001",
+                "11052",
+                "72537"
+            ]
         }
 
-        // 设置图片的高度
-        function SetImgHeight() {
-            var cutHalf = (parseFloat($('.same_module a').css('width'))) / 2;
-            $('.same_module a').css('height', cutHalf);
-        }
+        // 初始化
+        JsonAddData(random_number, 0, '&#xe60d;');
 
-        $('.same_module a').hover(function () {
-            $(this).addClass("a_hover a_hover_a");
-        }, function () {
-            $(this).removeClass("a_hover a_hover_a");
+        var Last_A = $('.all-classification span a').eq(0);
+        $('.all-classification span a').on('click', function () {
+            var index = $('.all-classification span a').index(this);
+            var random_number = Math.floor(Math.random() * 6 + 15);
+            JsonAddData(random_number, index, '&#xe60d;');
+            Last_A.removeClass('click-hover-after');
+            Last_A = $(this);
+            $(this).addClass('click-hover-after');
         });
-
-        // 设置图片的高度
-        $(function () {
-            SetImgHeight();
-        });
-
-        // 设置图片的高度
-        $(window).resize(function () {
-            SetImgHeight();
-        });
-
-        // 分页
-        $('.pagingTool').Paging({
-            pagesize: 10,
-            count: 100,
-            prevTpl: '<i class="iconfont">&#xe78c;</i>',
-            nextTpl: '<i class="iconfont">&#xe77c;</i>',
-            firstTpl: '<i class="iconfont">&#xe609;</i>',
-            lastTpl: '<i class="iconfont">&#xe6de;</i>',
-        });
-
-        $('.pagingTool li').on('click', function () {
-            $('.pagingTool').css({
-                '-webkit-user-select': 'none',
-                '-moz-user-select': 'none',
-                '-ms-user-select': 'none',
-                'user-select': 'none',
-            });
-        });
-
-        //NO MORE
-        // $('.pagingTool').append('<div class="NOMore"><i class="iconfont">&#xe670;</i><p>没有更多了</p></div>');
     </script>
 </body>
 

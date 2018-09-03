@@ -87,12 +87,12 @@
                                 <a href="javascript:;">视频唱见</a>
                             </span>
                             <span class="right-video-focus-people">
-                                <span class="focus-btn">
-                                    <a href="javascript:;">关注</a>
-                                </span>
                                 <span class="play-people-number">
                                     <i class="iconfont">&#xe635;</i>
                                     55万
+                                </span>
+                                <span class="focus-btn">
+                                    <a href="javascript:;">关注</a>
                                 </span>
                             </span>
                         </p>
@@ -222,6 +222,8 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- 分页 -->
+                    <div class="pagingTool"></div>
                 </div>
             </div>
         </div>
@@ -236,6 +238,7 @@
     </div>
     <iframe src="particles.html" id="particles"></iframe>
     <script src="../js/jquery.min.js"></script>
+    <script src="../js/paging.js"></script>
     <script src="../js/social-share.min.js"></script>
     <script src="../js/jquery.qrcode.js"></script>
     <script src="../layui/layer.js"></script>
@@ -246,6 +249,20 @@
     <script src="../js/same.js"></script>
     <script src="../wangEditor/wangEditor.min.js"></script>
     <script src="../js/VideoToWatch.js"></script>
+    <script>
+        // 分页
+        $('.pagingTool').Paging({
+            pagesize: 10,
+            count: 100,
+            prevTpl: '<i class="iconfont">&#xe78c;</i>',
+            nextTpl: '<i class="iconfont">&#xe77c;</i>',
+            firstTpl: '<i class="iconfont">&#xe609;</i>',
+            lastTpl: '<i class="iconfont">&#xe6de;</i>',
+        });
+
+        //NO MORE
+        // $('.pagingTool').append('<div class="NOMore"><i class="iconfont">&#xe670;</i><p>没有更多了</p></div>');
+    </script>
 </body>
 
 </html>

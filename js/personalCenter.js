@@ -16,7 +16,7 @@ $(document).on("click", '.same_a,.user_list a,.FocusList a,.layui-layer-btn0', f
 
 var Select_One_Div = $('.Select_One_Div');
 for (var i = 0; i < 12; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></i>');
+    var select_one = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>1000</b></p></span></div>');
     Select_One_Div.append(select_one);
 };
 
@@ -211,8 +211,13 @@ var get_more_two = $('<div class="contain_a"><a class="contain_span" href="javas
 var get_more_three = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 
 for (var i = 0; i < 6; i++) {
-    var v_list = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></div>');
+    var v_list = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>2001</b></p></span></div>');
     Video_list.append(v_list);
+}
+
+for (var i = 0; i < 5; i++) {
+    var live_list = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe60d;</i>1000</b></p></span></div>');
+    Video_list.append(live_list);
 }
 
 Video_list.append(get_more_one);
@@ -613,7 +618,7 @@ $('.btn-whether-focus').on('click', function () {
 // 关注视频
 var videoFocus = $('.videoFocus');
 for (var i = 0; i < 12; i++) {
-    var videoFocusOne = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span>梨视频</span></div>');
+    var videoFocusOne = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>2001</b></p></span></div>');
     videoFocus.append(videoFocusOne);
 };
 

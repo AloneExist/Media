@@ -670,6 +670,10 @@ p {
     align-items: center;
 }
 
+.right-video-focus-people {
+    justify-content: flex-end;
+}
+
 .left-video-title a {
     color: #373E40;
     font-size: 14px;
@@ -679,13 +683,6 @@ p {
 
 .left-video-title a:hover {
     color: #FF5983;
-}
-
-.focus-btn {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 .focus-btn a {
@@ -715,8 +712,8 @@ p {
 .play-people-number {
     font-size: 16px;
     color: #6d757a;
-    padding: 0 0 0 30px;
     cursor: default;
+    padding: 0 20px 0 0;
 }
 
 .play-people-number .iconfont {

@@ -253,3 +253,50 @@
 .HiddenSpan {
     display: none;
 }
+
+/* 直播和视频播放 */
+.same_module span {
+    flex-wrap: wrap;
+    align-content: center;
+    height: auto;
+    padding: 6px 0;
+}
+
+.title-span-p {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    padding-bottom: 5px;
+    color: #000;
+}
+
+.cute-name-live-people {
+    width: 100%;
+}
+
+.cute-name-live-people b {
+    display: inline-block;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #9ba3ab;
+}
+
+.cute-name-live-people b .iconfont {
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.cute-name-live-people b:first-child {
+    width: calc(50% - 10px);
+    padding-left: 10px;
+}
+
+.cute-name-live-people b:last-child {
+    text-align: center;
+    font-size: 14px;
+}

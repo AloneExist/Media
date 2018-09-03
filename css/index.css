@@ -10,12 +10,6 @@ body {
     align-content: flex-start;
 }
 
-@media(max-width:1550px) {
-    .list {
-        width: 80%;
-    }
-}
-
 .module_scene,
 .module_news,
 .module_hall,
@@ -114,10 +108,10 @@ body {
     margin-left: 20px;
 }
 
-.module_scene p,
-.module_news p,
-.module_hall p,
-.module_ans_que p {
+.module_scene .first-p-module,
+.module_news .first-p-module,
+.module_hall .first-p-module,
+.module_ans_que .first-p-module {
     width: 100%;
     color: #3B200C;
     font-size: 25px;
@@ -252,6 +246,53 @@ body {
 
 .contain_other .other_module {
     width: 48%;
+}
+
+/* 直播和视频播放 */
+.same_module span {
+    flex-wrap: wrap;
+    align-content: center;
+    height: auto;
+    padding: 6px 0;
+}
+
+.title-span-p {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    padding-bottom: 5px;
+    color: #000;
+}
+
+.cute-name-live-people {
+    width: 100%;
+}
+
+.cute-name-live-people b {
+    display: inline-block;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #9ba3ab;
+}
+
+.cute-name-live-people b .iconfont {
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.cute-name-live-people b:first-child {
+    width: calc(50% - 10px);
+    padding-left: 10px;
+}
+
+.cute-name-live-people b:last-child {
+    text-align: center;
+    font-size: 14px;
 }
 
 @media(width:1024px) {
