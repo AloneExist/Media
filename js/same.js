@@ -289,16 +289,17 @@ $('.three-part-for-article-video-issue a').on('click', function () {
     }, 300);
 });
 
-// 当页面变化时使搜索框有一些变化
-(window.onresize = function () {
+// 初始化,使搜索框在1024下最宽为80px
+$(function () {
     var Body_width = $('body').outerWidth();
     if (Body_width == 1024) {
         $('.InputTextBtn').on('click', function () {
-            $(this).css('width', '120px');
+            $(this).css('width', '80px');
         });
     }
-})();
+});
 
+// 永无BUG
 console.log([
     "                   我佛慈悲",
     "                   _ooOoo_",

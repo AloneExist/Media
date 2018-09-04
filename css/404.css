@@ -1,10 +1,12 @@
 .pageMain {
     padding-top: 100px;
+    transition: all .3s ease;
 }
 
 .pageMain img {
     width: 600px;
     margin: 0 auto;
+    transition: all .3s ease;
 }
 
 .pageMain h3,
@@ -15,10 +17,12 @@
 
 .pageMain div {
     padding-top: 42px;
+    transition: all .3s ease;
 }
 
 .pageMain p {
     padding-top: 20px;
+    transition: all .3s ease;
 }
 
 .pageMain div a {

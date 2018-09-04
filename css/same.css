@@ -747,15 +747,14 @@ h6 {
 
 @media(width:1024px) {
     .title {
-        width: calc(100% - 50px);
-        padding: 0 25px;
+        width: 100%;
         flex-wrap: wrap;
         align-content: center;
+        padding: 0;
     }
 
     .list {
-        width: 100%;
-        padding-bottom: 20px;
+        width: calc(100% - 120px);
     }
 
     .editor_article {
@@ -780,6 +779,11 @@ h6 {
 
     .left_list li {
         flex: initial;
+        padding-right: 45px;
+    }
+
+    .left_list .same_li {
+        padding: 0;
     }
 
     .searchLi {
@@ -794,19 +798,17 @@ h6 {
     }
 
     .left_list {
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .logo {
-        width: 100%;
+        overflow: hidden;
+        width: 120px;
     }
 
     .logo img {
         margin: 0 auto;
-    }
-
-    .HotAPast {
-        top: 52px;
+        height: 110px;
     }
 
     .InputTextBtn {
