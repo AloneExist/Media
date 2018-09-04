@@ -20,6 +20,7 @@
     width: 50%;
     flex-wrap: wrap;
     align-content: center;
+    transition: all .3s ease;
 }
 
 .MuchSame {
@@ -103,4 +104,10 @@
 .bottomDiv p {
     font-size: 14px;
     color: #FF5983;
+}
+
+@media(width:1024px) {
+    .containMuch {
+        width: 90%;
+    }
 }

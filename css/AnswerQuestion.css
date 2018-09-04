@@ -1,6 +1,7 @@
 .topImgColumns {
     width: 60%;
     justify-content: space-between;
+    transition: all .3s ease;
 }
 
 .leftColumns {
@@ -10,6 +11,7 @@
 .moveDou,
 .insertContainer {
     width: 60%;
+    transition: all .3s ease;
 }
 
 .Select_Much {
@@ -210,5 +212,16 @@
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media(width:1024px) {
+    .topImgColumns {
+        width: 80%;
+    }
+
+    .moveDou,
+    .insertContainer {
+        width: 80%;
     }
 }

@@ -1263,3 +1263,89 @@
     text-align: center;
     font-size: 14px;
 }
+
+@media(width:1024px) {
+    .contain_tou_photo a img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contain_tou_photo p {
+        margin: 6px 0 3px 0;
+        font-size: 12px;
+    }
+
+    .contain_tou_photo span {
+        font-size: 18px;
+    }
+
+    .contain_tou_photo {
+        padding: 65px 0 0 40px;
+    }
+
+    .all_content .Select_One_Div .same_module,
+    .Video_list .same_module {
+        width: 30%;
+        margin: 0 1.666666666666666666666%;
+        margin-bottom: 25px;
+    }
+
+    .user_list,
+    .FocusList {
+        margin: 0;
+        width: 230px;
+    }
+
+    .all_content .Select_Two_Div {
+        width: 85%;
+    }
+
+    .Select_Much {
+        width: 65%;
+    }
+
+    .other_module {
+        width: 100%;
+    }
+
+    .recommed_topic .issueOutContainer {
+        width: 33.3333333333333333333333%;
+    }
+
+    .AuthorFocus,
+    .problemFocus,
+    .courseFocus,
+    .videoFocus {
+        width: 65%;
+    }
+
+    .liveFocus {
+        width: 68%;
+    }
+
+    .Issue-main-content {
+        margin-bottom: 50px;
+    }
+
+    .live-three-part {
+        width: 48%;
+    }
+
+    .live-message {
+        padding: 20px;
+    }
+
+    .all-live-content .live-three-part:nth-of-type(2n+1) {
+        padding-right: 4%;
+    }
+
+    .live-three-part {
+        padding-bottom: 20px;
+    }
+
+    .videoFocus .same_module {
+        width: 48%;
+        margin: 0 1%;
+        margin-bottom: 15px;
+    }
+}

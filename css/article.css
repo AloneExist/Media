@@ -648,3 +648,9 @@ blockquote b {
 .w-e-text-container {
   position: static !important;
 }
+
+@media(width:1024px) {
+  .ContentShare {
+    left: 50px;
+  }
+}

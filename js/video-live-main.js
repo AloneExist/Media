@@ -17,6 +17,9 @@
              '</b></p></span></div>');
          mainContent.append(Content_one);
      }
+
+     // 重设背景图片容器的宽度
+     SetImgHeight();
      // 移过视频或是直播的样式添加
      $('.same_module a').hover(function () {
          $(this).addClass("a_hover a_hover_a");

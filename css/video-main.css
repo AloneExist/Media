@@ -19,12 +19,13 @@
 
 .main-content .first-p-for-title {
     padding-left: 1%;
-    width: 100%;
+    width: 99%;
     color: #3B200C;
     padding-bottom: 20px;
     text-align: left;
     font-size: 20px;
     font-weight: 600;
+    transition: all .3s ease;
 }
 
 .same_module span {
@@ -41,6 +42,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    transition: all .3s ease;
 }
 
 .kind-span {
@@ -136,4 +138,22 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: -50%;
+}
+
+@media(width:1024px) {
+    .main-content .same_module {
+        width: 30%;
+        margin: 0 1.66666666666666666%;
+        margin-bottom: 20px;
+    }
+
+    .classification {
+        width: 96.6%;
+        padding: 0 1.7% 20px 1.7%;
+    }
+
+    .main-content .first-p-for-title {
+        padding-left: 1.7%;
+        width: 98.3%;
+    }
 }

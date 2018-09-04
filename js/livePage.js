@@ -22,8 +22,6 @@ $(function () {
         autohidemode: false, //不隐藏滚动条
     });
 
-    $('.SendArea').scrollTop($('.SendArea')[0].scrollHeight);
-
     //限制textarea文字的输入字数
     var doing = false;
     var doSomething = function (e) {
@@ -111,8 +109,10 @@ $('.MuchColors span').on('click', function () {
 });
 
 //发送按钮点击
+var ScrollMove = true; //判断SendArea是否还在动画中
 $('#SendDanMU').on('click', function () {
-    if ($('.SendFunction a').css('cursor') == 'pointer') {
+    if ($('.SendFunction a').css('cursor') == 'pointer' && ScrollMove) {
+        ScrollMove = false;
         var DamMuLength = $('.userMessageDiv').length;
         //缓存99条弹幕记录
         if (DamMuLength >= 99) {
@@ -128,7 +128,14 @@ $('#SendDanMU').on('click', function () {
             'background': '#e3e8ec',
             'cursor': 'not-allowed',
         });
-        $('.SendArea').scrollTop($('.SendArea')[0].scrollHeight);
+        $('.SendArea').animate({
+            scrollTop: $('.SendArea')[0].scrollHeight
+        }, 1000, function () {
+            ScrollMove = true; //动画结束，可以发送
+        });
+        // $('.SendArea').scrollTop($('.SendArea')[0].scrollHeight);
+    } else if (ScrollMove == false) { //如果在动画的时间内则不让其操作，显示下面这段话
+        alert('客官，你操作太频繁了！');
     };
 });
 
@@ -188,11 +195,6 @@ window.onresize = function () {
         $('#VideoInterface').css({
             width: '',
             height: '',
-        });
-        // 重设右边栏高度
-        var containrAllVideoElementHeight = $('.containrAllVideoElement').outerHeight();
-        $('.DanMuListKeepSame').css({
-            'height': containrAllVideoElementHeight,
         });
     }
 }
