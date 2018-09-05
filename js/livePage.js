@@ -135,8 +135,13 @@ $('#SendDanMU').on('click', function () {
         });
         // $('.SendArea').scrollTop($('.SendArea')[0].scrollHeight);
     } else if (ScrollMove == false) { //如果在动画的时间内则不让其操作，显示下面这段话
-        alert('客官，你操作太频繁了！');
+        alert('客官，你操作太频繁了，请在1秒后在发送！');
     };
+});
+
+// 举报
+$('.ReportIssue,.ShareLiveBtn').on('click', function () {
+    alert('功能尚在开发中，敬请期待！！！');
 });
 
 //enter键发送

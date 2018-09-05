@@ -5,6 +5,12 @@ body,
     height: 100%;
 }
 
+#DPlayerVideo {
+    width: 1200px;
+    height: 675px;
+    background: #000;
+}
+
 #DPlayerVideo video {
     cursor: pointer;
 }
@@ -46,7 +52,7 @@ body,
 
 .containrAllVideoElement {
     width: 1200px;
-    border-radius: 15px 15px 0 0;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
     display: flex;
     align-content: flex-start;
@@ -60,7 +66,7 @@ body,
     height: 770px;
     background: #fff;
     margin-left: 20px;
-    border-radius: 15px 15px 0 0;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     background: #f8f8f8;
@@ -382,6 +388,7 @@ body,
 }
 
 .MuchColors {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -403,7 +410,7 @@ body,
     border-radius: 50%;
     flex: inherit;
     border: 1px solid #CCC;
-    transition: all .3s ease;
+    transition: all .1s ease;
 }
 
 .MuchColors span:hover {
@@ -463,39 +470,91 @@ body,
 }
 
 @media(width:1024px) {
-
-    html,
-    body,
-    #main {
-        height: auto;
-    }
-
     .containrAllVideoElement {
-        width: 950px;
-    }
-
-    .KeepSame {
-        flex-wrap: wrap;
-        align-items: initial;
-        align-content: center;
-    }
-
-    .DanMuListKeepSame {
-        margin: 0;
-        margin-top: 20px;
-        width: 950px;
-        border-radius: initial;
-        height: 500px;
+        width: 750px;
+        border-radius: 5px;
     }
 
     #VideoInterface {
-        width: 950px;
-        height: 534.38px;
+        width: 750px;
+        height: 421.88px;
     }
 
-    .MiddleContent {
-        height: auto;
-        padding-top: 120px;
-        padding-bottom: 20px;
+    .DanMuListKeepSame {
+        width: 220px;
+        height: 501.88px;
+        border-radius: 5px;
+    }
+
+    .HeadPicture img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bottomImgL a,
+    .bottomImgL a .iconfont,
+    .topImgL span:nth-of-type(2n),
+    .topImgL span:nth-of-type(2n-1) .iconfont,
+    .bottomImgL .NUmCounts,
+    .NameColumn a,
+    .MainContain span {
+        font-size: 12px;
+    }
+
+    .MainContain p {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .bottomImgL .NUmCounts {
+        padding: 0 15px 0 15px;
+    }
+
+    .DanMuSet .iconfont {
+        font-size: 12px;
+    }
+
+    .SendFunction a {
+        padding: 3px 10px;
+    }
+
+    #DPlayerVideo {
+        width: 750px;
+        height: 421.88px;
+    }
+
+    .DanMUSetIng {
+        padding: 10px;
+        width: 180px;
+        right: -55px;
+    }
+
+    .DanMUSetIng p,
+    .DanMuLocation {
+        padding: 0 0 10px 0;
+    }
+
+    .DanMUSetIng::before {
+        left: 132px;
+    }
+
+    .MuchColors span {
+        width: 12px;
+        height: 12px;
+    }
+
+    .MuchColors div {
+        width: 18px;
+        height: 18px;
+    }
+
+    .bigER {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .MuchColors span:hover {
+        width: 16px;
+        height: 16px;
     }
 }

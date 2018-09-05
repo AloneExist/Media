@@ -80,14 +80,6 @@ function danmuSend(n, m) {
     getTime('.current-time', m);
     // 输入的内容
     m.find('.limit-word-num').html(n.val());
-    // 限制弹幕内容的字数
-    m.find('.limit-word-num').each(function () {
-        var maxwidth = 14;
-        if ($(this).text().length > maxwidth) {
-            $(this).text($(this).text().substring(0, maxwidth));
-            $(this).html($(this).html() + "...");
-        };
-    });
     var Len = $('.send-danmu-Message-content').length;
     $('.danmu-content-and-number').html('弹幕内容(' + Len + ')');
 }
@@ -117,7 +109,7 @@ $('.NewEditor .publish_A').on('click', function () {
         '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
         '</a><a href="javascript:;" class="DeleteCommentSpecial"><i class="iconfont">&#xe622;</i>删除评论</a></div></div></div></li>'
     );
-    var Content = $('.NewEditor .w-e-text').html();
+    var Content = $('.NewEditor .w-e-text').html().replace(/<(?!img).*?>/g, "");
     if (Content == '') {
         alert('请您写一点内容再发送，当前状态不可发送');
     } else {
@@ -246,7 +238,7 @@ function getNewEditor(n) {
         var Hour = Now.getHours();
         var Minute = Now.getMinutes();
         var Second = Now.getSeconds();
-        var ContentNew = $('.NewGoodEditor .w-e-text').html();
+        var ContentNew = $('.NewGoodEditor .w-e-text').html().replace(/<(?!img).*?>/g, "");
         if (ContentNew == '') {
             alert('请您写一点内容再发送，当前状态不可发送');
         } else {
@@ -332,10 +324,23 @@ socialShare('.social-share', {
     description: getFirstContent, //分享到额描述
 });
 
-$('#QRcode-weixin').qrcode({
-    width: 150,
-    height: 150,
-    text: UrlAddress,
+function QRCodeChange() {
+    var QRCode_Width = $('#QRCode_Main').outerWidth();
+    var QRCode_Height = $('#QRCode_Main').outerHeight();
+    $('#QRCode_Main').qrcode({
+        width: QRCode_Width,
+        height: QRCode_Height,
+        text: UrlAddress,
+    });
+}
+
+// 二维码的初始化
+QRCodeChange();
+
+// 当页面尺寸改变时发生，其实没有什么作用，可加可不加
+$(window).resize(function () {
+    $('#QRCode_Main').empty();
+    QRCodeChange();
 });
 
 $('.focus-btn a').on('click', function () {
@@ -364,11 +369,6 @@ window.onresize = function () {
         $('#VideoInterface').css({
             width: '',
             height: '',
-        });
-        // 重新设置右边栏的高度
-        var videoContent = $('.video-content').outerHeight();
-        $('.danmu-list-content').css({
-            'height': videoContent,
         });
     }
 }

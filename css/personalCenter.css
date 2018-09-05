@@ -651,6 +651,10 @@
     flex-wrap: wrap;
 }
 
+.liveFocus {
+    width: 65%;
+}
+
 .videoFocus {
     justify-content: flex-start;
 }
@@ -914,7 +918,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
 }
 
 .live-message {
@@ -984,8 +988,17 @@
 }
 
 .live-room-status a {
-    color: #FF5983;
     font-size: 12px;
+}
+
+/* 直播中 */
+.live-room-status .status {
+    color: #FF5983;
+}
+
+/* 闲置中 */
+.live-room-status .Idle {
+    color: #999;
 }
 
 .course-main-content {

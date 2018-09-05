@@ -603,6 +603,14 @@ for (var i = 0; i < 5; i++) {
     $('.all-live-content').append(liveThreePart);
 }
 
+for (var i = 0; i < 5; i++) {
+    var liveThreePart = $('<div class="live-three-part"><div class="live-message"><div class="photo-title-focus-btn">' +
+        '<a href="livePage.html" target="_blank" class="img-a"><img src="../img/11.jpg"></a><div><p>养乐多了</p>' +
+        '<a href="javascript:;" class="btn-whether-focus" data-btn-focus="1">取消关注</a></div></div><div class="live-room-status"><p>直播间</p>' +
+        '<a href="livePage.html" target="_blank" class="Idle">闲置中</a></div></div></div>');
+    $('.all-live-content').append(liveThreePart);
+}
+
 $('.btn-whether-focus').on('click', function () {
     if ($(this).attr('data-btn-focus') == '1') {
         $(this).attr('data-btn-focus', '0');
@@ -643,8 +651,20 @@ $('.Delect-Video').on('click', function () {
 
 // 设置图片的高度
 function SetImgHeight() {
-    var cutHalf = (parseFloat($('.same_module a').css('width'))) / 2;
-    $('.same_module a').css('height', cutHalf);
+    var cutHalfOne = (parseFloat($('.Select_One_Div .same_module a').outerWidth())) / 2;
+    var cutHalfTwo = (parseFloat($('.Select_Four_Div .same_module a').outerWidth())) / 2;
+    var cutHalfThree = (parseFloat($('.Select_seven_Div .same_module a').outerWidth())) / 2;
+    // 解决window resize时背景图片高度丢失的问题
+    var max = 0;
+    if (cutHalfOne != 0) {
+        max = cutHalfOne;
+    } else if (cutHalfTwo != 0) {
+        max = cutHalfTwo;
+    } else if (cutHalfThree != 0) {
+        max = cutHalfThree;
+    }
+    // 解决window resize时背景图片高度丢失的问题
+    $('.same_module a').css('height', max);
 }
 
 // 设置图片的高度

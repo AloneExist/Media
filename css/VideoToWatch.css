@@ -8,6 +8,12 @@
     cursor: pointer;
 }
 
+#video-page-play-interface {
+    width: 1100px;
+    height: 618.75px;
+    background: #000;
+}
+
 .dplayer-bar-wrap {
     bottom: inherit;
     top: -15px;
@@ -43,7 +49,7 @@
 /* 弹幕列表 */
 .danmu-list-content {
     width: 350px;
-    height: 677.75px;
+    height: 669.75px;
     margin-left: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     transition: all .3s ease;
@@ -93,6 +99,14 @@
 
 .send-danmu-Message-content span {
     white-space: nowrap;
+}
+
+.send-danmu-Message-content .limit-word-num {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 202px;
+    transition: all .3s ease;
 }
 
 .send-danmu-Message-content span:nth-of-type(1) {
@@ -723,4 +737,92 @@ p {
 #VideoInterface {
     width: 1100px;
     height: 618.75px;
+}
+
+#QRCode_Main {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
+
+@media(width:1024px) {
+
+    .left-part,
+    .left-comments-contents-all {
+        width: 800px !important;
+    }
+
+    .introduce-word {
+        margin: 0;
+    }
+
+    .introduce-word .first-div {
+        width: auto !important;
+    }
+
+    #VideoInterface,
+    #video-page-play-interface {
+        width: 720px;
+        height: 405px;
+    }
+
+    .danmu-list-content {
+        width: 250px;
+        height: 456px;
+        margin-left: 20px;
+    }
+
+    .introduce-main-content .show-height {
+        width: 660px !important;
+    }
+
+    .introduce-word .share-area {
+        width: 220px !important;
+        margin-left: 20px !important;
+    }
+
+    .introduce-main-content .show-height .YScroll {
+        height: 100px;
+        font-size: 14px;
+    }
+
+    #QRCode_Main {
+        width: 100px;
+        height: 100px;
+    }
+
+    .social-share .social-share-icon {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .social-share .social-share-icon .iconfont {
+        font-size: 16px;
+    }
+
+    .introduce-word .share-area .social-share {
+        padding: 0 0 15px 0;
+    }
+
+    #QRcode-weixin {
+        padding-top: 15px;
+    }
+
+    .show-height .photo-niCall-created-time {
+        padding-bottom: 10px;
+    }
+
+    .show-height .photo-niCall-created-time img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .send-danmu-Message-content .limit-word-num {
+        width: 102px;
+    }
+
+    .dplayer-danmaku {
+        font-size: 18px;
+    }
 }

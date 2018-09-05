@@ -245,7 +245,7 @@ $('.NewEditor .publish_A').on('click', function () {
     '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
     '</a><a href="javascript:;" class="DeleteCommentSpecial"><i class="iconfont">&#xe622;</i>删除评论</a></div></div></div></li>'
   );
-  var Content = $('.NewEditor .w-e-text').html();
+  var Content = $('.NewEditor .w-e-text').html().replace(/<(?!img).*?>/g, ""); //去掉html标签保留img标签
   if (Content == '') {
     alert('请您写一点内容再发送，当前状态不可发送');
   } else {
@@ -374,7 +374,7 @@ function getNewEditor(n) {
     var Hour = Now.getHours();
     var Minute = Now.getMinutes();
     var Second = Now.getSeconds();
-    var ContentNew = $('.NewGoodEditor .w-e-text').html();
+    var ContentNew = $('.NewGoodEditor .w-e-text').html().replace(/<(?!img).*?>/g, ""); //去掉html标签保留img标签
     if (ContentNew == '') {
       alert('请您写一点内容再发送，当前状态不可发送');
     } else {

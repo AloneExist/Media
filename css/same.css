@@ -814,4 +814,13 @@ h6 {
     .InputTextBtn {
         width: 50px;
     }
+
+    .copyright {
+        margin-top: 100px;
+        height: 70px;
+    }
+
+    .copyright p {
+        font-size: 14px;
+    }
 }
