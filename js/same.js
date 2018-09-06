@@ -58,7 +58,7 @@ $('#login_a').on('click', function () {
         shadeClose: true, //点击遮罩关闭层
         content: ['../html/signIn.html', 'no'],
         closeBtn: 0,
-        area: ['400px', '552px'],
+        area: ['400px', '542px'],
     });
 });
 
@@ -70,7 +70,7 @@ $('#register_a').on('click', function () {
         shadeClose: true, //点击遮罩关闭层
         content: ['../html/signUp.html', 'no'],
         closeBtn: 0,
-        area: ['400px', '552px'],
+        area: ['400px', '542px'],
     });
 });
 
