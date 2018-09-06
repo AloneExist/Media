@@ -275,7 +275,7 @@ p {
     height: 100%;
     background: transparent;
     color: #595959;
-    transition: all .5s;
+    transition: all .5s ease;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -27,6 +27,10 @@ $(function () {
         background: '#DDD',
         hidecursordelay: 300,
     });
+
+    // 初始化评论的条数
+    var NumNumber = $('.commentsList li').length;
+    $('.commentsNum span').html(NumNumber);
 });
 
 function getTime(n, m) {
@@ -105,8 +109,8 @@ $('.NewEditor .publish_A').on('click', function () {
     var addComments = $(
         '<li class="Number"><div class="commentsMessage"><div class="topMessage"><a href="javascript:;"><img src="../img/11.jpg"></a>' +
         '<div class="rightMessage"><div class="commentsName">白矖</div><div class="timeMessage"><span></span><span></span>' +
-        '</div></div></div><div class="bottomMessage"><p class="OneFirst"></p><div class="toolBar_Btn"><a href="javascript:;"><i class="iconfont">&#xe606;</i>' +
-        '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
+        '</div></div></div><div class="bottomMessage"><p class="OneFirst"></p><div class="toolBar_Btn"><a href="javascript:;" class="toolBar_like_Zan" data-goodNum-onOff="1"><i class="iconfont">&#xe606;</i>' +
+        '<span class="goodNum">0</span><span>人赞</span></a><a href="javascript:;" class="replyBack_Btn"><i class="iconfont replyBack">&#xe61b;</i><span>回复</span>' +
         '</a><a href="javascript:;" class="DeleteCommentSpecial"><i class="iconfont">&#xe622;</i>删除评论</a></div></div></div></li>'
     );
     var Content = $('.NewEditor .w-e-text').html().replace(/<(?!img).*?>/g, "");
@@ -125,41 +129,40 @@ $('.NewEditor .publish_A').on('click', function () {
         $('.commentsList li:first-child .timeMessage span').eq(1).html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
     }
     $('.NewEditor .w-e-text').html('<p><br></p>');
+});
 
-    //点赞
-    var NotSame = true;
-    var GoodNum = parseInt($('.goodNum').html());
-    $('.toolBar_Btn a').eq(0).on('click', function () {
-        if (NotSame) {
-            NotSame = false;
-            onNotSame($(this).find('.iconfont'), 1);
-            $(this).find('.goodNum').html(++GoodNum);
-        } else {
-            NotSame = true;
-            onNotSame($(this).find('.iconfont'), 0);
-            $(this).find('.goodNum').html(--GoodNum);
-        }
+//点赞
+$(document).on('click', '.toolBar_like_Zan', function () {
+    var data_goodNum_onOff = $(this).attr('data-goodNum-onOff');
+    var GoodNum = parseInt($(this).find('.goodNum').html());
+    if (data_goodNum_onOff == '1') {
+        $(this).attr('data-goodNum-onOff', '0');
+        onNotSame($(this).find('.iconfont'), 1);
+        $(this).find('.goodNum').html(++GoodNum);
+    } else {
+        $(this).attr('data-goodNum-onOff', '1');
+        onNotSame($(this).find('.iconfont'), 0);
+        $(this).find('.goodNum').html(--GoodNum);
+    }
+});
+
+//回复
+$(document).on('click', '.replyBack_Btn', function () {
+    getNewEditor($(this));
+});
+
+//删除评论
+$(document).on('click', '.DeleteCommentSpecial', function () {
+    var This = $(this);
+    layer.confirm('确定要删除此评论吗?', {
+        btn: ['确定', '取消'], //按钮
+        title: '提示',
+    }, function (index) {
+        This.parent().parent().parent().parent().remove();
+        var NumCommentSpan = parseInt($('.commentsNum span').html());
+        $('.commentsNum span').html(--NumCommentSpan);
+        layer.close(index);
     });
-
-    //回复
-    $('.toolBar_Btn a').eq(1).on('click', function () {
-        getNewEditor($(this));
-    });
-
-    //删除评论
-    $('.DeleteCommentSpecial').unbind('click').on('click', function () {
-        var This = $(this);
-        layer.confirm('确定要删除此评论吗?', {
-            btn: ['确定', '取消'], //按钮
-            title: '提示',
-        }, function (index) {
-            This.parent().parent().parent().parent().remove();
-            var NumCommentSpan = parseInt($('.commentsNum span').html());
-            $('.commentsNum span').html(--NumCommentSpan);
-            layer.close(index);
-        });
-    });
-
 });
 
 function addZero(n) {
@@ -247,29 +250,27 @@ function getNewEditor(n) {
             $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:first .oneSpanTWO').html('' + Year + '/' + Month + '/' + Day + '');
             $(this).parent().parent().parent().parent().parent().parent().find('.insertComment:first .TwoSpanTWO').html('' + addZero(Hour) + ':' + addZero(Minute) + ':' + addZero(Second) + '');
         }
-
         $('.NewGoodEditor .w-e-text').html('<p><br></p>');
-
         cancel();
-
-        $('.DEl').unbind('click').on('click', function () {
-            var This = $(this);
-            layer.confirm('确定要删除此评论吗?', {
-                btn: ['确定', '取消'], //按钮
-                title: '提示',
-            }, function (index) {
-                This.parent().parent().remove();
-                layer.close(index);
-            });
-        }); //删除评论
-
-        //添加评论
-        $('.ADDCommit').on('click', function () {
-            getNewEditor($(this).parent());
-        });
-
     });
 }
+
+//添加评论
+$(document).on('click', '.ADDCommit', function () {
+    getNewEditor($(this).parent());
+});
+
+//删除评论
+$(document).on('click', '.DEl', function () {
+    var This = $(this);
+    layer.confirm('确定要删除此评论吗?', {
+        btn: ['确定', '取消'], //按钮
+        title: '提示',
+    }, function (index) {
+        This.parent().parent().remove();
+        layer.close(index);
+    });
+});
 
 // 检测一个页面中是否存在一个元素
 (function ($) {
