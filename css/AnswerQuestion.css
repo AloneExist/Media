@@ -224,4 +224,8 @@
     .insertContainer {
         width: 80%;
     }
+
+    .other_module {
+        width: 100%;
+    }
 }

@@ -219,3 +219,9 @@
         transform: rotate(360deg);
     }
 }
+
+@media(width:1024px) {
+    .user_select{
+        width: 90%;
+    }
+}

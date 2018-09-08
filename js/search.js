@@ -229,8 +229,17 @@ $('.HiddenSpan').on('click', function () {
 
 // 设置图片的高度
 function SetImgHeight() {
-    var cutHalf = (parseFloat($('.same_module a').css('width'))) / 2;
-    $('.same_module a').css('height', cutHalf);
+    var cutHalfOne = (parseFloat($('.firstPart .same_module a').outerWidth())) / 2;
+    var cutHalfTwo = (parseFloat($('.secondPart .same_module a').outerWidth())) / 2;
+    // 解决window resize时背景图片高度丢失的问题
+    var max = 0;
+    if (cutHalfOne != 0) {
+        max = cutHalfOne;
+    } else if (cutHalfTwo != 0) {
+        max = cutHalfTwo;
+    }
+    // 解决window resize时背景图片高度丢失的问题
+    $('.same_module a').css('height', max);
 }
 
 // 设置图片的高度

@@ -211,7 +211,7 @@ blockquote summary {
     position: absolute;
     left: 50%;
     bottom: -45px;
-    z-index: 9;
+    z-index: 100000000;
     color: #fff;
     transition: all .3s ease-out;
     transform: translateX(-50%) scale(0);

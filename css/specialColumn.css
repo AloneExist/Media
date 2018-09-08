@@ -78,7 +78,6 @@
 }
 
 /* 波浪线用作分割线 */
-
 .leftColumns a {
     display: inline-block;
     padding: 10px 15px;
@@ -124,4 +123,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+@media(width:1024px) {
+
+    .topImgColumns,
+    .moveDou,
+    .insertContainer {
+        width: 80%;
+    }
+
+    .rightColumns a img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .leftColumns h1 {
+        font-size: 30px;
+    }
+
+    .other_module {
+        width: 100%;
+    }
+
+    .toTop {
+        right: 20px;
+    }
 }

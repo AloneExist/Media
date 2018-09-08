@@ -300,3 +300,32 @@
     text-align: center;
     font-size: 14px;
 }
+
+@media(width:1024px) {
+    .TwoParts {
+        justify-content: space-around;
+    }
+
+    .leftParts {
+        width: 250px;
+    }
+
+    .rightParts {
+        width: 60%;
+    }
+
+    .firstPart .same_module,
+    .secondPart .same_module {
+        width: 45%;
+        margin: 0 2.5%;
+        margin-bottom: 30px;
+    }
+
+    .fourPart .recommed_topic .issueOutContainer {
+        width: 33.333333333333333333%;
+    }
+
+    .recommed_topic .ShadowBoxConatiner {
+        margin-bottom: 20px;
+    }
+}
