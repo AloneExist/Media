@@ -74,13 +74,6 @@ $('#register_a').on('click', function () {
     });
 });
 
-$(window).keydown(function (event) {
-    event = event || window.event;
-    if (event.keyCode == 13) {
-        $('.layui-layer-btn0').trigger('click');
-    };
-});
-
 $('.photo_cicle').hover(function () {
     $('.msg_index_dance').css({
         "transform": "scale(1)",
@@ -90,8 +83,6 @@ $('.photo_cicle').hover(function () {
         "transform": "scale(0)",
     });
 });
-
-
 
 function getBigHeight() {
     var bigHeight = document.documentElement.clientHeight || document.body.clientHeight;
@@ -170,7 +161,14 @@ $(window).keydown(function (event) {
         if (value != '') {
             window.open("search.html");
         }
-        $('.search_special').click();
+        // 恢复原来的样子
+        $('.InputTextBtn').css({
+            'width': '',
+        });
+        $('.search_special').css({
+            'background': '',
+        });
+        $('.HotAPast').remove();
         event.preventDefault();
     }
 });
@@ -187,57 +185,34 @@ function SearchFun(n) {
 
 $('.InputTextBtn').on('click', function () {
     $('.HotAPast').remove();
-    var HotPast = $('<div class="HotAPast"><div class="topSearch"><p>搜索历史</p><a href="javascript:;"><span class="longWidth">' +
-        '<i class="iconfont">&#xe6e3;</i></span>换一批</a></div><ul class="past"><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
-        '<p class="pastP">上大学后，我一直坚持的三件事情</p></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
-        '<p class="pastP">上大学后，我一直坚持的三件事情</p></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
-        '<p class="pastP">上大学后，我一直坚持的三件事情</p></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
-        '<p class="pastP">上大学后，我一直坚持的三件事情</p></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
-        '<p class="pastP">上大学后，我一直坚持的三件事情</p></a></li></ul></div>');
+    var HotPast = $('<div class="HotAPast"><div class="topSearch"><p>搜索历史</p><p>最多显示5条</p></div><ul class="past"><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
+        '<p class="pastP">上大学后，我一直坚持的三件事情</p><i class="iconfont cancel_btn_past">&#xe624;</i></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
+        '<p class="pastP">上大学后，我一直坚持的三件事情</p><i class="iconfont cancel_btn_past">&#xe624;</i></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
+        '<p class="pastP">上大学后，我一直坚持的三件事情</p><i class="iconfont cancel_btn_past">&#xe624;</i></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
+        '<p class="pastP">上大学后，我一直坚持的三件事情</p><i class="iconfont cancel_btn_past">&#xe624;</i></a></li><li><a href="javascript:;"><i class="iconfont">&#xe6c0;</i>' +
+        '<p class="pastP">上大学后，我一直坚持的三件事情</p><i class="iconfont cancel_btn_past">&#xe624;</i></a></li></ul></div>');
     $('.searchLi form').append(HotPast);
     $('.search_special').css({
         'background': '#BBB',
     });
 
-    $(this).css('width', '180px');
+    var searchLiWidth = ($('.searchLi').width() - 60) * .75;
+
+    $(this).css('width', searchLiWidth);
     stopBubble();
 
-    CutWord();
-
-    var NumAdd = 0;
-    var pageChange = 0;
-    $('.topSearch a').on('click', function () {
-        NumAdd++;
-        pageChange++;
-
-        $(this).find('.iconfont').css({
-            'transform': 'rotate(' + 720 * NumAdd + 'deg)',
-        });
-        switch (pageChange) {
-            case 0:
-                $('.pastP').html('上大学后，我一直坚持的三件事情');
-                break;
-            case 1:
-                $('.pastP').html('既然实现目标那么苦，你为什么还要继续苦下去');
-                break;
-            case 2:
-                $('.pastP').html('大学四年，我独立承担了我的生活费');
-                break;
-            case 3:
-                $('.pastP').html('使用Spring Data JPA访问关系型数据库');
-                break;
-            case 4:
-                $('.pastP').html('自律才能得自由---读《我的职业是小说家》');
-                break;
+    $('.cancel_btn_past').on('click', function () {
+        var Li_length = $('.past li').length;
+        if (Li_length == 1) {
+            $('.InputTextBtn').css({
+                'width': '',
+            });
+            $('.search_special').css({
+                'background': '',
+            });
+            $('.HotAPast').remove();
         }
-        if (pageChange == 4) {
-            pageChange = -1;
-        }
-        CutWord();
-        stopBubble();
-    });
-
-    $('.HotAPast').on('click', function () {
+        $(this).parent().parent().remove();
         stopBubble();
     });
 });
@@ -262,16 +237,6 @@ function stopBubble(e) {
         window.event.cancelBubble = true;
 }
 
-function CutWord() {
-    $(".pastP").each(function () {
-        var maxwidth = 9;
-        if ($(this).text().length > maxwidth) {
-            $(this).text($(this).text().substring(0, maxwidth));
-            $(this).html($(this).html() + "...");
-        };
-    });
-}
-
 // 发布
 $('.editor_article').hover(function () {
     $('.three-part-for-article-video-issue').css('transform', 'scaleY(1)');
@@ -287,16 +252,6 @@ $('.three-part-for-article-video-issue a').on('click', function () {
             window.open(This.attr('data-href'));
         }
     }, 300);
-});
-
-// 初始化,使搜索框在1024下最宽为80px
-$(function () {
-    var Body_width = $('body').outerWidth();
-    if (Body_width == 1024) {
-        $('.InputTextBtn').on('click', function () {
-            $(this).css('width', '80px');
-        });
-    }
 });
 
 // 永无BUG

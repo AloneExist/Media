@@ -71,9 +71,7 @@ h6 {
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
     padding: 0 150px 0 150px;
-    justify-content: space-between;
     background: #fff;
     z-index: 10;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .2);
@@ -89,23 +87,25 @@ h6 {
 }
 
 .logo {
+    width: 130px;
     height: 100px;
     overflow: hidden;
 }
 
 .logo img {
-    height: 100%;
+    width: 130px;
 }
 
 .list {
-    width: calc(100% - 250px);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     transition: all .3s ease;
 }
 
 .left_list {
-    width: 100%;
+    width: 85%;
     display: flex;
-    height: 100%;
 }
 
 .left_list li {
@@ -253,11 +253,19 @@ h6 {
     background: #C8E9A0;
 }
 
+.past li a:hover .cancel_btn_past {
+    display: block;
+}
+
 .past .pastP {
     font-size: 14px;
     position: relative;
     top: -1px;
     padding-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
 }
 
 .HotAPast {
@@ -612,6 +620,7 @@ h6 {
     width: 16.66666666666666666%;
     display: flex;
     justify-content: center;
+    transition: all .3s ease;
 }
 
 .recommed_topic .ShadowBoxConatiner {
@@ -740,21 +749,25 @@ h6 {
     color: #000;
 }
 
+.cancel_btn_past {
+    font-size: 12px !important;
+    padding-left: 10px;
+    display: none;
+}
+
 /* 去掉网页全屏 */
 #page-full-screen {
     display: none !important;
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1600px) {
     .title {
         width: 100%;
-        flex-wrap: wrap;
-        align-content: center;
         padding: 0;
     }
 
     .list {
-        width: calc(100% - 120px);
+        justify-content: space-around;
     }
 
     .editor_article {
@@ -779,7 +792,6 @@ h6 {
 
     .left_list li {
         flex: initial;
-        padding-right: 45px;
     }
 
     .left_list .same_li {
@@ -798,12 +810,13 @@ h6 {
     }
 
     .left_list {
-        justify-content: center;
+        justify-content: space-around;
     }
 
     .logo {
         overflow: hidden;
         width: 120px;
+        padding-left: 10px;
     }
 
     .logo img {
@@ -815,6 +828,11 @@ h6 {
         width: 50px;
     }
 
+    .msg_index_dance {
+        width: 100px;
+        right: -112px;
+    }
+
     .copyright {
         margin-top: 100px;
         height: 70px;
@@ -822,5 +840,23 @@ h6 {
 
     .copyright p {
         font-size: 14px;
+    }
+}
+
+@media(width:1024px) {
+    .list {
+        justify-content: space-between;
+    }
+
+    .left_list li {
+        padding-right: 40px;
+    }
+
+    .left_list {
+        justify-content: center;
+    }
+
+    .logo {
+        padding-right: 20px;
     }
 }

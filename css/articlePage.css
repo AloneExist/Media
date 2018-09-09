@@ -106,7 +106,25 @@
     color: #FF5983;
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1800px) {
+    .containMuch {
+        width: 60%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1500px) {
+    .containMuch {
+        width: 70%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1400px) {
+    .containMuch {
+        width: 80%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1200px) {
     .containMuch {
         width: 90%;
     }

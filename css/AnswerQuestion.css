@@ -23,6 +23,7 @@
 
 .other_module {
     width: 48%;
+    transition: all .3s ease;
 }
 
 .FocusQuestion {
@@ -215,7 +216,13 @@
     }
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1600px) {
+    .other_module {
+        width: 100%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1200px) {
     .topImgColumns {
         width: 80%;
     }
@@ -223,9 +230,5 @@
     .moveDou,
     .insertContainer {
         width: 80%;
-    }
-
-    .other_module {
-        width: 100%;
     }
 }

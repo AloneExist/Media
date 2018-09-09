@@ -125,11 +125,13 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
     border-radius: 10px;
     margin-bottom: 30px;
+    transition: all .3s ease;
 }
 
 .main-content .same_module a {
     width: 100%;
-    height: 138.234px;
+    height: 0;
+    padding-top: 50%;
     transition: all .5s ease;
     display: block;
     overflow: hidden;
@@ -140,10 +142,10 @@
     background-position: -50%;
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1600px) {
     .main-content .same_module {
-        width: 30%;
-        margin: 0 1.66666666666666666%;
+        width: 22%;
+        margin: 0 1.5%;
         margin-bottom: 20px;
     }
 
@@ -155,5 +157,13 @@
     .main-content .first-p-for-title {
         padding-left: 1.7%;
         width: 98.3%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1200px) {
+    .main-content .same_module {
+        width: 30%;
+        margin: 0 1.66666666666666666%;
+        margin-bottom: 20px;
     }
 }

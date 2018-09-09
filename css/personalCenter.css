@@ -23,9 +23,10 @@
 }
 
 .contain_tou_photo {
-    padding: 180px 0 0 40px;
+    padding: 8.5% 0 0 40px;
     display: flex;
     align-items: flex-start;
+    transition: all .3s ease;
 }
 
 .contain_tou_photo a {
@@ -144,6 +145,7 @@
 .all_content .Select_One_Div .same_module {
     margin-right: 1%;
     margin-left: 1%;
+    transition: all .3s ease;
 }
 
 .all_content .Select_Four_Div {
@@ -159,6 +161,8 @@
 
 .same_module a {
     width: 100%;
+    height: 0;
+    padding-top: 50%;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     display: block;
@@ -235,6 +239,7 @@
 
 .article_list .other_module {
     width: 45%;
+    transition: all .3s ease;
 }
 
 .Video_list .contain_a,
@@ -449,6 +454,7 @@
     width: 100%;
     height: 100%;
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    border-radius: 5px;
 }
 
 /* 选择分类 */
@@ -752,11 +758,11 @@
 }
 
 .Issue-main-content {
-    width: 382px;
+    width: 100%;
     background: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     border-radius: 3px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
     overflow: hidden;
     padding: 20px;
 }
@@ -922,7 +928,7 @@
 }
 
 .live-message {
-    width: 250px;
+    width: 80%;
     padding: 25px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
@@ -1277,7 +1283,18 @@
     font-size: 14px;
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1780px) {
+    .live-three-part {
+        width: 48%;
+        padding-bottom: 20px;
+    }
+
+    .all-live-content .live-three-part:nth-of-type(2n+1) {
+        padding-right: 4%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1600px) {
     .contain_tou_photo a img {
         width: 70px;
         height: 70px;
@@ -1292,21 +1309,16 @@
         font-size: 18px;
     }
 
-    .contain_tou_photo {
-        padding: 65px 0 0 40px;
-    }
-
     .all_content .Select_One_Div .same_module,
     .Video_list .same_module {
-        width: 30%;
-        margin: 0 1.666666666666666666666%;
+        width: 22%;
+        margin: 0 1.5%;
         margin-bottom: 25px;
     }
 
     .user_list,
     .FocusList {
         margin: 0;
-        width: 230px;
     }
 
     .all_content .Select_Two_Div {
@@ -1322,7 +1334,7 @@
     }
 
     .recommed_topic .issueOutContainer {
-        width: 33.3333333333333333333333%;
+        width: 20%;
     }
 
     .AuthorFocus,
@@ -1336,29 +1348,48 @@
         width: 68%;
     }
 
-    .Issue-main-content {
-        margin-bottom: 50px;
-    }
-
-    .live-three-part {
-        width: 48%;
-    }
-
     .live-message {
         padding: 20px;
-    }
-
-    .all-live-content .live-three-part:nth-of-type(2n+1) {
-        padding-right: 4%;
-    }
-
-    .live-three-part {
-        padding-bottom: 20px;
     }
 
     .videoFocus .same_module {
         width: 48%;
         margin: 0 1%;
         margin-bottom: 15px;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1300px) {
+
+    .all_content .Select_One_Div .same_module,
+    .Video_list .same_module {
+        width: 30%;
+        margin: 0 1.666666666666666666%;
+        margin-bottom: 25px;
+    }
+
+    .article_list .other_module {
+        width: 100%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1280px) {
+    .recommed_topic .issueOutContainer {
+        width: 25%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1200px) {
+    .contain_tou_photo {
+        padding: 7.5% 0 0 40px;
+    }
+
+    .user_list,
+    .FocusList {
+        width: 230px;
+    }
+
+    .recommed_topic .issueOutContainer {
+        width: 33.3333333333333333333333333%;
     }
 }

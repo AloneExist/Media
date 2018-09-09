@@ -31,6 +31,7 @@ body {
     width: 18%;
     margin-left: 1%;
     margin-right: 1%;
+    transition: all .3s ease;
 }
 
 .module_scene div,
@@ -65,6 +66,8 @@ body {
     background: url(../img/Soda.jpg) no-repeat;
     background-size: cover;
     background-position: -50%;
+    height: 0;
+    padding-top: 50%;
 }
 
 .module_scene .contain_span,
@@ -246,6 +249,7 @@ body {
 
 .contain_other .other_module {
     width: 48%;
+    transition: all .3s ease;
 }
 
 /* 直播和视频播放 */
@@ -295,7 +299,29 @@ body {
     font-size: 14px;
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1600px) {
+
+    .module_scene .same_module,
+    .module_news .same_module {
+        width: 22%;
+        margin: 0 1.5%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1550px) {
+    .recommed_topic .issueOutContainer {
+        width: 25%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1300px) {
+    .contain_other .other_module {
+        width: 100%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1370px) {
     .flex_box {
         align-items: initial;
         align-content: center;

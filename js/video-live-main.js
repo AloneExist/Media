@@ -19,7 +19,7 @@
      }
 
      // 重设背景图片容器的宽度
-     SetImgHeight();
+    //  SetImgHeight();
      // 移过视频或是直播的样式添加
      $('.same_module a').hover(function () {
          $(this).addClass("a_hover a_hover_a");
@@ -28,21 +28,21 @@
      });
  }
 
- // 设置背景图片容器的高度
- function SetImgHeight() {
-     var cutHalf = (parseFloat($('.same_module a').css('width'))) / 2;
-     $('.same_module a').css('height', cutHalf);
- }
+//  // 设置背景图片容器的高度
+//  function SetImgHeight() {
+//      var cutHalf = (parseFloat($('.same_module a').css('width'))) / 2;
+//      $('.same_module a').css('height', cutHalf);
+//  }
 
- // 设置背景图片容器的高度
- $(function () {
-     SetImgHeight();
- });
+//  // 设置背景图片容器的高度
+//  $(function () {
+//      SetImgHeight();
+//  });
 
- // 设置背景图片容器的高度
- $(window).resize(function () {
-     SetImgHeight();
- });
+//  // 设置背景图片容器的高度
+//  $(window).resize(function () {
+//      SetImgHeight();
+//  });
 
  // 分页
  $('.pagingTool').Paging({

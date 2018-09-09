@@ -649,30 +649,30 @@ $('.Delect-Video').on('click', function () {
     });
 });
 
-// 设置图片的高度
-function SetImgHeight() {
-    var cutHalfOne = (parseFloat($('.Select_One_Div .same_module a').outerWidth())) / 2;
-    var cutHalfTwo = (parseFloat($('.Select_Four_Div .same_module a').outerWidth())) / 2;
-    var cutHalfThree = (parseFloat($('.Select_seven_Div .same_module a').outerWidth())) / 2;
-    // 解决window resize时背景图片高度丢失的问题
-    var max = 0;
-    if (cutHalfOne != 0) {
-        max = cutHalfOne;
-    } else if (cutHalfTwo != 0) {
-        max = cutHalfTwo;
-    } else if (cutHalfThree != 0) {
-        max = cutHalfThree;
-    }
-    // 解决window resize时背景图片高度丢失的问题
-    $('.same_module a').css('height', max);
-}
+// // 设置图片的高度
+// function SetImgHeight() {
+//     var cutHalfOne = (parseFloat($('.Select_One_Div .same_module a').outerWidth())) / 2;
+//     var cutHalfTwo = (parseFloat($('.Select_Four_Div .same_module a').outerWidth())) / 2;
+//     var cutHalfThree = (parseFloat($('.Select_seven_Div .same_module a').outerWidth())) / 2;
+//     // 解决window resize时背景图片高度丢失的问题
+//     var max = 0;
+//     if (cutHalfOne != 0) {
+//         max = cutHalfOne;
+//     } else if (cutHalfTwo != 0) {
+//         max = cutHalfTwo;
+//     } else if (cutHalfThree != 0) {
+//         max = cutHalfThree;
+//     }
+//     // 解决window resize时背景图片高度丢失的问题
+//     $('.same_module a').css('height', max);
+// }
 
-// 设置图片的高度
-$(function () {
-    SetImgHeight();
-});
+// // 设置图片的高度
+// $(function () {
+//     SetImgHeight();
+// });
 
-// 设置图片的高度
-$(window).resize(function () {
-    SetImgHeight();
-});
+// // 设置图片的高度
+// $(window).resize(function () {
+//     SetImgHeight();
+// });
