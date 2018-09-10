@@ -157,6 +157,7 @@
     width: 18%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
     border-radius: 10px;
+    position: relative;
 }
 
 .same_module a {
@@ -1078,6 +1079,7 @@
     margin-right: 1.66666666666666666%;
     box-shadow: 0 0 20px rgba(0, 0, 0, .3);
     border-radius: 10px;
+    position: relative;
 }
 
 /* 删除video */
@@ -1085,11 +1087,11 @@
     position: absolute;
     top: 12px;
     right: 12px;
-    z-index: 10;
+    z-index: 1;
     color: #fff;
     font-size: 12px;
-    cursor: pointer;
     display: none;
+    cursor: pointer;
 }
 
 .Delect-show .Delect-Video {
@@ -1099,6 +1101,11 @@
 .replace_img,
 .ShadowBoxConatiner {
     position: relative;
+}
+
+.replace_img {
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .Delect-article,

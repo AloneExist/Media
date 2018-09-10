@@ -469,20 +469,20 @@ body,
     height: 675px;
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1580px) {
     .containrAllVideoElement {
-        width: 750px;
+        width: 900px;
         border-radius: 5px;
     }
 
     #VideoInterface {
-        width: 750px;
-        height: 421.88px;
+        width: 900px;
+        height: 506.25px;
     }
 
     .DanMuListKeepSame {
         width: 220px;
-        height: 501.88px;
+        height: 586.25px;
         border-radius: 5px;
     }
 
@@ -519,8 +519,8 @@ body,
     }
 
     #DPlayerVideo {
-        width: 750px;
-        height: 421.88px;
+        width: 900px;
+        height: 506.25px;
     }
 
     .DanMUSetIng {
@@ -556,5 +556,25 @@ body,
     .MuchColors span:hover {
         width: 16px;
         height: 16px;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1170px) {
+    .containrAllVideoElement {
+        width: 750px;
+    }
+
+    #VideoInterface {
+        width: 750px;
+        height: 421.88px;
+    }
+
+    #DPlayerVideo {
+        width: 750px;
+        height: 421.88px;
+    }
+
+    .DanMuListKeepSame {
+        height: 501.88px;
     }
 }

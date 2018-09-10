@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    transition: all .3s ease;
 }
 
 .leftTopicContent {
@@ -586,4 +587,11 @@
 #NewUser_edit {
     z-index: inherit !important;
     position: static !important;
+}
+
+@media(min-width:1024px) and (max-width:1130px) {
+    .ContainerTopic {
+        width: 100%;
+        justify-content: space-around;
+    }
 }

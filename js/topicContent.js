@@ -14,7 +14,7 @@ $('.RealFocus').on('click', function () {
 
 //限制描述的字数--简介
 $(".describe p").each(function () {
-    var maxwidth = 150;
+    var maxwidth = 100;
     if ($(this).text().length > maxwidth) {
         $(this).text($(this).text().substring(0, maxwidth));
         $(this).html($(this).html() + "...");

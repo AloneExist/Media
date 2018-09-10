@@ -745,11 +745,11 @@ p {
     height: 150px;
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1650px) {
 
     .left-part,
     .left-comments-contents-all {
-        width: 800px !important;
+        width: 1000px !important;
     }
 
     .introduce-word {
@@ -762,22 +762,22 @@ p {
 
     #VideoInterface,
     #video-page-play-interface {
-        width: 720px;
-        height: 405px;
+        width: 900px;
+        height: 506.25px;
     }
 
     .danmu-list-content {
-        width: 250px;
-        height: 456px;
+        width: 300px;
+        height: 557.25px;
         margin-left: 20px;
     }
 
     .introduce-main-content .show-height {
-        width: 660px !important;
+        width: 840px !important;
     }
 
     .introduce-word .share-area {
-        width: 220px !important;
+        width: 270px !important;
         margin-left: 20px !important;
     }
 
@@ -789,6 +789,10 @@ p {
     #QRCode_Main {
         width: 100px;
         height: 100px;
+    }
+
+    .introduce-word .synopsis {
+        margin: 0 0 0 95px;
     }
 
     .social-share .social-share-icon {
@@ -824,5 +828,32 @@ p {
 
     .dplayer-danmaku {
         font-size: 18px;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1234px) {
+
+    .left-part,
+    .left-comments-contents-all {
+        width: 800px !important;
+    }
+
+    #VideoInterface,
+    #video-page-play-interface {
+        width: 720px;
+        height: 405px;
+    }
+
+    .danmu-list-content {
+        width: 250px;
+        height: 456px;
+    }
+
+    .introduce-main-content .show-height {
+        width: 660px !important;
+    }
+
+    .introduce-word .share-area {
+        width: 220px !important;
     }
 }

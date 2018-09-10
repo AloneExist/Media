@@ -19,6 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    transition: all .3s ease;
 }
 
 .leftColumns {
@@ -71,6 +72,7 @@
 .moveDou {
     width: 60%;
     height: 8px;
+    transition: all .3s ease;
     background-image: -webkit-radial-gradient(circle, transparent, transparent 5px, #FF5983 5px, #FF5983 8px, transparent 8px, transparent);
     background-image: -moz-radial-gradient(circle, transparent, transparent 5px, #FF5983 5px, #FF5983 8px, transparent 8px, transparent);
     background-image: radial-gradient(circle, transparent, transparent 5px, #FF5983 5px, #FF5983 8px, transparent 8px, transparent);
@@ -116,6 +118,7 @@
 
 .other_module {
     width: 48%;
+    transition: all .3s ease;
 }
 
 .Select_Much {
@@ -125,7 +128,13 @@
     justify-content: space-between;
 }
 
-@media(width:1024px) {
+@media(min-width:1024px) and (max-width:1600px) {
+    .other_module {
+        width: 100%;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1400px) {
 
     .topImgColumns,
     .moveDou,
@@ -140,10 +149,6 @@
 
     .leftColumns h1 {
         font-size: 30px;
-    }
-
-    .other_module {
-        width: 100%;
     }
 
     .toTop {

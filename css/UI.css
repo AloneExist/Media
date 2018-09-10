@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    transition: all .3s ease;
 }
 
 .user_information {
@@ -220,8 +221,8 @@
     }
 }
 
-@media(width:1024px) {
-    .user_select{
+@media(min-width:1024px) and (max-width:1400px) {
+    .user_select {
         width: 90%;
     }
 }

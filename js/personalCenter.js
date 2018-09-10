@@ -16,7 +16,7 @@ $(document).on("click", '.same_a,.user_list a,.FocusList a,.layui-layer-btn0', f
 
 var Select_One_Div = $('.Select_One_Div');
 for (var i = 0; i < 12; i++) {
-    var select_one = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>1000</b></p></span></div>');
+    var select_one = $('<div class="same_module"><i class="Delect-Video iconfont">&#xe624;</i><a href="javascript:;"></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>1000</b></p></span></div>');
     Select_One_Div.append(select_one);
 };
 
@@ -191,7 +191,7 @@ $(function () {
 });
 
 for (var i = 0; i < 7; i++) {
-    var five_block = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span><div class="Delect-question"><i class="iconfont Del-this">&#xe622;</i><br><i class="iconfont enter-this">&#xe650;</i></div></div></div>');
+    var five_block = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span><div class="Delect-question"><i class="iconfont Del-this">&#xe622;</i><i class="iconfont enter-this">&#xe650;</i></div></div></div>');
     $('.Select_Three_Div .recommed_topic').append(five_block);
 }
 
@@ -211,12 +211,12 @@ var get_more_two = $('<div class="contain_a"><a class="contain_span" href="javas
 var get_more_three = $('<div class="contain_a"><a class="contain_span" href="javascript:;"><span class="change_circle">Get More<i class="iconfont">&#xe6c3;</i></span></a></div>');
 
 for (var i = 0; i < 6; i++) {
-    var v_list = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>2001</b></p></span></div>');
+    var v_list = $('<div class="same_module"><i class="Delect-Video iconfont">&#xe624;</i><a href="javascript:;"></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>2001</b></p></span></div>');
     Video_list.append(v_list);
 }
 
 for (var i = 0; i < 5; i++) {
-    var live_list = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe60d;</i>1000</b></p></span></div>');
+    var live_list = $('<div class="same_module"><i class="Delect-Video iconfont">&#xe624;</i><a href="javascript:;"></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe60d;</i>1000</b></p></span></div>');
     Video_list.append(live_list);
 }
 
@@ -252,7 +252,7 @@ $('.Delect-article').on('click', function () {
 
 var answer_list = $('.answer_list');
 for (var i = 0; i < 8; i++) {
-    var w_list = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span><div class="Delect-question"><i class="iconfont Del-this">&#xe622;</i><br><i class="iconfont enter-this">&#xe650;</i></div></div></div>');
+    var w_list = $('<div class="issueOutContainer"><div class="ShadowBoxConatiner"><a href="javascript:;"><img src=""><span></span></a><span class="issue"></span><div class="Delect-question"><i class="iconfont Del-this">&#xe622;</i><i class="iconfont enter-this">&#xe650;</i></div></div></div>');
     answer_list.append(w_list);
 }
 answer_list.append(get_more_three);
@@ -626,15 +626,22 @@ $('.btn-whether-focus').on('click', function () {
 // 关注视频
 var videoFocus = $('.videoFocus');
 for (var i = 0; i < 12; i++) {
-    var videoFocusOne = $('<div class="same_module"><a href="javascript:;"><i class="Delect-Video iconfont">&#xe624;</i></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>2001</b></p></span></div>');
+    var videoFocusOne = $('<div class="same_module"><i class="Delect-Video iconfont">&#xe624;</i><a href="javascript:;"></a><span><p class="title-span-p">梨视频</p><p class="cute-name-live-people"><b>双马尾lolita/我是你的新同桌呀</b><b><i class="iconfont">&#xe611;</i>2001</b></p></span></div>');
     videoFocus.append(videoFocusOne);
 };
 
 // 移过视频的效果
 $('.same_module a').hover(function () {
-    $(this).addClass("a_hover a_hover_a Delect-show");
+    $(this).addClass("a_hover a_hover_a");
 }, function () {
-    $(this).removeClass("a_hover a_hover_a Delect-show");
+    $(this).removeClass("a_hover a_hover_a");
+});
+
+// 取消关注/收藏之类的
+$('.same_module').hover(function () {
+    $(this).addClass("Delect-show");
+}, function () {
+    $(this).removeClass("Delect-show");
 });
 
 // 删除按钮
@@ -644,7 +651,7 @@ $('.Delect-Video').on('click', function () {
         btn: ['确定', '取消'], //按钮
         title: '提示',
     }, function (index) {
-        This.parent().parent().remove();
+        This.parent().remove();
         layer.close(index);
     });
 });
