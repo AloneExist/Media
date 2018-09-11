@@ -1,6 +1,13 @@
-.center_container {
-    width: 100%;
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#center_container {
+    flex: 1;
     position: relative;
+    padding: 0 0 180px 0;
 }
 
 .big_title {
@@ -111,6 +118,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.copyright {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .all_content .Select_One_Div,
