@@ -185,10 +185,19 @@ $('.release a').on('click', function () {
                 if ($('.VideoTitle input').val() != '') { //检测标题
                     if ($('#introduce-for-video').val() != '') { //检测是否有视频简介
                         $('.ProgressFixed').css({
-                            'display': 'block',
+                            'display': 'flex',
                             'opacity': '1',
                         });
-                        CircleProgress('.ProgressFixed', '#83FCD8', 6, .5, '45px', '150', '.ProgressFixed'); //进度条
+                        // 模拟上传
+                        var timer = null;
+                        var time = 0;
+                        timer = setInterval(function () {
+                            time += .1;
+                            CircleProgress(time);
+                            if (time >= 100) {
+                                clearInterval(timer);
+                            }
+                        }, 0);
                         //存储数据带#main，查看是否需要上传文件
                         $('#main').data({
                             'videoName': $('.videoName').html(),
@@ -216,57 +225,22 @@ $('.release a').on('click', function () {
 
 
 //环形进度条
-function CircleProgress(n, color, width, speed, fontSize, radiusSize, cover) {
-    var CircleDraw = $('<div class="CanvasNumUploadVideo"><span class="NumTopCanvasUploadVideo">0%</span>' +
-        '<canvas id="DrawProgressUploadVideo"></canvas><span class="WordProgress">文件正在上传，请稍等 ...</span></div>');
-    $(n).append(CircleDraw);
-    var previewDivWidth = $('.CanvasNumUploadVideo').outerWidth();
-    var previewDivHeight = $('.CanvasNumUploadVideo').outerHeight();
-    $('#DrawProgressUploadVideo').attr({
-        'width': previewDivWidth,
-        'height': previewDivHeight,
-    });
-    //绘制环形进度条
-    $('#DrawProgressUploadVideo').drawArc({ //绘制环形
-        layer: true, //使动画可以实现
-        name: 'DrawProgress', //动画的名字
-        strokeStyle: color, //进度条的颜色
-        strokeWidth: width, //进度条的宽度
-        rounded: true, //进度条为圆角
-        x: previewDivWidth / 2, //进度条的x轴坐标
-        y: previewDivHeight / 2, //进度条的y轴坐标
-        radius: radiusSize, //进度条的半径
-        start: 0, //开始的角度
-        end: 0, //结束的角度
-    });
+function CircleProgress(speed) {
+    $('.percentage_change').html('' + parseInt(speed) + '%'); //模拟上传
+    var Result = parseInt($('.percentage_change').html());
+    if (Result == 100) {
+        $('.status_show').html('发布成功');
+    }
 
-    //模拟上传
-    var TimerStamp = null;
-    var Result = 0;
-    TimerStamp = setInterval(function () {
-        Result += speed;
-        //改变环形
-        $('#DrawProgressUploadVideo').animateLayer('DrawProgress', {
-            end: Result,
-        }, 0);
-        //绘制百分比
-        $('.NumTopCanvasUploadVideo').css('font-size', fontSize);
-        $('.NumTopCanvasUploadVideo').html('' + parseInt((Result / 360) * 100) + '%');
-
-        if (Result >= 360) {
-            clearInterval(TimerStamp);
-            $('.WordProgress').html('发布成功');
+    $('.ProgressFixed').on('click', function () {
+        if ($('.status_show').html() == '发布成功') {
+            $(this).css('opacity', '0');
+            var This = $(this);
+            setTimeout(function () {
+                This.css('display', 'none');
+                $('.percentage_change').html('0%'); //模拟上传
+                $('.status_show').html('文件正在上传，请稍等 ...');
+            }, 500);
         }
-
-        $(cover).on('click', function () {
-            if ($('.WordProgress').html() == '发布成功') {
-                $(this).css('opacity', '0');
-                var This = $(this);
-                setTimeout(function () {
-                    This.css('display', 'none');
-                    CircleDraw.remove();
-                }, 500);
-            }
-        });
-    }, 0);
+    });
 }

@@ -147,12 +147,21 @@
 .LeftLabel {
     font-size: 16px;
     color: #000;
+    flex: .3;
+}
+
+.rightLabel {
+    flex: .7;
 }
 
 .LeftLabel span {
     color: #7a7979;
     font-size: 14px;
-    padding-right: 80px;
+}
+
+.rightLabel {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .rightLabel a {
@@ -161,6 +170,8 @@
     color: #363636;
     font-size: 14px;
     transition: all .3s ease;
+    display: block;
+    margin: 0 5px 5px 0;
 }
 
 .rightLabel a:hover {
@@ -219,40 +230,88 @@
     z-index: 10;
     transition: all .3s ease;
     opacity: 1;
-}
-
-/* jcanvas绘制进度条 */
-
-.CanvasNumUploadVideo {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
     background: rgba(0, 0, 0, .8);
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
-.NumTopCanvasUploadVideo {
+/* 加载动画 */
+
+.ProgressFixed .loading {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid lightgreen;
+    animation: turn 2s linear infinite;
+    position: relative;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+        border-color: lightgreen;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-color: lightblue;
+    }
+}
+
+.ProgressFixed .loading span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: lightgreen;
+    position: absolute;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+    animation: changeBgColor 2s linear infinite;
+}
+
+@keyframes changeBgColor {
+    0% {
+        background: lightgreen;
+    }
+
+    100% {
+        background: lightblue;
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        color: lightgreen;
+    }
+
+    100% {
+        color: lightblue;
+    }
+}
+
+.status_show {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    padding-top: 20px;
+    animation: changeColor 2s linear infinite;
+}
+
+.Location_true {
+    position: relative;
+}
+
+.percentage_change {
     position: absolute;
     top: 50%;
     left: 50%;
-    color: #83FCD8;
     transform: translate(-50%, -50%);
-}
-
-#DrawProgressUploadVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.WordProgress {
-    color: #83FCD8;
-    position: absolute;
-    top: calc(50% + 200px);
-    left: 50%;
-    font-size: 25px;
-    transform: translate(-50%, -50%);
+    font-size: 45px;
+    animation: changeColor 2s linear infinite;
 }
 
 /* 简介 */
