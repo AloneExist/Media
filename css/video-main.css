@@ -1,3 +1,23 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#main {
+    flex: 1;
+    position: relative;
+    padding: 0 0 250px 0;
+}
+
+.copyright {
+    margin: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .main-video-page {
     margin: 100px 0 0 0;
 }
@@ -36,6 +56,7 @@
 }
 
 /* 分类 */
+
 .classification {
     width: 98%;
     padding: 0 1% 20px 1%;
@@ -148,12 +169,10 @@
         margin: 0 1.5%;
         margin-bottom: 20px;
     }
-
     .classification {
         width: 96.6%;
         padding: 0 1.7% 20px 1.7%;
     }
-
     .main-content .first-p-for-title {
         padding-left: 1.7%;
         width: 98.3%;
