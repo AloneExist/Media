@@ -674,6 +674,7 @@ h6 {
 }
 
 /* 分页样式 */
+
 .pagingTool {
     width: 100%;
     display: flex;
@@ -730,6 +731,7 @@ h6 {
 }
 
 /* NO MORE */
+
 .NOMore {
     display: flex;
     flex-wrap: wrap;
@@ -756,8 +758,29 @@ h6 {
 }
 
 /* 去掉网页全屏 */
+
 #page-full-screen {
     display: none !important;
+}
+
+/* 登录按钮 */
+
+.loading_btn_login {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    transition: all .6s ease;
+}
+
+#login_a:hover .loading_btn_login {
+    color: #FF9500;
+    background: #000;
 }
 
 @media(min-width:1024px) and (max-width:1600px) {
@@ -765,79 +788,63 @@ h6 {
         width: 100%;
         padding: 0;
     }
-
     .list {
         justify-content: space-around;
     }
-
     .editor_article {
         margin-left: 20px;
         width: 80px;
         height: 30px;
     }
-
     .photo_cicle img {
         width: 35px;
         height: 35px;
     }
-
     .three-part-for-article-video-issue a {
         padding: 8px 0;
         font-size: 12px;
     }
-
     .editor_article .editor-first-a {
         font-size: 12px;
     }
-
     .left_list li {
         flex: initial;
     }
-
     .left_list .same_li {
         padding: 0;
     }
-
     .searchLi {
         padding-left: 0;
         width: 180px;
         justify-content: center;
     }
-
     .last_li,
     .searchLi {
         flex: initial !important;
     }
-
     .left_list {
         justify-content: space-around;
     }
-
     .logo {
         overflow: hidden;
         width: 120px;
         padding-left: 10px;
     }
-
     .logo img {
         margin: 0 auto;
         height: 110px;
     }
-
     .InputTextBtn {
         width: 50px;
     }
-
     .msg_index_dance {
         width: 100px;
         right: -112px;
     }
-
     .copyright {
         margin-top: 100px;
         height: 70px;
     }
-
     .copyright p {
         font-size: 14px;
     }
@@ -847,15 +854,12 @@ h6 {
     .list {
         justify-content: space-between;
     }
-
     .left_list li {
         padding-right: 40px;
     }
-
     .left_list {
         justify-content: center;
     }
-
     .logo {
         padding-right: 20px;
     }

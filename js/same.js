@@ -62,17 +62,17 @@ $('#login_a').on('click', function () {
     });
 });
 
-// 注册
-$('#register_a').on('click', function () {
-    layer.open({
-        type: 2,
-        title: false,
-        shadeClose: true, //点击遮罩关闭层
-        content: ['../html/signUp.html', 'no'],
-        closeBtn: 0,
-        area: ['400px', '542px'],
-    });
-});
+// // 注册
+// $('#register_a').on('click', function () {
+//     layer.open({
+//         type: 2,
+//         title: false,
+//         shadeClose: true, //点击遮罩关闭层
+//         content: ['../html/signUp.html', 'no'],
+//         closeBtn: 0,
+//         area: ['400px', '542px'],
+//     });
+// });
 
 $('.photo_cicle').hover(function () {
     $('.msg_index_dance').css({
